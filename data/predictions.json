@@ -88,7 +88,7 @@
       "picks": {
         "fifwc-pan-eng-2026-06-27": {
           "outcome": "England",
-          "probability": 0.845,
+          "probability": 0.855,
           "source": "Polymarket"
         },
         "fifwc-hrv-gha-2026-06-27": {
@@ -108,7 +108,7 @@
         },
         "fifwc-alg-aut-2026-06-27": {
           "outcome": "Draw",
-          "probability": 0.465,
+          "probability": 0.475,
           "source": "Polymarket"
         },
         "fifwc-jor-arg-2026-06-27": {
@@ -157,7 +157,7 @@
       "match": "Panama vs. England",
       "startTime": "2026-06-27T21:00:00Z",
       "pickedOutcome": "England",
-      "pickedProbability": 0.845,
+      "pickedProbability": 0.855,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-pan-eng-2026-06-27",
       "marketSnapshot": [
@@ -169,9 +169,9 @@
         },
         {
           "title": "England",
-          "price": 0.845,
-          "bestBid": 0.84,
-          "bestAsk": 0.85
+          "price": 0.855,
+          "bestBid": 0.85,
+          "bestAsk": 0.86
         },
         {
           "title": "Panama",
@@ -180,12 +180,12 @@
           "bestAsk": 0.05
         }
       ],
-      "lastChecked": "2026-06-27T16:16:44.449Z",
+      "lastChecked": "2026-06-27T16:30:27.662Z",
       "espnId": "760485",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:16:44.449Z"
+      "resultLastChecked": "2026-06-27T16:30:27.662Z"
     },
     {
       "slug": "fifwc-hrv-gha-2026-06-27",
@@ -215,12 +215,12 @@
           "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T16:16:44.449Z",
+      "lastChecked": "2026-06-27T16:30:27.662Z",
       "espnId": "760480",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:16:44.449Z"
+      "resultLastChecked": "2026-06-27T16:30:27.662Z"
     },
     {
       "slug": "fifwc-col-prt-2026-06-27",
@@ -250,12 +250,12 @@
           "bestAsk": 0.5
         }
       ],
-      "lastChecked": "2026-06-27T16:16:44.449Z",
+      "lastChecked": "2026-06-27T16:30:27.662Z",
       "espnId": "760481",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:16:44.449Z"
+      "resultLastChecked": "2026-06-27T16:30:27.662Z"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
@@ -285,19 +285,19 @@
           "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T16:16:44.449Z",
+      "lastChecked": "2026-06-27T16:30:27.662Z",
       "espnId": "760482",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:16:44.449Z"
+      "resultLastChecked": "2026-06-27T16:30:27.662Z"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
       "match": "Algeria vs. Austria",
       "startTime": "2026-06-28T02:00:00Z",
       "pickedOutcome": "Draw",
-      "pickedProbability": 0.465,
+      "pickedProbability": 0.475,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-alg-aut-2026-06-27",
       "marketSnapshot": [
@@ -309,9 +309,9 @@
         },
         {
           "title": "Draw",
-          "price": 0.465,
-          "bestBid": 0.46,
-          "bestAsk": 0.47
+          "price": 0.475,
+          "bestBid": 0.47,
+          "bestAsk": 0.48
         },
         {
           "title": "Austria",
@@ -320,12 +320,12 @@
           "bestAsk": 0.29
         }
       ],
-      "lastChecked": "2026-06-27T16:16:44.449Z",
+      "lastChecked": "2026-06-27T16:30:27.662Z",
       "espnId": "760484",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:16:44.449Z"
+      "resultLastChecked": "2026-06-27T16:30:27.662Z"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
@@ -350,18 +350,18 @@
         },
         {
           "title": "Jordan",
-          "price": 0.0455,
-          "bestBid": 0.045,
-          "bestAsk": 0.046
+          "price": 0.0445,
+          "bestBid": 0.044,
+          "bestAsk": 0.045
         }
       ],
-      "lastChecked": "2026-06-27T16:16:44.449Z",
+      "lastChecked": "2026-06-27T16:30:27.662Z",
       "espnId": "760483",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:16:44.449Z"
+      "resultLastChecked": "2026-06-27T16:30:27.662Z"
     }
   ],
-  "lastUpdated": "2026-06-27T16:16:44.449Z"
+  "lastUpdated": "2026-06-27T16:30:27.662Z"
 }
