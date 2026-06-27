@@ -1,6 +1,6 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-27T19:43:27.336Z
+Last updated: 2026-06-27T20:28:51.874Z
 
 ## SMS Leaderboard
 
@@ -24,14 +24,20 @@ As of: July 27, 2026, 12:10 PM ET
 
 Carlito: Panama vs. England - Panama 0-3 England (pending)
 Carlito: Croatia vs. Ghana - Croatia 1-1 Ghana (pending)
+Diana: Panama vs. England - Panama 0-3 England (pending)
+Diana: Croatia vs. Ghana - Croatia 2-2 Ghana (pending)
 Youssef: Panama vs. England - Panama 0-3 England (pending)
 Youssef: Croatia vs. Ghana - Croatia 2-2 Ghana (pending)
 Carlito: Colombia vs. Portugal - Colombia 2-1 Portugal (pending)
 Carlito: DR Congo vs. Uzbekistan - DR Congo 1-0 Uzbekistan (pending)
+Diana: Colombia vs. Portugal - Colombia 2-1 Portugal (pending)
+Diana: DR Congo vs. Uzbekistan - DR Congo 1-1 Uzbekistan (pending)
 Youssef: Colombia vs. Portugal - Colombia 2-2 Portugal (pending)
 Youssef: DR Congo vs. Uzbekistan - DR Congo 0-0 Uzbekistan (pending)
 Carlito: Algeria vs. Austria - Algeria 1-1 Austria (pending)
 Carlito: Jordan vs. Argentina - Jordan 0-2 Argentina (pending)
+Diana: Algeria vs. Austria - Algeria 1-2 Austria (pending)
+Diana: Jordan vs. Argentina - Jordan 0-4 Argentina (pending)
 Youssef: Algeria vs. Austria - Algeria 1-2 Austria (pending)
 Youssef: Jordan vs. Argentina - Jordan 0-2 Argentina (pending)
 
@@ -48,7 +54,7 @@ Panama/England - England, 85.5%
 Croatia/Ghana - Croatia, 54.5%
 Colombia/Portugal - Portugal, 47.5%
 DR Congo/Uzbekistan - DR Congo, 56.5%
-Algeria/Austria - Draw, 47.5%
+Algeria/Austria - Draw, 46.5%
 Jordan/Argentina - Argentina, 86.5%
 
 Shareable page: fifa-predictions.html
