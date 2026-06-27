@@ -1,8 +1,12 @@
-# FIFA Predictions
+# Freeman's FIFA Predictions and Tally
 
-Running total: 3-1
+Freeman: 4 pts, 3-1
 Exact scores: 1
-Last updated: 2026-06-27T14:38:18.141Z
+Last updated: 2026-06-27T15:27:35.448Z
+
+## Leaderboard
+
+Freeman: 4 pts, 3-1, 1 exact
 
 ## Completed Picks
 
