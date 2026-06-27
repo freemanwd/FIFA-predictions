@@ -176,6 +176,23 @@ function playerStats(data) {
     .sort((a, b) => b.points - a.points || b.correct - a.correct || b.exactScores - a.exactScores || a.name.localeCompare(b.name));
 }
 
+function manualLeaderboardEntries(data) {
+  return [...(data.manualLeaderboard?.entries || [])]
+    .map((entry, index) => ({ ...entry, smsOrder: index }))
+    .sort((a, b) => b.points - a.points || a.smsOrder - b.smsOrder);
+}
+
+function rankedEntries(entries) {
+  let previousPoints = null;
+  let previousRank = 0;
+  return entries.map((entry, index) => {
+    const rank = entry.points === previousPoints ? previousRank : index + 1;
+    previousPoints = entry.points;
+    previousRank = rank;
+    return { ...entry, rank };
+  });
+}
+
 function record(data) {
   const freeman = playerStats(data).find((player) => player.id === "freeman");
   if (freeman) {
@@ -346,6 +363,7 @@ function mergeEspnScore(match, espnEvent, now) {
 function makeMarkdown(data) {
   const totals = record(data);
   const standings = playerStats(data);
+  const smsStandings = rankedEntries(manualLeaderboardEntries(data));
   const lines = [
     "# Freeman's FIFA Predictions and Tally",
     "",
@@ -359,6 +377,15 @@ function makeMarkdown(data) {
 
   for (const player of standings) {
     lines.push(`${player.name}: ${player.points} pts, ${player.correct}-${player.missed}, ${player.exactScores} exact`);
+  }
+
+  if (smsStandings.length) {
+    lines.push("", `## ${data.manualLeaderboard.title || "SMS Leaderboard"}`, "");
+    lines.push(`As of: ${data.manualLeaderboard.asOfLabel || data.manualLeaderboard.asOf}`);
+    lines.push("");
+    for (const entry of smsStandings) {
+      lines.push(`#${entry.rank} ${entry.name}: ${entry.points}`);
+    }
   }
 
   lines.push(
@@ -385,7 +412,8 @@ function makeMarkdown(data) {
 function makeHtml(data) {
   const totals = record(data);
   const standings = playerStats(data);
-  const leader = standings[0];
+  const smsStandings = rankedEntries(manualLeaderboardEntries(data));
+  const leader = smsStandings[0] || standings[0];
   const pending = data.matches.filter((match) => !match.resolvedOutcome).length;
   const standingsRows = standings
     .map(
@@ -396,6 +424,15 @@ function makeHtml(data) {
         <td>${player.correct}-${player.missed}</td>
         <td>${player.exactScores}</td>
         <td>${player.pending}</td>
+      </tr>`
+    )
+    .join("\n");
+  const smsRows = smsStandings
+    .map(
+      (entry) => `<tr>
+        <td>${entry.rank}</td>
+        <td>${escapeHtml(entry.name)}</td>
+        <td>${entry.points}</td>
       </tr>`
     )
     .join("\n");
@@ -438,6 +475,7 @@ function makeHtml(data) {
     .metric strong { display: block; font-size: 28px; line-height: 1.1; }
     .metric span { color: var(--muted); font-size: 13px; }
     .section-title { margin: 26px 0 10px; font-size: 18px; }
+    .section-note { color: var(--muted); margin: -4px 0 12px; font-size: 13px; }
     .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
     table { border-collapse: collapse; width: 100%; min-width: 920px; }
     th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
@@ -466,12 +504,12 @@ function makeHtml(data) {
   </header>
   <main>
     <section class="summary">
-      <div class="metric"><strong>${escapeHtml(leader?.name || "Freeman")}</strong><span>Current leader</span></div>
+      <div class="metric"><strong>${escapeHtml(leader?.name || "Freeman")}</strong><span>Pool leader</span></div>
       <div class="metric"><strong>${totals.points}</strong><span>Freeman points</span></div>
       <div class="metric"><strong>${totals.exactScores}</strong><span>Exact scores</span></div>
       <div class="metric"><strong>${pending}</strong><span>Pending matches</span></div>
     </section>
-    <h2 class="section-title">Leaderboard</h2>
+    <h2 class="section-title">Freeman Model Tally</h2>
     <div class="table-wrap">
       <table class="leaderboard">
         <thead>
@@ -503,6 +541,20 @@ function makeHtml(data) {
         <tbody>${rows}</tbody>
       </table>
     </div>
+    ${smsRows ? `<h2 class="section-title">${escapeHtml(data.manualLeaderboard?.title || "SMS Leaderboard")}</h2>
+    <p class="section-note">As of ${escapeHtml(data.manualLeaderboard?.asOfLabel || data.manualLeaderboard?.asOf || "")}. Source: ${escapeHtml(data.manualLeaderboard?.source || "SMS thread")}.</p>
+    <div class="table-wrap">
+      <table class="leaderboard">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>${smsRows}</tbody>
+      </table>
+    </div>` : ""}
     <footer>Sources: Polymarket FIFA World Cup moneyline markets for picks; ESPN FIFA World Cup scoreboard for final scores. Prices can move before kickoff.</footer>
   </main>
 </body>
