@@ -2,11 +2,28 @@
 
 Freeman: 4 pts, 3-1
 Exact scores: 1
-Last updated: 2026-06-27T15:27:35.448Z
+Last updated: 2026-06-27T16:06:55.620Z
 
 ## Leaderboard
 
 Freeman: 4 pts, 3-1, 1 exact
+
+## SMS Leaderboard
+
+As of: July 27, 2026, 12:10 PM ET
+
+#1 CARLITO: 9
+#2 Enver: 5
+#2 DaveG-KGB: 5
+#4 Huy: 4
+#4 Youssef: 4
+#6 Eric: 3
+#6 Connor: 3
+#6 Diana: 3
+#9 Billy E (BE): 2
+#9 Cole: 2
+#11 Diego: 1
+#12 Kwame: 0
 
 ## Completed Picks
 
