@@ -242,6 +242,12 @@ function makeHtml(data) {
 async function main() {
   const data = readData();
   const now = new Date().toISOString();
+  const stopAfter = new Date(`${data.finalDate}T23:59:59-04:00`);
+  if (new Date(now) > stopAfter) {
+    console.log(`Tournament final date has passed; no update needed after ${data.finalDate}.`);
+    return;
+  }
+
   const response = await fetch(apiUrl);
   if (!response.ok) {
     throw new Error(`Polymarket API failed: ${response.status} ${response.statusText}`);
