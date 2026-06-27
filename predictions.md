@@ -1,6 +1,6 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-27T20:35:53.531Z
+Last updated: 2026-06-27T21:26:39.035Z
 
 ## SMS Leaderboard
 
@@ -22,6 +22,8 @@ As of: July 27, 2026, 12:10 PM ET
 
 ## SMS Score Picks
 
+Billy E (BE): Panama vs. England - Panama 2-5 England (pending)
+Billy E (BE): Croatia vs. Ghana - Croatia 3-3 Ghana (pending)
 Carlito: Panama vs. England - Panama 0-3 England (pending)
 Carlito: Croatia vs. Ghana - Croatia 1-1 Ghana (pending)
 Diana: Panama vs. England - Panama 0-3 England (pending)
@@ -30,6 +32,8 @@ Enver: Panama vs. England - Panama 0-2 England (pending)
 Enver: Croatia vs. Ghana - Croatia 2-1 Ghana (pending)
 Youssef: Panama vs. England - Panama 0-3 England (pending)
 Youssef: Croatia vs. Ghana - Croatia 2-2 Ghana (pending)
+Billy E (BE): Colombia vs. Portugal - Colombia 3-3 Portugal (pending)
+Billy E (BE): DR Congo vs. Uzbekistan - DR Congo 1-3 Uzbekistan (pending)
 Carlito: Colombia vs. Portugal - Colombia 2-1 Portugal (pending)
 Carlito: DR Congo vs. Uzbekistan - DR Congo 1-0 Uzbekistan (pending)
 Diana: Colombia vs. Portugal - Colombia 2-1 Portugal (pending)
@@ -38,6 +42,8 @@ Enver: Colombia vs. Portugal - Colombia 1-1 Portugal (pending)
 Enver: DR Congo vs. Uzbekistan - DR Congo 1-0 Uzbekistan (pending)
 Youssef: Colombia vs. Portugal - Colombia 2-2 Portugal (pending)
 Youssef: DR Congo vs. Uzbekistan - DR Congo 0-0 Uzbekistan (pending)
+Billy E (BE): Algeria vs. Austria - Algeria 2-2 Austria (pending)
+Billy E (BE): Jordan vs. Argentina - Jordan 0-4 Argentina (pending)
 Carlito: Algeria vs. Austria - Algeria 1-1 Austria (pending)
 Carlito: Jordan vs. Argentina - Jordan 0-2 Argentina (pending)
 Diana: Algeria vs. Austria - Algeria 1-2 Austria (pending)
@@ -56,10 +62,10 @@ Belgium 2-0 - winner correct, score missed
 
 ## Polymarket Moneyline Picks
 
-Panama/England - England, 85.5%
-Croatia/Ghana - Croatia, 54.5%
+Panama/England - England, 82.5%
+Croatia/Ghana - Croatia, 52.5%
 Colombia/Portugal - Portugal, 47.5%
-DR Congo/Uzbekistan - DR Congo, 56.5%
+DR Congo/Uzbekistan - DR Congo, 57.5%
 Algeria/Austria - Draw, 46.5%
 Jordan/Argentina - Argentina, 86.5%
 
