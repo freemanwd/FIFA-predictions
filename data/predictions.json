@@ -1,10 +1,64 @@
 {
-  "title": "FIFA Predictions",
+  "title": "Freeman's FIFA Predictions and Tally",
   "finalDate": "2026-07-19",
   "source": {
     "name": "Polymarket FIFA World Cup moneyline",
-    "api": "https://gamma-api.polymarket.com/events?series_slug=soccer-fifwc&limit=500"
+    "api": "https://gamma-api.polymarket.com/events?series_slug=soccer-fifwc&limit=500",
+    "scores": {
+      "name": "ESPN FIFA World Cup scoreboard",
+      "api": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+    }
   },
+  "scoring": {
+    "winnerPoints": 1,
+    "exactScoreBonus": 1,
+    "notes": "One point for correct winner or draw, plus one bonus point for exact score."
+  },
+  "players": [
+    {
+      "id": "freeman",
+      "name": "Freeman",
+      "source": "Polymarket moneyline leaders",
+      "baseRecord": {
+        "points": 4,
+        "correct": 3,
+        "missed": 1,
+        "exactScores": 1
+      },
+      "picks": {
+        "fifwc-pan-eng-2026-06-27": {
+          "outcome": "England",
+          "probability": 0.845,
+          "source": "Polymarket"
+        },
+        "fifwc-hrv-gha-2026-06-27": {
+          "outcome": "Croatia",
+          "probability": 0.515,
+          "source": "Polymarket"
+        },
+        "fifwc-col-prt-2026-06-27": {
+          "outcome": "Portugal",
+          "probability": 0.495,
+          "source": "Polymarket"
+        },
+        "fifwc-cdr-uzb-2026-06-27": {
+          "outcome": "DR Congo",
+          "probability": 0.585,
+          "source": "Polymarket"
+        },
+        "fifwc-alg-aut-2026-06-27": {
+          "outcome": "Draw",
+          "probability": 0.465,
+          "source": "Polymarket"
+        },
+        "fifwc-jor-arg-2026-06-27": {
+          "outcome": "Argentina",
+          "probability": 0.855,
+          "source": "Polymarket"
+        }
+      }
+    }
+  ],
   "baseRecord": {
     "wins": 3,
     "losses": 1,
@@ -66,7 +120,12 @@
           "bestAsk": 0.05
         }
       ],
-      "lastChecked": "2026-06-27T14:38:18.141Z"
+      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "espnId": "760485",
+      "resultStatus": "Scheduled",
+      "resultDetail": "Sat, June 27th at 5:00 PM EDT",
+      "resultSource": "ESPN FIFA World Cup scoreboard",
+      "resultLastChecked": "2026-06-27T15:27:35.448Z"
     },
     {
       "slug": "fifwc-hrv-gha-2026-06-27",
@@ -85,18 +144,23 @@
         },
         {
           "title": "Draw",
-          "price": 0.315,
-          "bestBid": 0.31,
-          "bestAsk": 0.32
+          "price": 0.305,
+          "bestBid": 0.3,
+          "bestAsk": 0.31
         },
         {
           "title": "Ghana",
-          "price": 0.175,
-          "bestBid": 0.17,
-          "bestAsk": 0.18
+          "price": 0.185,
+          "bestBid": 0.18,
+          "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T14:38:18.141Z"
+      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "espnId": "760480",
+      "resultStatus": "Scheduled",
+      "resultDetail": "Sat, June 27th at 5:00 PM EDT",
+      "resultSource": "ESPN FIFA World Cup scoreboard",
+      "resultLastChecked": "2026-06-27T15:27:35.448Z"
     },
     {
       "slug": "fifwc-col-prt-2026-06-27",
@@ -126,7 +190,12 @@
           "bestAsk": 0.5
         }
       ],
-      "lastChecked": "2026-06-27T14:38:18.141Z"
+      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "espnId": "760481",
+      "resultStatus": "Scheduled",
+      "resultDetail": "Sat, June 27th at 7:30 PM EDT",
+      "resultSource": "ESPN FIFA World Cup scoreboard",
+      "resultLastChecked": "2026-06-27T15:27:35.448Z"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
@@ -156,7 +225,12 @@
           "bestAsk": 0.18
         }
       ],
-      "lastChecked": "2026-06-27T14:38:18.141Z"
+      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "espnId": "760482",
+      "resultStatus": "Scheduled",
+      "resultDetail": "Sat, June 27th at 7:30 PM EDT",
+      "resultSource": "ESPN FIFA World Cup scoreboard",
+      "resultLastChecked": "2026-06-27T15:27:35.448Z"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
@@ -186,7 +260,12 @@
           "bestAsk": 0.29
         }
       ],
-      "lastChecked": "2026-06-27T14:38:18.141Z"
+      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "espnId": "760484",
+      "resultStatus": "Scheduled",
+      "resultDetail": "Sat, June 27th at 10:00 PM EDT",
+      "resultSource": "ESPN FIFA World Cup scoreboard",
+      "resultLastChecked": "2026-06-27T15:27:35.448Z"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
@@ -211,13 +290,18 @@
         },
         {
           "title": "Jordan",
-          "price": 0.0485,
-          "bestBid": 0.048,
-          "bestAsk": 0.049
+          "price": 0.0465,
+          "bestBid": 0.046,
+          "bestAsk": 0.047
         }
       ],
-      "lastChecked": "2026-06-27T14:38:18.141Z"
+      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "espnId": "760483",
+      "resultStatus": "Scheduled",
+      "resultDetail": "Sat, June 27th at 10:00 PM EDT",
+      "resultSource": "ESPN FIFA World Cup scoreboard",
+      "resultLastChecked": "2026-06-27T15:27:35.448Z"
     }
   ],
-  "lastUpdated": "2026-06-27T14:38:18.141Z"
+  "lastUpdated": "2026-06-27T15:27:35.448Z"
 }
