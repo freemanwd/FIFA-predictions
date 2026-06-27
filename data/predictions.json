@@ -14,6 +14,62 @@
     "exactScoreBonus": 1,
     "notes": "One point for correct winner or draw, plus one bonus point for exact score."
   },
+  "manualLeaderboard": {
+    "title": "SMS Leaderboard",
+    "asOf": "2026-07-27T12:10:00-04:00",
+    "asOfLabel": "July 27, 2026, 12:10 PM ET",
+    "source": "SMS thread",
+    "entries": [
+      {
+        "name": "CARLITO",
+        "points": 9
+      },
+      {
+        "name": "Enver",
+        "points": 5
+      },
+      {
+        "name": "DaveG-KGB",
+        "points": 5
+      },
+      {
+        "name": "Huy",
+        "points": 4
+      },
+      {
+        "name": "Youssef",
+        "points": 4
+      },
+      {
+        "name": "Eric",
+        "points": 3
+      },
+      {
+        "name": "Connor",
+        "points": 3
+      },
+      {
+        "name": "Diana",
+        "points": 3
+      },
+      {
+        "name": "Billy E (BE)",
+        "points": 2
+      },
+      {
+        "name": "Cole",
+        "points": 2
+      },
+      {
+        "name": "Diego",
+        "points": 1
+      },
+      {
+        "name": "Kwame",
+        "points": 0
+      }
+    ]
+  },
   "players": [
     {
       "id": "freeman",
@@ -120,12 +176,12 @@
           "bestAsk": 0.05
         }
       ],
-      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "lastChecked": "2026-06-27T16:06:55.264Z",
       "espnId": "760485",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T15:27:35.448Z"
+      "resultLastChecked": "2026-06-27T16:06:55.264Z"
     },
     {
       "slug": "fifwc-hrv-gha-2026-06-27",
@@ -155,12 +211,12 @@
           "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "lastChecked": "2026-06-27T16:06:55.264Z",
       "espnId": "760480",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T15:27:35.448Z"
+      "resultLastChecked": "2026-06-27T16:06:55.264Z"
     },
     {
       "slug": "fifwc-col-prt-2026-06-27",
@@ -190,12 +246,12 @@
           "bestAsk": 0.5
         }
       ],
-      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "lastChecked": "2026-06-27T16:06:55.264Z",
       "espnId": "760481",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T15:27:35.448Z"
+      "resultLastChecked": "2026-06-27T16:06:55.264Z"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
@@ -220,17 +276,17 @@
         },
         {
           "title": "Uzbekistan",
-          "price": 0.175,
-          "bestBid": 0.17,
-          "bestAsk": 0.18
+          "price": 0.185,
+          "bestBid": 0.18,
+          "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "lastChecked": "2026-06-27T16:06:55.264Z",
       "espnId": "760482",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T15:27:35.448Z"
+      "resultLastChecked": "2026-06-27T16:06:55.264Z"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
@@ -260,12 +316,12 @@
           "bestAsk": 0.29
         }
       ],
-      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "lastChecked": "2026-06-27T16:06:55.264Z",
       "espnId": "760484",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T15:27:35.448Z"
+      "resultLastChecked": "2026-06-27T16:06:55.264Z"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
@@ -290,18 +346,18 @@
         },
         {
           "title": "Jordan",
-          "price": 0.0465,
-          "bestBid": 0.046,
-          "bestAsk": 0.047
+          "price": 0.0445,
+          "bestBid": 0.044,
+          "bestAsk": 0.045
         }
       ],
-      "lastChecked": "2026-06-27T15:27:35.448Z",
+      "lastChecked": "2026-06-27T16:06:55.264Z",
       "espnId": "760483",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T15:27:35.448Z"
+      "resultLastChecked": "2026-06-27T16:06:55.264Z"
     }
   ],
-  "lastUpdated": "2026-06-27T15:27:35.448Z"
+  "lastUpdated": "2026-06-27T16:06:55.264Z"
 }
