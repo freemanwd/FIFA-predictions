@@ -193,6 +193,43 @@ function rankedEntries(entries) {
   });
 }
 
+function scoreTextForMatch(match, score) {
+  if (!score) return "";
+  const teams = matchTeams(match.match);
+  const left = teams[0];
+  const right = teams[1];
+  if (left && right && Number.isFinite(score[left]) && Number.isFinite(score[right])) {
+    return `${left} ${score[left]}-${score[right]} ${right}`;
+  }
+  return Object.entries(score)
+    .map(([team, goals]) => `${team} ${goals}`)
+    .join(", ");
+}
+
+function scorePickRows(data) {
+  const matchesBySlug = new Map(data.matches.map((match) => [match.slug, match]));
+  return data.players
+    .filter((player) => player.id !== "freeman")
+    .flatMap((player) =>
+      Object.entries(player.picks || [])
+        .filter(([, pick]) => pick.score)
+        .map(([slug, pick]) => {
+          const match = matchesBySlug.get(slug);
+          if (!match) return null;
+          const scored = pickScoreStatus(pick, match);
+          return {
+            player,
+            match,
+            pick,
+            scored,
+            pickText: scoreTextForMatch(match, pick.score)
+          };
+        })
+        .filter(Boolean)
+    )
+    .sort((a, b) => new Date(a.match.startTime) - new Date(b.match.startTime) || a.player.name.localeCompare(b.player.name));
+}
+
 function record(data) {
   const freeman = playerStats(data).find((player) => player.id === "freeman");
   if (freeman) {
@@ -362,6 +399,7 @@ function mergeEspnScore(match, espnEvent, now) {
 
 function makeMarkdown(data) {
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
+  const smsScorePicks = scorePickRows(data);
   const lines = [
     "# Freeman's FIFA Predictions and Tally",
     "",
@@ -375,6 +413,14 @@ function makeMarkdown(data) {
     lines.push("");
     for (const entry of smsStandings) {
       lines.push(`#${entry.rank} ${entry.points} pts - ${entry.name}`);
+    }
+  }
+
+  if (smsScorePicks.length) {
+    lines.push("", "## SMS Score Picks", "");
+    for (const row of smsScorePicks) {
+      const finalScore = row.match.finalScore ? `, final: ${row.match.finalScore}` : "";
+      lines.push(`${row.player.name}: ${row.match.match} - ${row.pickText} (${row.scored.status}${finalScore})`);
     }
   }
 
@@ -401,12 +447,24 @@ function makeMarkdown(data) {
 
 function makeHtml(data) {
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
+  const smsScorePicks = scorePickRows(data);
   const smsRows = smsStandings
     .map(
       (entry) => `<tr>
         <td>${entry.rank}</td>
         <td>${entry.points}</td>
         <td>${escapeHtml(entry.name)}</td>
+      </tr>`
+    )
+    .join("\n");
+  const smsScoreRows = smsScorePicks
+    .map(
+      (row) => `<tr>
+        <td>${escapeHtml(row.player.name)}<span>${escapeHtml(row.player.source || "")}</span></td>
+        <td>${escapeHtml(row.match.match)}<span>${escapeHtml(new Date(row.match.startTime).toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" }))} ET</span></td>
+        <td>${escapeHtml(row.pickText)}<span>${escapeHtml(row.pick.outcome)}</span></td>
+        <td class="status ${escapeHtml(row.scored.status)}">${escapeHtml(row.scored.status)}</td>
+        <td>${escapeHtml(row.match.finalScore || "TBD")}<span>${escapeHtml(row.match.resultStatus || "Awaiting final")}</span></td>
       </tr>`
     )
     .join("\n");
@@ -490,6 +548,22 @@ function makeHtml(data) {
           </tr>
         </thead>
         <tbody>${smsRows}</tbody>
+      </table>
+    </div>` : ""}
+    ${smsScoreRows ? `<h2 class="section-title">SMS Score Picks</h2>
+    <p class="section-note">From the June 27 SMS screenshot. ESPN final scores will grade winner and exact-score points as matches complete.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Match</th>
+            <th>Pick</th>
+            <th>Status</th>
+            <th>Final Score</th>
+          </tr>
+        </thead>
+        <tbody>${smsScoreRows}</tbody>
       </table>
     </div>` : ""}
     <h2 class="section-title">Match Picks</h2>
