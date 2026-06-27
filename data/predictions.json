@@ -21,7 +21,7 @@
     "source": "SMS thread",
     "entries": [
       {
-        "name": "CARLITO",
+        "name": "Carlito",
         "points": 9
       },
       {
@@ -31,6 +31,10 @@
       {
         "name": "DaveG-KGB",
         "points": 5
+      },
+      {
+        "name": "Freeman",
+        "points": 4
       },
       {
         "name": "Huy",
@@ -176,12 +180,12 @@
           "bestAsk": 0.05
         }
       ],
-      "lastChecked": "2026-06-27T16:06:55.264Z",
+      "lastChecked": "2026-06-27T16:16:44.449Z",
       "espnId": "760485",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:06:55.264Z"
+      "resultLastChecked": "2026-06-27T16:16:44.449Z"
     },
     {
       "slug": "fifwc-hrv-gha-2026-06-27",
@@ -211,12 +215,12 @@
           "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T16:06:55.264Z",
+      "lastChecked": "2026-06-27T16:16:44.449Z",
       "espnId": "760480",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:06:55.264Z"
+      "resultLastChecked": "2026-06-27T16:16:44.449Z"
     },
     {
       "slug": "fifwc-col-prt-2026-06-27",
@@ -246,12 +250,12 @@
           "bestAsk": 0.5
         }
       ],
-      "lastChecked": "2026-06-27T16:06:55.264Z",
+      "lastChecked": "2026-06-27T16:16:44.449Z",
       "espnId": "760481",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:06:55.264Z"
+      "resultLastChecked": "2026-06-27T16:16:44.449Z"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
@@ -281,12 +285,12 @@
           "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T16:06:55.264Z",
+      "lastChecked": "2026-06-27T16:16:44.449Z",
       "espnId": "760482",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:06:55.264Z"
+      "resultLastChecked": "2026-06-27T16:16:44.449Z"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
@@ -316,12 +320,12 @@
           "bestAsk": 0.29
         }
       ],
-      "lastChecked": "2026-06-27T16:06:55.264Z",
+      "lastChecked": "2026-06-27T16:16:44.449Z",
       "espnId": "760484",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:06:55.264Z"
+      "resultLastChecked": "2026-06-27T16:16:44.449Z"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
@@ -346,18 +350,18 @@
         },
         {
           "title": "Jordan",
-          "price": 0.0445,
-          "bestBid": 0.044,
-          "bestAsk": 0.045
+          "price": 0.0455,
+          "bestBid": 0.045,
+          "bestAsk": 0.046
         }
       ],
-      "lastChecked": "2026-06-27T16:06:55.264Z",
+      "lastChecked": "2026-06-27T16:16:44.449Z",
       "espnId": "760483",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:06:55.264Z"
+      "resultLastChecked": "2026-06-27T16:16:44.449Z"
     }
   ],
-  "lastUpdated": "2026-06-27T16:06:55.264Z"
+  "lastUpdated": "2026-06-27T16:16:44.449Z"
 }
