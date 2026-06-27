@@ -361,30 +361,20 @@ function mergeEspnScore(match, espnEvent, now) {
 }
 
 function makeMarkdown(data) {
-  const totals = record(data);
-  const standings = playerStats(data);
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
   const lines = [
     "# Freeman's FIFA Predictions and Tally",
     "",
-    `Freeman: ${totals.points} pts, ${totals.wins}-${totals.losses}`,
-    `Exact scores: ${totals.exactScores}`,
     `Last updated: ${data.lastUpdated}`,
-    "",
-    "## Leaderboard",
     ""
   ];
 
-  for (const player of standings) {
-    lines.push(`${player.name}: ${player.points} pts, ${player.correct}-${player.missed}, ${player.exactScores} exact`);
-  }
-
   if (smsStandings.length) {
-    lines.push("", `## ${data.manualLeaderboard.title || "SMS Leaderboard"}`, "");
+    lines.push(`## ${data.manualLeaderboard.title || "SMS Leaderboard"}`, "");
     lines.push(`As of: ${data.manualLeaderboard.asOfLabel || data.manualLeaderboard.asOf}`);
     lines.push("");
     for (const entry of smsStandings) {
-      lines.push(`#${entry.rank} ${entry.name}: ${entry.points}`);
+      lines.push(`#${entry.rank} ${entry.points} pts - ${entry.name}`);
     }
   }
 
@@ -410,29 +400,13 @@ function makeMarkdown(data) {
 }
 
 function makeHtml(data) {
-  const totals = record(data);
-  const standings = playerStats(data);
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
-  const leader = smsStandings[0] || standings[0];
-  const pending = data.matches.filter((match) => !match.resolvedOutcome).length;
-  const standingsRows = standings
-    .map(
-      (player, index) => `<tr>
-        <td>${index + 1}</td>
-        <td>${escapeHtml(player.name)}<span>${escapeHtml(player.source || "")}</span></td>
-        <td>${player.points}</td>
-        <td>${player.correct}-${player.missed}</td>
-        <td>${player.exactScores}</td>
-        <td>${player.pending}</td>
-      </tr>`
-    )
-    .join("\n");
   const smsRows = smsStandings
     .map(
       (entry) => `<tr>
         <td>${entry.rank}</td>
-        <td>${escapeHtml(entry.name)}</td>
         <td>${entry.points}</td>
+        <td>${escapeHtml(entry.name)}</td>
       </tr>`
     )
     .join("\n");
@@ -470,11 +444,9 @@ function makeHtml(data) {
     main { max-width: 1120px; margin: 0 auto; padding: 24px; }
     h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.1; letter-spacing: 0; }
     p { margin: 0; color: #d5e2ea; }
-    .summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 22px; }
-    .metric { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
-    .metric strong { display: block; font-size: 28px; line-height: 1.1; }
-    .metric span { color: var(--muted); font-size: 13px; }
-    .section-title { margin: 26px 0 10px; font-size: 18px; }
+    .section-title { margin: 0 0 10px; font-size: 18px; }
+    .section-title + .section-note { margin-top: -4px; }
+    .table-wrap + .section-title { margin-top: 26px; }
     .section-note { color: var(--muted); margin: -4px 0 12px; font-size: 13px; }
     .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
     table { border-collapse: collapse; width: 100%; min-width: 920px; }
@@ -493,7 +465,6 @@ function makeHtml(data) {
       header { padding: 24px 18px 18px; }
       main { padding: 18px; }
       h1 { font-size: 28px; }
-      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
@@ -503,28 +474,20 @@ function makeHtml(data) {
     <p>Polymarket moneyline picks, ESPN final scores, and a running pool tally through the July 19, 2026 final.</p>
   </header>
   <main>
-    <section class="summary">
-      <div class="metric"><strong>${escapeHtml(leader?.name || "Freeman")}</strong><span>Pool leader</span></div>
-      <div class="metric"><strong>${totals.points}</strong><span>Freeman points</span></div>
-      <div class="metric"><strong>${totals.exactScores}</strong><span>Exact scores</span></div>
-      <div class="metric"><strong>${pending}</strong><span>Pending matches</span></div>
-    </section>
-    <h2 class="section-title">Freeman Model Tally</h2>
+    ${smsRows ? `<h2 class="section-title">${escapeHtml(data.manualLeaderboard?.title || "SMS Leaderboard")}</h2>
+    <p class="section-note">As of ${escapeHtml(data.manualLeaderboard?.asOfLabel || data.manualLeaderboard?.asOf || "")}. Source: ${escapeHtml(data.manualLeaderboard?.source || "SMS thread")}.</p>
     <div class="table-wrap">
       <table class="leaderboard">
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Player</th>
-            <th>Pts</th>
-            <th>Record</th>
-            <th>Exact</th>
-            <th>Pending</th>
+            <th>Total points</th>
+            <th>Name</th>
           </tr>
         </thead>
-        <tbody>${standingsRows}</tbody>
+        <tbody>${smsRows}</tbody>
       </table>
-    </div>
+    </div>` : ""}
     <h2 class="section-title">Match Picks</h2>
     <div class="table-wrap">
       <table>
@@ -541,20 +504,6 @@ function makeHtml(data) {
         <tbody>${rows}</tbody>
       </table>
     </div>
-    ${smsRows ? `<h2 class="section-title">${escapeHtml(data.manualLeaderboard?.title || "SMS Leaderboard")}</h2>
-    <p class="section-note">As of ${escapeHtml(data.manualLeaderboard?.asOfLabel || data.manualLeaderboard?.asOf || "")}. Source: ${escapeHtml(data.manualLeaderboard?.source || "SMS thread")}.</p>
-    <div class="table-wrap">
-      <table class="leaderboard">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>${smsRows}</tbody>
-      </table>
-    </div>` : ""}
     <footer>Sources: Polymarket FIFA World Cup moneyline markets for picks; ESPN FIFA World Cup scoreboard for final scores. Prices can move before kickoff.</footer>
   </main>
 </body>
