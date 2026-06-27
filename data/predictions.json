@@ -108,7 +108,7 @@
         },
         "fifwc-alg-aut-2026-06-27": {
           "outcome": "Draw",
-          "probability": 0.475,
+          "probability": 0.465,
           "source": "Polymarket"
         },
         "fifwc-jor-arg-2026-06-27": {
@@ -251,6 +251,73 @@
           "submittedAt": "2026-06-27T15:28:49-04:00"
         }
       }
+    },
+    {
+      "id": "diana",
+      "name": "Diana",
+      "source": "SMS text from Diana",
+      "baseRecord": {
+        "points": 3,
+        "correct": 3,
+        "missed": 0,
+        "exactScores": 0
+      },
+      "picks": {
+        "fifwc-pan-eng-2026-06-27": {
+          "outcome": "England",
+          "score": {
+            "Panama": 0,
+            "England": 3
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-hrv-gha-2026-06-27": {
+          "outcome": "Draw",
+          "score": {
+            "Croatia": 2,
+            "Ghana": 2
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-col-prt-2026-06-27": {
+          "outcome": "Colombia",
+          "score": {
+            "Colombia": 2,
+            "Portugal": 1
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-cdr-uzb-2026-06-27": {
+          "outcome": "Draw",
+          "score": {
+            "DR Congo": 1,
+            "Uzbekistan": 1
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-alg-aut-2026-06-27": {
+          "outcome": "Austria",
+          "score": {
+            "Algeria": 1,
+            "Austria": 2
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-jor-arg-2026-06-27": {
+          "outcome": "Argentina",
+          "score": {
+            "Jordan": 0,
+            "Argentina": 4
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        }
+      }
     }
   ],
   "baseRecord": {
@@ -314,12 +381,12 @@
           "bestAsk": 0.05
         }
       ],
-      "lastChecked": "2026-06-27T19:43:27.336Z",
+      "lastChecked": "2026-06-27T20:28:51.874Z",
       "espnId": "760485",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T19:43:27.336Z"
+      "resultLastChecked": "2026-06-27T20:28:51.874Z"
     },
     {
       "slug": "fifwc-hrv-gha-2026-06-27",
@@ -338,23 +405,23 @@
         },
         {
           "title": "Draw",
-          "price": 0.305,
-          "bestBid": 0.3,
-          "bestAsk": 0.31
+          "price": 0.295,
+          "bestBid": 0.29,
+          "bestAsk": 0.3
         },
         {
           "title": "Ghana",
-          "price": 0.165,
-          "bestBid": 0.16,
-          "bestAsk": 0.17
+          "price": 0.155,
+          "bestBid": 0.15,
+          "bestAsk": 0.16
         }
       ],
-      "lastChecked": "2026-06-27T19:43:27.336Z",
+      "lastChecked": "2026-06-27T20:28:51.874Z",
       "espnId": "760480",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T19:43:27.336Z"
+      "resultLastChecked": "2026-06-27T20:28:51.874Z"
     },
     {
       "slug": "fifwc-col-prt-2026-06-27",
@@ -384,12 +451,12 @@
           "bestAsk": 0.48
         }
       ],
-      "lastChecked": "2026-06-27T19:43:27.336Z",
+      "lastChecked": "2026-06-27T20:28:51.874Z",
       "espnId": "760481",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T19:43:27.336Z"
+      "resultLastChecked": "2026-06-27T20:28:51.874Z"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
@@ -419,19 +486,19 @@
           "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T19:43:27.336Z",
+      "lastChecked": "2026-06-27T20:28:51.874Z",
       "espnId": "760482",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T19:43:27.336Z"
+      "resultLastChecked": "2026-06-27T20:28:51.874Z"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
       "match": "Algeria vs. Austria",
       "startTime": "2026-06-28T02:00:00Z",
       "pickedOutcome": "Draw",
-      "pickedProbability": 0.475,
+      "pickedProbability": 0.465,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-alg-aut-2026-06-27",
       "marketSnapshot": [
@@ -443,9 +510,9 @@
         },
         {
           "title": "Draw",
-          "price": 0.475,
-          "bestBid": 0.47,
-          "bestAsk": 0.48
+          "price": 0.465,
+          "bestBid": 0.46,
+          "bestAsk": 0.47
         },
         {
           "title": "Austria",
@@ -454,12 +521,12 @@
           "bestAsk": 0.26
         }
       ],
-      "lastChecked": "2026-06-27T19:43:27.336Z",
+      "lastChecked": "2026-06-27T20:28:51.874Z",
       "espnId": "760484",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T19:43:27.336Z"
+      "resultLastChecked": "2026-06-27T20:28:51.874Z"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
@@ -489,13 +556,13 @@
           "bestAsk": 0.044
         }
       ],
-      "lastChecked": "2026-06-27T19:43:27.336Z",
+      "lastChecked": "2026-06-27T20:28:51.874Z",
       "espnId": "760483",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T19:43:27.336Z"
+      "resultLastChecked": "2026-06-27T20:28:51.874Z"
     }
   ],
-  "lastUpdated": "2026-06-27T19:43:27.336Z"
+  "lastUpdated": "2026-06-27T20:28:51.874Z"
 }
