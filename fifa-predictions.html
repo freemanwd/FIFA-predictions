@@ -11,11 +11,9 @@
     main { max-width: 1120px; margin: 0 auto; padding: 24px; }
     h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.1; letter-spacing: 0; }
     p { margin: 0; color: #d5e2ea; }
-    .summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 22px; }
-    .metric { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
-    .metric strong { display: block; font-size: 28px; line-height: 1.1; }
-    .metric span { color: var(--muted); font-size: 13px; }
-    .section-title { margin: 26px 0 10px; font-size: 18px; }
+    .section-title { margin: 0 0 10px; font-size: 18px; }
+    .section-title + .section-note { margin-top: -4px; }
+    .table-wrap + .section-title { margin-top: 26px; }
     .section-note { color: var(--muted); margin: -4px 0 12px; font-size: 13px; }
     .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
     table { border-collapse: collapse; width: 100%; min-width: 920px; }
@@ -34,7 +32,6 @@
       header { padding: 24px 18px 18px; }
       main { padding: 18px; }
       h1 { font-size: 28px; }
-      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
 </head>
@@ -44,32 +41,81 @@
     <p>Polymarket moneyline picks, ESPN final scores, and a running pool tally through the July 19, 2026 final.</p>
   </header>
   <main>
-    <section class="summary">
-      <div class="metric"><strong>Carlito</strong><span>Pool leader</span></div>
-      <div class="metric"><strong>4</strong><span>Freeman points</span></div>
-      <div class="metric"><strong>1</strong><span>Exact scores</span></div>
-      <div class="metric"><strong>6</strong><span>Pending matches</span></div>
-    </section>
-    <h2 class="section-title">Freeman Model Tally</h2>
+    <h2 class="section-title">SMS Leaderboard</h2>
+    <p class="section-note">As of July 27, 2026, 12:10 PM ET. Source: SMS thread.</p>
     <div class="table-wrap">
       <table class="leaderboard">
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Player</th>
-            <th>Pts</th>
-            <th>Record</th>
-            <th>Exact</th>
-            <th>Pending</th>
+            <th>Total points</th>
+            <th>Name</th>
           </tr>
         </thead>
         <tbody><tr>
         <td>1</td>
-        <td>Freeman<span>Polymarket moneyline leaders</span></td>
+        <td>9</td>
+        <td>Carlito</td>
+      </tr>
+<tr>
+        <td>2</td>
+        <td>5</td>
+        <td>Enver</td>
+      </tr>
+<tr>
+        <td>2</td>
+        <td>5</td>
+        <td>DaveG-KGB</td>
+      </tr>
+<tr>
         <td>4</td>
-        <td>3-1</td>
+        <td>4</td>
+        <td>Freeman</td>
+      </tr>
+<tr>
+        <td>4</td>
+        <td>4</td>
+        <td>Huy</td>
+      </tr>
+<tr>
+        <td>4</td>
+        <td>4</td>
+        <td>Youssef</td>
+      </tr>
+<tr>
+        <td>7</td>
+        <td>3</td>
+        <td>Eric</td>
+      </tr>
+<tr>
+        <td>7</td>
+        <td>3</td>
+        <td>Connor</td>
+      </tr>
+<tr>
+        <td>7</td>
+        <td>3</td>
+        <td>Diana</td>
+      </tr>
+<tr>
+        <td>10</td>
+        <td>2</td>
+        <td>Billy E (BE)</td>
+      </tr>
+<tr>
+        <td>10</td>
+        <td>2</td>
+        <td>Cole</td>
+      </tr>
+<tr>
+        <td>12</td>
         <td>1</td>
-        <td>6</td>
+        <td>Diego</td>
+      </tr>
+<tr>
+        <td>13</td>
+        <td>0</td>
+        <td>Kwame</td>
       </tr></tbody>
       </table>
     </div>
@@ -88,11 +134,11 @@
         </thead>
         <tbody><tr>
         <td><a href="https://polymarket.com/event/fifwc-pan-eng-2026-06-27">Panama vs. England</a><span>Jun 27, 2026, 5:00 PM ET</span></td>
-        <td>England<span>84.5%</span></td>
-        <td>84.5%</td>
+        <td>England<span>85.5%</span></td>
+        <td>85.5%</td>
         <td class="status pending">pending</td>
         <td>TBD<span>Scheduled</span></td>
-        <td>Draw 10.5% | England 84.5% | Panama 4.5%</td>
+        <td>Draw 10.5% | England 85.5% | Panama 4.5%</td>
       </tr>
 <tr>
         <td><a href="https://polymarket.com/event/fifwc-hrv-gha-2026-06-27">Croatia vs. Ghana</a><span>Jun 27, 2026, 5:00 PM ET</span></td>
@@ -120,11 +166,11 @@
       </tr>
 <tr>
         <td><a href="https://polymarket.com/event/fifwc-alg-aut-2026-06-27">Algeria vs. Austria</a><span>Jun 27, 2026, 10:00 PM ET</span></td>
-        <td>Draw<span>46.5%</span></td>
-        <td>46.5%</td>
+        <td>Draw<span>47.5%</span></td>
+        <td>47.5%</td>
         <td class="status pending">pending</td>
         <td>TBD<span>Scheduled</span></td>
-        <td>Algeria 24.5% | Draw 46.5% | Austria 28.5%</td>
+        <td>Algeria 24.5% | Draw 47.5% | Austria 28.5%</td>
       </tr>
 <tr>
         <td><a href="https://polymarket.com/event/fifwc-jor-arg-2026-06-27">Jordan vs. Argentina</a><span>Jun 27, 2026, 10:00 PM ET</span></td>
@@ -133,84 +179,6 @@
         <td class="status pending">pending</td>
         <td>TBD<span>Scheduled</span></td>
         <td>Draw 9.5% | Argentina 85.5% | Jordan 4.5%</td>
-      </tr></tbody>
-      </table>
-    </div>
-    <h2 class="section-title">SMS Leaderboard</h2>
-    <p class="section-note">As of July 27, 2026, 12:10 PM ET. Source: SMS thread.</p>
-    <div class="table-wrap">
-      <table class="leaderboard">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody><tr>
-        <td>1</td>
-        <td>Carlito</td>
-        <td>9</td>
-      </tr>
-<tr>
-        <td>2</td>
-        <td>Enver</td>
-        <td>5</td>
-      </tr>
-<tr>
-        <td>2</td>
-        <td>DaveG-KGB</td>
-        <td>5</td>
-      </tr>
-<tr>
-        <td>4</td>
-        <td>Freeman</td>
-        <td>4</td>
-      </tr>
-<tr>
-        <td>4</td>
-        <td>Huy</td>
-        <td>4</td>
-      </tr>
-<tr>
-        <td>4</td>
-        <td>Youssef</td>
-        <td>4</td>
-      </tr>
-<tr>
-        <td>7</td>
-        <td>Eric</td>
-        <td>3</td>
-      </tr>
-<tr>
-        <td>7</td>
-        <td>Connor</td>
-        <td>3</td>
-      </tr>
-<tr>
-        <td>7</td>
-        <td>Diana</td>
-        <td>3</td>
-      </tr>
-<tr>
-        <td>10</td>
-        <td>Billy E (BE)</td>
-        <td>2</td>
-      </tr>
-<tr>
-        <td>10</td>
-        <td>Cole</td>
-        <td>2</td>
-      </tr>
-<tr>
-        <td>12</td>
-        <td>Diego</td>
-        <td>1</td>
-      </tr>
-<tr>
-        <td>13</td>
-        <td>Kwame</td>
-        <td>0</td>
       </tr></tbody>
       </table>
     </div>
