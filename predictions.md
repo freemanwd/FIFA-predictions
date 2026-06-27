@@ -2,7 +2,7 @@
 
 Freeman: 4 pts, 3-1
 Exact scores: 1
-Last updated: 2026-06-27T16:06:55.620Z
+Last updated: 2026-06-27T16:20:08.056Z
 
 ## Leaderboard
 
@@ -12,18 +12,19 @@ Freeman: 4 pts, 3-1, 1 exact
 
 As of: July 27, 2026, 12:10 PM ET
 
-#1 CARLITO: 9
+#1 Carlito: 9
 #2 Enver: 5
 #2 DaveG-KGB: 5
+#4 Freeman: 4
 #4 Huy: 4
 #4 Youssef: 4
-#6 Eric: 3
-#6 Connor: 3
-#6 Diana: 3
-#9 Billy E (BE): 2
-#9 Cole: 2
-#11 Diego: 1
-#12 Kwame: 0
+#7 Eric: 3
+#7 Connor: 3
+#7 Diana: 3
+#10 Billy E (BE): 2
+#10 Cole: 2
+#12 Diego: 1
+#13 Kwame: 0
 
 ## Completed Picks
 
