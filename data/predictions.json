@@ -93,17 +93,17 @@
         },
         "fifwc-hrv-gha-2026-06-27": {
           "outcome": "Croatia",
-          "probability": 0.515,
+          "probability": 0.545,
           "source": "Polymarket"
         },
         "fifwc-col-prt-2026-06-27": {
           "outcome": "Portugal",
-          "probability": 0.495,
+          "probability": 0.475,
           "source": "Polymarket"
         },
         "fifwc-cdr-uzb-2026-06-27": {
           "outcome": "DR Congo",
-          "probability": 0.585,
+          "probability": 0.565,
           "source": "Polymarket"
         },
         "fifwc-alg-aut-2026-06-27": {
@@ -113,8 +113,142 @@
         },
         "fifwc-jor-arg-2026-06-27": {
           "outcome": "Argentina",
-          "probability": 0.855,
+          "probability": 0.865,
           "source": "Polymarket"
+        }
+      }
+    },
+    {
+      "id": "carlito",
+      "name": "Carlito",
+      "source": "SMS screenshot from Carlos R Santos",
+      "baseRecord": {
+        "points": 9,
+        "correct": 9,
+        "missed": 0,
+        "exactScores": 0
+      },
+      "picks": {
+        "fifwc-pan-eng-2026-06-27": {
+          "outcome": "England",
+          "score": {
+            "Panama": 0,
+            "England": 3
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-hrv-gha-2026-06-27": {
+          "outcome": "Draw",
+          "score": {
+            "Croatia": 1,
+            "Ghana": 1
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-col-prt-2026-06-27": {
+          "outcome": "Colombia",
+          "score": {
+            "Colombia": 2,
+            "Portugal": 1
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-cdr-uzb-2026-06-27": {
+          "outcome": "DR Congo",
+          "score": {
+            "DR Congo": 1,
+            "Uzbekistan": 0
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-alg-aut-2026-06-27": {
+          "outcome": "Draw",
+          "score": {
+            "Algeria": 1,
+            "Austria": 1
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-jor-arg-2026-06-27": {
+          "outcome": "Argentina",
+          "score": {
+            "Jordan": 0,
+            "Argentina": 2
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        }
+      }
+    },
+    {
+      "id": "youssef",
+      "name": "Youssef",
+      "source": "SMS screenshot from Youssef Khachanet",
+      "baseRecord": {
+        "points": 4,
+        "correct": 4,
+        "missed": 0,
+        "exactScores": 0
+      },
+      "picks": {
+        "fifwc-pan-eng-2026-06-27": {
+          "outcome": "England",
+          "score": {
+            "Panama": 0,
+            "England": 3
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-hrv-gha-2026-06-27": {
+          "outcome": "Draw",
+          "score": {
+            "Croatia": 2,
+            "Ghana": 2
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-col-prt-2026-06-27": {
+          "outcome": "Draw",
+          "score": {
+            "Colombia": 2,
+            "Portugal": 2
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-cdr-uzb-2026-06-27": {
+          "outcome": "Draw",
+          "score": {
+            "DR Congo": 0,
+            "Uzbekistan": 0
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-alg-aut-2026-06-27": {
+          "outcome": "Austria",
+          "score": {
+            "Algeria": 1,
+            "Austria": 2
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "fifwc-jor-arg-2026-06-27": {
+          "outcome": "Argentina",
+          "score": {
+            "Jordan": 0,
+            "Argentina": 2
+          },
+          "source": "SMS screenshot",
+          "submittedAt": "2026-06-27T15:28:49-04:00"
         }
       }
     }
@@ -180,27 +314,27 @@
           "bestAsk": 0.05
         }
       ],
-      "lastChecked": "2026-06-27T16:30:27.662Z",
+      "lastChecked": "2026-06-27T19:43:27.336Z",
       "espnId": "760485",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:30:27.662Z"
+      "resultLastChecked": "2026-06-27T19:43:27.336Z"
     },
     {
       "slug": "fifwc-hrv-gha-2026-06-27",
       "match": "Croatia vs. Ghana",
       "startTime": "2026-06-27T21:00:00Z",
       "pickedOutcome": "Croatia",
-      "pickedProbability": 0.515,
+      "pickedProbability": 0.545,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-hrv-gha-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Croatia",
-          "price": 0.515,
-          "bestBid": 0.51,
-          "bestAsk": 0.52
+          "price": 0.545,
+          "bestBid": 0.54,
+          "bestAsk": 0.55
         },
         {
           "title": "Draw",
@@ -210,24 +344,24 @@
         },
         {
           "title": "Ghana",
-          "price": 0.185,
-          "bestBid": 0.18,
-          "bestAsk": 0.19
+          "price": 0.165,
+          "bestBid": 0.16,
+          "bestAsk": 0.17
         }
       ],
-      "lastChecked": "2026-06-27T16:30:27.662Z",
+      "lastChecked": "2026-06-27T19:43:27.336Z",
       "espnId": "760480",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 5:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:30:27.662Z"
+      "resultLastChecked": "2026-06-27T19:43:27.336Z"
     },
     {
       "slug": "fifwc-col-prt-2026-06-27",
       "match": "Colombia vs. Portugal",
       "startTime": "2026-06-27T23:30:00Z",
       "pickedOutcome": "Portugal",
-      "pickedProbability": 0.495,
+      "pickedProbability": 0.475,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-col-prt-2026-06-27",
       "marketSnapshot": [
@@ -239,30 +373,30 @@
         },
         {
           "title": "Colombia",
-          "price": 0.265,
-          "bestBid": 0.26,
-          "bestAsk": 0.27
+          "price": 0.285,
+          "bestBid": 0.28,
+          "bestAsk": 0.29
         },
         {
           "title": "Portugal",
-          "price": 0.495,
-          "bestBid": 0.49,
-          "bestAsk": 0.5
+          "price": 0.475,
+          "bestBid": 0.47,
+          "bestAsk": 0.48
         }
       ],
-      "lastChecked": "2026-06-27T16:30:27.662Z",
+      "lastChecked": "2026-06-27T19:43:27.336Z",
       "espnId": "760481",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:30:27.662Z"
+      "resultLastChecked": "2026-06-27T19:43:27.336Z"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
       "match": "DR Congo vs. Uzbekistan",
       "startTime": "2026-06-27T23:30:00Z",
       "pickedOutcome": "DR Congo",
-      "pickedProbability": 0.585,
+      "pickedProbability": 0.565,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-cdr-uzb-2026-06-27",
       "marketSnapshot": [
@@ -274,9 +408,9 @@
         },
         {
           "title": "DR Congo",
-          "price": 0.585,
-          "bestBid": 0.58,
-          "bestAsk": 0.59
+          "price": 0.565,
+          "bestBid": 0.56,
+          "bestAsk": 0.57
         },
         {
           "title": "Uzbekistan",
@@ -285,12 +419,12 @@
           "bestAsk": 0.19
         }
       ],
-      "lastChecked": "2026-06-27T16:30:27.662Z",
+      "lastChecked": "2026-06-27T19:43:27.336Z",
       "espnId": "760482",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 7:30 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:30:27.662Z"
+      "resultLastChecked": "2026-06-27T19:43:27.336Z"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
@@ -303,9 +437,9 @@
       "marketSnapshot": [
         {
           "title": "Algeria",
-          "price": 0.245,
-          "bestBid": 0.24,
-          "bestAsk": 0.25
+          "price": 0.265,
+          "bestBid": 0.26,
+          "bestAsk": 0.27
         },
         {
           "title": "Draw",
@@ -315,24 +449,24 @@
         },
         {
           "title": "Austria",
-          "price": 0.285,
-          "bestBid": 0.28,
-          "bestAsk": 0.29
+          "price": 0.255,
+          "bestBid": 0.25,
+          "bestAsk": 0.26
         }
       ],
-      "lastChecked": "2026-06-27T16:30:27.662Z",
+      "lastChecked": "2026-06-27T19:43:27.336Z",
       "espnId": "760484",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:30:27.662Z"
+      "resultLastChecked": "2026-06-27T19:43:27.336Z"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
       "match": "Jordan vs. Argentina",
       "startTime": "2026-06-28T02:00:00Z",
       "pickedOutcome": "Argentina",
-      "pickedProbability": 0.855,
+      "pickedProbability": 0.865,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-jor-arg-2026-06-27",
       "marketSnapshot": [
@@ -344,24 +478,24 @@
         },
         {
           "title": "Argentina",
-          "price": 0.855,
-          "bestBid": 0.85,
-          "bestAsk": 0.86
+          "price": 0.865,
+          "bestBid": 0.86,
+          "bestAsk": 0.87
         },
         {
           "title": "Jordan",
-          "price": 0.0445,
-          "bestBid": 0.044,
-          "bestAsk": 0.045
+          "price": 0.0435,
+          "bestBid": 0.043,
+          "bestAsk": 0.044
         }
       ],
-      "lastChecked": "2026-06-27T16:30:27.662Z",
+      "lastChecked": "2026-06-27T19:43:27.336Z",
       "espnId": "760483",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T16:30:27.662Z"
+      "resultLastChecked": "2026-06-27T19:43:27.336Z"
     }
   ],
-  "lastUpdated": "2026-06-27T16:30:27.662Z"
+  "lastUpdated": "2026-06-27T19:43:27.336Z"
 }
