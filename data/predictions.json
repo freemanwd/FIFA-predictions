@@ -178,6 +178,15 @@
           },
           "source": "SMS screenshot",
           "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "espn-760486-zaf-can-2026-06-28": {
+          "outcome": "Canada",
+          "score": {
+            "South Africa": 0,
+            "Canada": 2
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-28T11:26:54-04:00"
         }
       }
     },
@@ -245,6 +254,59 @@
           },
           "source": "SMS screenshot",
           "submittedAt": "2026-06-27T15:28:49-04:00"
+        },
+        "espn-760486-zaf-can-2026-06-28": {
+          "outcome": "Canada",
+          "score": {
+            "South Africa": 0,
+            "Canada": 2
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-28T11:26:54-04:00"
+        }
+      }
+    },
+    {
+      "id": "kgb",
+      "name": "KGB.",
+      "source": "SMS text from Dave G",
+      "baseRecord": {
+        "points": 6,
+        "correct": 6,
+        "missed": 0,
+        "exactScores": 0
+      },
+      "picks": {
+        "espn-760486-zaf-can-2026-06-28": {
+          "outcome": "Canada",
+          "score": {
+            "South Africa": 1,
+            "Canada": 2
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-28T11:26:54-04:00"
+        }
+      }
+    },
+    {
+      "id": "huy",
+      "name": "Huy",
+      "source": "SMS text from Huy",
+      "baseRecord": {
+        "points": 5,
+        "correct": 5,
+        "missed": 0,
+        "exactScores": 0
+      },
+      "picks": {
+        "espn-760486-zaf-can-2026-06-28": {
+          "outcome": "Canada",
+          "score": {
+            "South Africa": 0,
+            "Canada": 1
+          },
+          "source": "SMS text",
+          "submittedAt": "2026-06-28T11:26:54-04:00"
         }
       }
     },
@@ -509,12 +571,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:21:20.701Z",
+      "lastChecked": "2026-06-28T15:28:20.247Z",
       "espnId": "760485",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:21:20.701Z",
+      "resultLastChecked": "2026-06-28T15:28:20.247Z",
       "resolvedOutcome": "England",
       "score": {
         "Panama": 0,
@@ -548,12 +610,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:21:20.701Z",
+      "lastChecked": "2026-06-28T15:28:20.247Z",
       "espnId": "760480",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:21:20.701Z",
+      "resultLastChecked": "2026-06-28T15:28:20.247Z",
       "resolvedOutcome": "Croatia",
       "score": {
         "Croatia": 2,
@@ -587,12 +649,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:21:20.701Z",
+      "lastChecked": "2026-06-28T15:28:20.247Z",
       "espnId": "760481",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:21:20.701Z",
+      "resultLastChecked": "2026-06-28T15:28:20.247Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Colombia": 0,
@@ -626,12 +688,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:21:20.701Z",
+      "lastChecked": "2026-06-28T15:28:20.247Z",
       "espnId": "760482",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:21:20.701Z",
+      "resultLastChecked": "2026-06-28T15:28:20.247Z",
       "resolvedOutcome": "DR Congo",
       "score": {
         "DR Congo": 3,
@@ -665,12 +727,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:21:20.701Z",
+      "lastChecked": "2026-06-28T15:28:20.247Z",
       "espnId": "760484",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:21:20.701Z",
+      "resultLastChecked": "2026-06-28T15:28:20.247Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Algeria": 3,
@@ -704,19 +766,31 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:21:20.701Z",
+      "lastChecked": "2026-06-28T15:28:20.247Z",
       "espnId": "760483",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:21:20.701Z",
+      "resultLastChecked": "2026-06-28T15:28:20.247Z",
       "resolvedOutcome": "Argentina",
       "score": {
         "Jordan": 1,
         "Argentina": 3
       },
       "finalScore": "Jordan 1-3 Argentina"
+    },
+    {
+      "slug": "espn-760486-zaf-can-2026-06-28",
+      "match": "South Africa vs. Canada",
+      "startTime": "2026-06-28T19:00:00Z",
+      "status": "pending",
+      "url": "https://www.espn.com/soccer/match/_/gameId/760486",
+      "espnId": "760486",
+      "resultStatus": "Scheduled",
+      "resultDetail": "Sun, June 28th at 3:00 PM EDT",
+      "resultSource": "ESPN FIFA World Cup scoreboard",
+      "resultLastChecked": "2026-06-28T15:28:20.247Z"
     }
   ],
-  "lastUpdated": "2026-06-28T15:21:20.701Z"
+  "lastUpdated": "2026-06-28T15:28:20.247Z"
 }

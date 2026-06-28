@@ -435,7 +435,7 @@ function makeMarkdown(data) {
   }
 
   lines.push("", "## Polymarket Moneyline Picks", "");
-  for (const match of data.matches) {
+  for (const match of data.matches.filter((match) => match.pickedOutcome)) {
     const score = match.finalScore ? `, score: ${match.finalScore}` : "";
     const result = match.resolvedOutcome ? `, result: ${match.resolvedOutcome}, ${statusFor(match)}` : "";
     lines.push(`${match.match.replace(" vs. ", "/")} - ${match.pickedOutcome}, ${pct(match.pickedProbability)}${score}${result}`);
@@ -469,6 +469,7 @@ function makeHtml(data) {
     )
     .join("\n");
   const rows = data.matches
+    .filter((match) => match.pickedOutcome)
     .sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
     .map((match) => {
       const status = statusFor(match);
@@ -551,7 +552,7 @@ function makeHtml(data) {
       </table>
     </div>` : ""}
     ${smsScoreRows ? `<h2 class="section-title">SMS Score Picks</h2>
-    <p class="section-note">From the June 27 SMS screenshot. ESPN final scores will grade winner and exact-score points as matches complete.</p>
+    <p class="section-note">From the SMS thread. ESPN final scores will grade winner and exact-score points as matches complete.</p>
     <div class="table-wrap">
       <table>
         <thead>

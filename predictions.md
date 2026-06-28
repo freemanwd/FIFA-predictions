@@ -1,6 +1,6 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-28T15:21:20.701Z
+Last updated: 2026-06-28T15:28:20.247Z
 
 ## SMS Leaderboard
 
@@ -51,6 +51,10 @@ Enver: Algeria vs. Austria - Algeria 1-2 Austria (missed, final: Algeria 3-3 Aus
 Enver: Jordan vs. Argentina - Jordan 0-4 Argentina (correct, final: Jordan 1-3 Argentina)
 Youssef: Algeria vs. Austria - Algeria 1-2 Austria (missed, final: Algeria 3-3 Austria)
 Youssef: Jordan vs. Argentina - Jordan 0-2 Argentina (correct, final: Jordan 1-3 Argentina)
+Carlito: South Africa vs. Canada - South Africa 0-2 Canada (pending)
+Huy: South Africa vs. Canada - South Africa 0-1 Canada (pending)
+KGB.: South Africa vs. Canada - South Africa 1-2 Canada (pending)
+Youssef: South Africa vs. Canada - South Africa 0-2 Canada (pending)
 
 ## Completed Picks
 
