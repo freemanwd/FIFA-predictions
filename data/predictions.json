@@ -513,12 +513,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T00:59:14.026Z",
+      "lastChecked": "2026-06-28T08:30:32.087Z",
       "espnId": "760485",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T00:59:14.026Z",
+      "resultLastChecked": "2026-06-28T08:30:32.087Z",
       "resolvedOutcome": "England",
       "score": {
         "Panama": 0,
@@ -552,12 +552,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T00:59:14.026Z",
+      "lastChecked": "2026-06-28T08:30:32.087Z",
       "espnId": "760480",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T00:59:14.026Z",
+      "resultLastChecked": "2026-06-28T08:30:32.087Z",
       "resolvedOutcome": "Croatia",
       "score": {
         "Croatia": 2,
@@ -571,34 +571,38 @@
       "startTime": "2026-06-27T23:30:00Z",
       "pickedOutcome": "Draw",
       "pickedProbability": 0.445,
-      "status": "pending",
+      "status": "correct",
       "url": "https://polymarket.com/event/fifwc-col-prt-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Draw",
-          "price": 0.445,
-          "bestBid": 0.44,
-          "bestAsk": 0.45
+          "price": 1,
+          "bestBid": 0.999,
+          "bestAsk": 1
         },
         {
           "title": "Colombia",
-          "price": 0.215,
-          "bestBid": 0.21,
-          "bestAsk": 0.22
+          "price": 0,
+          "bestAsk": 0.001
         },
         {
           "title": "Portugal",
-          "price": 0.335,
-          "bestBid": 0.33,
-          "bestAsk": 0.34
+          "price": 0,
+          "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T00:59:14.026Z",
+      "lastChecked": "2026-06-28T08:30:32.087Z",
       "espnId": "760481",
-      "resultStatus": "Second Half",
-      "resultDetail": "67'",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T00:59:14.026Z"
+      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resolvedOutcome": "Draw",
+      "score": {
+        "Colombia": 0,
+        "Portugal": 0
+      },
+      "finalScore": "Colombia 0-0 Portugal"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
@@ -606,34 +610,38 @@
       "startTime": "2026-06-27T23:30:00Z",
       "pickedOutcome": "Uzbekistan",
       "pickedProbability": 0.575,
-      "status": "pending",
+      "status": "missed",
       "url": "https://polymarket.com/event/fifwc-cdr-uzb-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Draw",
-          "price": 0.285,
-          "bestBid": 0.28,
-          "bestAsk": 0.29
+          "price": 0,
+          "bestAsk": 0.001
         },
         {
           "title": "DR Congo",
-          "price": 0.135,
-          "bestBid": 0.13,
-          "bestAsk": 0.14
+          "price": 1,
+          "bestBid": 0.999,
+          "bestAsk": 1
         },
         {
           "title": "Uzbekistan",
-          "price": 0.575,
-          "bestBid": 0.57,
-          "bestAsk": 0.58
+          "price": 0,
+          "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T00:59:14.026Z",
+      "lastChecked": "2026-06-28T08:30:32.087Z",
       "espnId": "760482",
-      "resultStatus": "Second Half",
-      "resultDetail": "65'",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T00:59:14.026Z"
+      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resolvedOutcome": "DR Congo",
+      "score": {
+        "DR Congo": 3,
+        "Uzbekistan": 1
+      },
+      "finalScore": "DR Congo 3-1 Uzbekistan"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
@@ -641,34 +649,38 @@
       "startTime": "2026-06-28T02:00:00Z",
       "pickedOutcome": "Draw",
       "pickedProbability": 0.465,
-      "status": "pending",
+      "status": "correct",
       "url": "https://polymarket.com/event/fifwc-alg-aut-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Algeria",
-          "price": 0.275,
-          "bestBid": 0.27,
-          "bestAsk": 0.28
+          "price": 0,
+          "bestAsk": 0.001
         },
         {
           "title": "Draw",
-          "price": 0.465,
-          "bestBid": 0.46,
-          "bestAsk": 0.47
+          "price": 1,
+          "bestBid": 0.999,
+          "bestAsk": 1
         },
         {
           "title": "Austria",
-          "price": 0.265,
-          "bestBid": 0.26,
-          "bestAsk": 0.27
+          "price": 0,
+          "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T00:59:14.026Z",
+      "lastChecked": "2026-06-28T08:30:32.087Z",
       "espnId": "760484",
-      "resultStatus": "Scheduled",
-      "resultDetail": "Sat, June 27th at 10:00 PM EDT",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T00:59:14.026Z"
+      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resolvedOutcome": "Draw",
+      "score": {
+        "Algeria": 3,
+        "Austria": 3
+      },
+      "finalScore": "Algeria 3-3 Austria"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
@@ -676,35 +688,39 @@
       "startTime": "2026-06-28T02:00:00Z",
       "pickedOutcome": "Argentina",
       "pickedProbability": 0.865,
-      "status": "pending",
+      "status": "correct",
       "url": "https://polymarket.com/event/fifwc-jor-arg-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Draw",
-          "price": 0.095,
-          "bestBid": 0.09,
-          "bestAsk": 0.1
+          "price": 0,
+          "bestAsk": 0.001
         },
         {
           "title": "Argentina",
-          "price": 0.865,
-          "bestBid": 0.86,
-          "bestAsk": 0.87
+          "price": 1,
+          "bestBid": 0.999,
+          "bestAsk": 1
         },
         {
           "title": "Jordan",
-          "price": 0.0435,
-          "bestBid": 0.043,
-          "bestAsk": 0.044
+          "price": 0,
+          "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T00:59:14.026Z",
+      "lastChecked": "2026-06-28T08:30:32.087Z",
       "espnId": "760483",
-      "resultStatus": "Scheduled",
-      "resultDetail": "Sat, June 27th at 10:00 PM EDT",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T00:59:14.026Z"
+      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resolvedOutcome": "Argentina",
+      "score": {
+        "Jordan": 1,
+        "Argentina": 3
+      },
+      "finalScore": "Jordan 1-3 Argentina"
     }
   ],
-  "lastUpdated": "2026-06-28T00:59:14.026Z"
+  "lastUpdated": "2026-06-28T08:30:32.087Z"
 }

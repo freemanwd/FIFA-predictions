@@ -1,6 +1,6 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-28T00:59:14.026Z
+Last updated: 2026-06-28T08:30:32.087Z
 
 ## SMS Leaderboard
 
@@ -32,26 +32,26 @@ Enver: Panama vs. England - Panama 0-2 England (exact, final: Panama 0-2 England
 Enver: Croatia vs. Ghana - Croatia 2-1 Ghana (exact, final: Croatia 2-1 Ghana)
 Youssef: Panama vs. England - Panama 0-3 England (correct, final: Panama 0-2 England)
 Youssef: Croatia vs. Ghana - Croatia 2-2 Ghana (missed, final: Croatia 2-1 Ghana)
-Billy E (BE): Colombia vs. Portugal - Colombia 3-3 Portugal (pending)
-Billy E (BE): DR Congo vs. Uzbekistan - DR Congo 1-3 Uzbekistan (pending)
-Carlito: Colombia vs. Portugal - Colombia 2-1 Portugal (pending)
-Carlito: DR Congo vs. Uzbekistan - DR Congo 1-0 Uzbekistan (pending)
-Diana: Colombia vs. Portugal - Colombia 2-1 Portugal (pending)
-Diana: DR Congo vs. Uzbekistan - DR Congo 1-1 Uzbekistan (pending)
-Enver: Colombia vs. Portugal - Colombia 1-1 Portugal (pending)
-Enver: DR Congo vs. Uzbekistan - DR Congo 1-0 Uzbekistan (pending)
-Youssef: Colombia vs. Portugal - Colombia 2-2 Portugal (pending)
-Youssef: DR Congo vs. Uzbekistan - DR Congo 0-0 Uzbekistan (pending)
-Billy E (BE): Algeria vs. Austria - Algeria 2-2 Austria (pending)
-Billy E (BE): Jordan vs. Argentina - Jordan 0-4 Argentina (pending)
-Carlito: Algeria vs. Austria - Algeria 1-1 Austria (pending)
-Carlito: Jordan vs. Argentina - Jordan 0-2 Argentina (pending)
-Diana: Algeria vs. Austria - Algeria 1-2 Austria (pending)
-Diana: Jordan vs. Argentina - Jordan 0-4 Argentina (pending)
-Enver: Algeria vs. Austria - Algeria 1-2 Austria (pending)
-Enver: Jordan vs. Argentina - Jordan 0-4 Argentina (pending)
-Youssef: Algeria vs. Austria - Algeria 1-2 Austria (pending)
-Youssef: Jordan vs. Argentina - Jordan 0-2 Argentina (pending)
+Billy E (BE): Colombia vs. Portugal - Colombia 3-3 Portugal (correct, final: Colombia 0-0 Portugal)
+Billy E (BE): DR Congo vs. Uzbekistan - DR Congo 1-3 Uzbekistan (missed, final: DR Congo 3-1 Uzbekistan)
+Carlito: Colombia vs. Portugal - Colombia 2-1 Portugal (missed, final: Colombia 0-0 Portugal)
+Carlito: DR Congo vs. Uzbekistan - DR Congo 1-0 Uzbekistan (correct, final: DR Congo 3-1 Uzbekistan)
+Diana: Colombia vs. Portugal - Colombia 2-1 Portugal (missed, final: Colombia 0-0 Portugal)
+Diana: DR Congo vs. Uzbekistan - DR Congo 1-1 Uzbekistan (missed, final: DR Congo 3-1 Uzbekistan)
+Enver: Colombia vs. Portugal - Colombia 1-1 Portugal (correct, final: Colombia 0-0 Portugal)
+Enver: DR Congo vs. Uzbekistan - DR Congo 1-0 Uzbekistan (correct, final: DR Congo 3-1 Uzbekistan)
+Youssef: Colombia vs. Portugal - Colombia 2-2 Portugal (correct, final: Colombia 0-0 Portugal)
+Youssef: DR Congo vs. Uzbekistan - DR Congo 0-0 Uzbekistan (missed, final: DR Congo 3-1 Uzbekistan)
+Billy E (BE): Algeria vs. Austria - Algeria 2-2 Austria (correct, final: Algeria 3-3 Austria)
+Billy E (BE): Jordan vs. Argentina - Jordan 0-4 Argentina (correct, final: Jordan 1-3 Argentina)
+Carlito: Algeria vs. Austria - Algeria 1-1 Austria (correct, final: Algeria 3-3 Austria)
+Carlito: Jordan vs. Argentina - Jordan 0-2 Argentina (correct, final: Jordan 1-3 Argentina)
+Diana: Algeria vs. Austria - Algeria 1-2 Austria (missed, final: Algeria 3-3 Austria)
+Diana: Jordan vs. Argentina - Jordan 0-4 Argentina (correct, final: Jordan 1-3 Argentina)
+Enver: Algeria vs. Austria - Algeria 1-2 Austria (missed, final: Algeria 3-3 Austria)
+Enver: Jordan vs. Argentina - Jordan 0-4 Argentina (correct, final: Jordan 1-3 Argentina)
+Youssef: Algeria vs. Austria - Algeria 1-2 Austria (missed, final: Algeria 3-3 Austria)
+Youssef: Jordan vs. Argentina - Jordan 0-2 Argentina (correct, final: Jordan 1-3 Argentina)
 
 ## Completed Picks
 
@@ -64,9 +64,9 @@ Belgium 2-0 - winner correct, score missed
 
 Panama/England - England, 82.5%, score: Panama 0-2 England, result: England, correct
 Croatia/Ghana - Croatia, 52.5%, score: Croatia 2-1 Ghana, result: Croatia, correct
-Colombia/Portugal - Draw, 44.5%
-DR Congo/Uzbekistan - Uzbekistan, 57.5%
-Algeria/Austria - Draw, 46.5%
-Jordan/Argentina - Argentina, 86.5%
+Colombia/Portugal - Draw, 44.5%, score: Colombia 0-0 Portugal, result: Draw, correct
+DR Congo/Uzbekistan - Uzbekistan, 57.5%, score: DR Congo 3-1 Uzbekistan, result: DR Congo, missed
+Algeria/Austria - Draw, 46.5%, score: Algeria 3-3 Austria, result: Draw, correct
+Jordan/Argentina - Argentina, 86.5%, score: Jordan 1-3 Argentina, result: Argentina, correct
 
 Shareable page: fifa-predictions.html
