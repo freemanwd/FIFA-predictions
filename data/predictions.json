@@ -16,32 +16,28 @@
   },
   "manualLeaderboard": {
     "title": "SMS Leaderboard",
-    "asOf": "2026-07-27T12:10:00-04:00",
-    "asOfLabel": "July 27, 2026, 12:10 PM ET",
+    "asOf": "2026-06-28T11:20:57-04:00",
+    "asOfLabel": "June 28, 2026, 11:20 AM ET",
     "source": "SMS thread",
     "entries": [
       {
-        "name": "Carlito",
+        "name": "CARLITO.",
         "points": 9
       },
       {
         "name": "Enver",
-        "points": 5
+        "points": 7
       },
       {
-        "name": "DaveG-KGB",
-        "points": 5
-      },
-      {
-        "name": "Freeman",
-        "points": 4
+        "name": "KGB.",
+        "points": 6
       },
       {
         "name": "Huy",
-        "points": 4
+        "points": 5
       },
       {
-        "name": "Youssef",
+        "name": "Yous.",
         "points": 4
       },
       {
@@ -57,7 +53,7 @@
         "points": 3
       },
       {
-        "name": "Billy E (BE)",
+        "name": "BE.",
         "points": 2
       },
       {
@@ -513,12 +509,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T08:30:32.087Z",
+      "lastChecked": "2026-06-28T15:21:20.701Z",
       "espnId": "760485",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resultLastChecked": "2026-06-28T15:21:20.701Z",
       "resolvedOutcome": "England",
       "score": {
         "Panama": 0,
@@ -552,12 +548,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T08:30:32.087Z",
+      "lastChecked": "2026-06-28T15:21:20.701Z",
       "espnId": "760480",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resultLastChecked": "2026-06-28T15:21:20.701Z",
       "resolvedOutcome": "Croatia",
       "score": {
         "Croatia": 2,
@@ -591,12 +587,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T08:30:32.087Z",
+      "lastChecked": "2026-06-28T15:21:20.701Z",
       "espnId": "760481",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resultLastChecked": "2026-06-28T15:21:20.701Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Colombia": 0,
@@ -630,12 +626,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T08:30:32.087Z",
+      "lastChecked": "2026-06-28T15:21:20.701Z",
       "espnId": "760482",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resultLastChecked": "2026-06-28T15:21:20.701Z",
       "resolvedOutcome": "DR Congo",
       "score": {
         "DR Congo": 3,
@@ -669,12 +665,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T08:30:32.087Z",
+      "lastChecked": "2026-06-28T15:21:20.701Z",
       "espnId": "760484",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resultLastChecked": "2026-06-28T15:21:20.701Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Algeria": 3,
@@ -708,12 +704,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T08:30:32.087Z",
+      "lastChecked": "2026-06-28T15:21:20.701Z",
       "espnId": "760483",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T08:30:32.087Z",
+      "resultLastChecked": "2026-06-28T15:21:20.701Z",
       "resolvedOutcome": "Argentina",
       "score": {
         "Jordan": 1,
@@ -722,5 +718,5 @@
       "finalScore": "Jordan 1-3 Argentina"
     }
   ],
-  "lastUpdated": "2026-06-28T08:30:32.087Z"
+  "lastUpdated": "2026-06-28T15:21:20.701Z"
 }

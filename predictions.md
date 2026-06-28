@@ -1,24 +1,23 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-28T08:30:32.087Z
+Last updated: 2026-06-28T15:21:20.701Z
 
 ## SMS Leaderboard
 
-As of: July 27, 2026, 12:10 PM ET
+As of: June 28, 2026, 11:20 AM ET
 
-#1 9 pts - Carlito
-#2 5 pts - Enver
-#2 5 pts - DaveG-KGB
-#4 4 pts - Freeman
-#4 4 pts - Huy
-#4 4 pts - Youssef
-#7 3 pts - Eric
-#7 3 pts - Connor
-#7 3 pts - Diana
-#10 2 pts - Billy E (BE)
-#10 2 pts - Cole
-#12 1 pts - Diego
-#13 0 pts - Kwame
+#1 9 pts - CARLITO.
+#2 7 pts - Enver
+#3 6 pts - KGB.
+#4 5 pts - Huy
+#5 4 pts - Yous.
+#6 3 pts - Eric
+#6 3 pts - Connor
+#6 3 pts - Diana
+#9 2 pts - BE.
+#9 2 pts - Cole
+#11 1 pts - Diego
+#12 0 pts - Kwame
 
 ## SMS Score Picks
 
