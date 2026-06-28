@@ -1,6 +1,6 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-27T21:26:39.035Z
+Last updated: 2026-06-28T00:59:14.026Z
 
 ## SMS Leaderboard
 
@@ -22,16 +22,16 @@ As of: July 27, 2026, 12:10 PM ET
 
 ## SMS Score Picks
 
-Billy E (BE): Panama vs. England - Panama 2-5 England (pending)
-Billy E (BE): Croatia vs. Ghana - Croatia 3-3 Ghana (pending)
-Carlito: Panama vs. England - Panama 0-3 England (pending)
-Carlito: Croatia vs. Ghana - Croatia 1-1 Ghana (pending)
-Diana: Panama vs. England - Panama 0-3 England (pending)
-Diana: Croatia vs. Ghana - Croatia 2-2 Ghana (pending)
-Enver: Panama vs. England - Panama 0-2 England (pending)
-Enver: Croatia vs. Ghana - Croatia 2-1 Ghana (pending)
-Youssef: Panama vs. England - Panama 0-3 England (pending)
-Youssef: Croatia vs. Ghana - Croatia 2-2 Ghana (pending)
+Billy E (BE): Panama vs. England - Panama 2-5 England (correct, final: Panama 0-2 England)
+Billy E (BE): Croatia vs. Ghana - Croatia 3-3 Ghana (missed, final: Croatia 2-1 Ghana)
+Carlito: Panama vs. England - Panama 0-3 England (correct, final: Panama 0-2 England)
+Carlito: Croatia vs. Ghana - Croatia 1-1 Ghana (missed, final: Croatia 2-1 Ghana)
+Diana: Panama vs. England - Panama 0-3 England (correct, final: Panama 0-2 England)
+Diana: Croatia vs. Ghana - Croatia 2-2 Ghana (missed, final: Croatia 2-1 Ghana)
+Enver: Panama vs. England - Panama 0-2 England (exact, final: Panama 0-2 England)
+Enver: Croatia vs. Ghana - Croatia 2-1 Ghana (exact, final: Croatia 2-1 Ghana)
+Youssef: Panama vs. England - Panama 0-3 England (correct, final: Panama 0-2 England)
+Youssef: Croatia vs. Ghana - Croatia 2-2 Ghana (missed, final: Croatia 2-1 Ghana)
 Billy E (BE): Colombia vs. Portugal - Colombia 3-3 Portugal (pending)
 Billy E (BE): DR Congo vs. Uzbekistan - DR Congo 1-3 Uzbekistan (pending)
 Carlito: Colombia vs. Portugal - Colombia 2-1 Portugal (pending)
@@ -62,10 +62,10 @@ Belgium 2-0 - winner correct, score missed
 
 ## Polymarket Moneyline Picks
 
-Panama/England - England, 82.5%
-Croatia/Ghana - Croatia, 52.5%
-Colombia/Portugal - Portugal, 47.5%
-DR Congo/Uzbekistan - DR Congo, 57.5%
+Panama/England - England, 82.5%, score: Panama 0-2 England, result: England, correct
+Croatia/Ghana - Croatia, 52.5%, score: Croatia 2-1 Ghana, result: Croatia, correct
+Colombia/Portugal - Draw, 44.5%
+DR Congo/Uzbekistan - Uzbekistan, 57.5%
 Algeria/Austria - Draw, 46.5%
 Jordan/Argentina - Argentina, 86.5%
 

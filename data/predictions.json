@@ -97,12 +97,12 @@
           "source": "Polymarket"
         },
         "fifwc-col-prt-2026-06-27": {
-          "outcome": "Portugal",
-          "probability": 0.475,
+          "outcome": "Draw",
+          "probability": 0.445,
           "source": "Polymarket"
         },
         "fifwc-cdr-uzb-2026-06-27": {
-          "outcome": "DR Congo",
+          "outcome": "Uzbekistan",
           "probability": 0.575,
           "source": "Polymarket"
         },
@@ -493,34 +493,38 @@
       "startTime": "2026-06-27T21:00:00Z",
       "pickedOutcome": "England",
       "pickedProbability": 0.825,
-      "status": "pending",
+      "status": "correct",
       "url": "https://polymarket.com/event/fifwc-pan-eng-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Draw",
-          "price": 0.135,
-          "bestBid": 0.13,
-          "bestAsk": 0.14
+          "price": 0,
+          "bestAsk": 0.001
         },
         {
           "title": "England",
-          "price": 0.825,
-          "bestBid": 0.82,
-          "bestAsk": 0.83
+          "price": 1,
+          "bestBid": 0.999,
+          "bestAsk": 1
         },
         {
           "title": "Panama",
-          "price": 0.0485,
-          "bestBid": 0.048,
-          "bestAsk": 0.049
+          "price": 0,
+          "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-27T21:26:39.035Z",
+      "lastChecked": "2026-06-28T00:59:14.026Z",
       "espnId": "760485",
-      "resultStatus": "First Half",
-      "resultDetail": "26'",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T21:26:39.035Z"
+      "resultLastChecked": "2026-06-28T00:59:14.026Z",
+      "resolvedOutcome": "England",
+      "score": {
+        "Panama": 0,
+        "England": 2
+      },
+      "finalScore": "Panama 0-2 England"
     },
     {
       "slug": "fifwc-hrv-gha-2026-06-27",
@@ -528,104 +532,108 @@
       "startTime": "2026-06-27T21:00:00Z",
       "pickedOutcome": "Croatia",
       "pickedProbability": 0.525,
-      "status": "pending",
+      "status": "correct",
       "url": "https://polymarket.com/event/fifwc-hrv-gha-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Croatia",
-          "price": 0.525,
-          "bestBid": 0.52,
-          "bestAsk": 0.53
+          "price": 1,
+          "bestBid": 0.999,
+          "bestAsk": 1
         },
         {
           "title": "Draw",
-          "price": 0.345,
-          "bestBid": 0.34,
-          "bestAsk": 0.35
+          "price": 0,
+          "bestAsk": 0.001
         },
         {
           "title": "Ghana",
-          "price": 0.135,
-          "bestBid": 0.13,
-          "bestAsk": 0.14
+          "price": 0,
+          "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-27T21:26:39.035Z",
+      "lastChecked": "2026-06-28T00:59:14.026Z",
       "espnId": "760480",
-      "resultStatus": "In Progress",
-      "resultDetail": "25'",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T21:26:39.035Z"
+      "resultLastChecked": "2026-06-28T00:59:14.026Z",
+      "resolvedOutcome": "Croatia",
+      "score": {
+        "Croatia": 2,
+        "Ghana": 1
+      },
+      "finalScore": "Croatia 2-1 Ghana"
     },
     {
       "slug": "fifwc-col-prt-2026-06-27",
       "match": "Colombia vs. Portugal",
       "startTime": "2026-06-27T23:30:00Z",
-      "pickedOutcome": "Portugal",
-      "pickedProbability": 0.475,
+      "pickedOutcome": "Draw",
+      "pickedProbability": 0.445,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-col-prt-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Draw",
-          "price": 0.245,
-          "bestBid": 0.24,
-          "bestAsk": 0.25
+          "price": 0.445,
+          "bestBid": 0.44,
+          "bestAsk": 0.45
         },
         {
           "title": "Colombia",
-          "price": 0.285,
-          "bestBid": 0.28,
-          "bestAsk": 0.29
+          "price": 0.215,
+          "bestBid": 0.21,
+          "bestAsk": 0.22
         },
         {
           "title": "Portugal",
-          "price": 0.475,
-          "bestBid": 0.47,
-          "bestAsk": 0.48
+          "price": 0.335,
+          "bestBid": 0.33,
+          "bestAsk": 0.34
         }
       ],
-      "lastChecked": "2026-06-27T21:26:39.035Z",
+      "lastChecked": "2026-06-28T00:59:14.026Z",
       "espnId": "760481",
-      "resultStatus": "Scheduled",
-      "resultDetail": "Sat, June 27th at 7:30 PM EDT",
+      "resultStatus": "Second Half",
+      "resultDetail": "67'",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T21:26:39.035Z"
+      "resultLastChecked": "2026-06-28T00:59:14.026Z"
     },
     {
       "slug": "fifwc-cdr-uzb-2026-06-27",
       "match": "DR Congo vs. Uzbekistan",
       "startTime": "2026-06-27T23:30:00Z",
-      "pickedOutcome": "DR Congo",
+      "pickedOutcome": "Uzbekistan",
       "pickedProbability": 0.575,
       "status": "pending",
       "url": "https://polymarket.com/event/fifwc-cdr-uzb-2026-06-27",
       "marketSnapshot": [
         {
           "title": "Draw",
-          "price": 0.245,
-          "bestBid": 0.24,
-          "bestAsk": 0.25
+          "price": 0.285,
+          "bestBid": 0.28,
+          "bestAsk": 0.29
         },
         {
           "title": "DR Congo",
-          "price": 0.575,
-          "bestBid": 0.57,
-          "bestAsk": 0.58
+          "price": 0.135,
+          "bestBid": 0.13,
+          "bestAsk": 0.14
         },
         {
           "title": "Uzbekistan",
-          "price": 0.175,
-          "bestBid": 0.17,
-          "bestAsk": 0.18
+          "price": 0.575,
+          "bestBid": 0.57,
+          "bestAsk": 0.58
         }
       ],
-      "lastChecked": "2026-06-27T21:26:39.035Z",
+      "lastChecked": "2026-06-28T00:59:14.026Z",
       "espnId": "760482",
-      "resultStatus": "Scheduled",
-      "resultDetail": "Sat, June 27th at 7:30 PM EDT",
+      "resultStatus": "Second Half",
+      "resultDetail": "65'",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T21:26:39.035Z"
+      "resultLastChecked": "2026-06-28T00:59:14.026Z"
     },
     {
       "slug": "fifwc-alg-aut-2026-06-27",
@@ -638,9 +646,9 @@
       "marketSnapshot": [
         {
           "title": "Algeria",
-          "price": 0.265,
-          "bestBid": 0.26,
-          "bestAsk": 0.27
+          "price": 0.275,
+          "bestBid": 0.27,
+          "bestAsk": 0.28
         },
         {
           "title": "Draw",
@@ -650,17 +658,17 @@
         },
         {
           "title": "Austria",
-          "price": 0.255,
-          "bestBid": 0.25,
-          "bestAsk": 0.26
+          "price": 0.265,
+          "bestBid": 0.26,
+          "bestAsk": 0.27
         }
       ],
-      "lastChecked": "2026-06-27T21:26:39.035Z",
+      "lastChecked": "2026-06-28T00:59:14.026Z",
       "espnId": "760484",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T21:26:39.035Z"
+      "resultLastChecked": "2026-06-28T00:59:14.026Z"
     },
     {
       "slug": "fifwc-jor-arg-2026-06-27",
@@ -685,18 +693,18 @@
         },
         {
           "title": "Jordan",
-          "price": 0.0425,
-          "bestBid": 0.042,
-          "bestAsk": 0.043
+          "price": 0.0435,
+          "bestBid": 0.043,
+          "bestAsk": 0.044
         }
       ],
-      "lastChecked": "2026-06-27T21:26:39.035Z",
+      "lastChecked": "2026-06-28T00:59:14.026Z",
       "espnId": "760483",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, June 27th at 10:00 PM EDT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-27T21:26:39.035Z"
+      "resultLastChecked": "2026-06-28T00:59:14.026Z"
     }
   ],
-  "lastUpdated": "2026-06-27T21:26:39.035Z"
+  "lastUpdated": "2026-06-28T00:59:14.026Z"
 }
