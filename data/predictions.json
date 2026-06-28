@@ -16,8 +16,8 @@
   },
   "manualLeaderboard": {
     "title": "SMS Leaderboard",
-    "asOf": "2026-06-28T11:20:57-04:00",
-    "asOfLabel": "June 28, 2026, 11:20 AM ET",
+    "asOf": "2026-06-28T18:43:38-04:00",
+    "asOfLabel": "June 28, 2026, 6:43 PM ET",
     "source": "SMS thread",
     "entries": [
       {
@@ -34,7 +34,7 @@
       },
       {
         "name": "Huy",
-        "points": 5
+        "points": 6
       },
       {
         "name": "Yous.",
@@ -571,12 +571,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:28:20.247Z",
+      "lastChecked": "2026-06-28T22:44:07.787Z",
       "espnId": "760485",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:28:20.247Z",
+      "resultLastChecked": "2026-06-28T22:44:07.787Z",
       "resolvedOutcome": "England",
       "score": {
         "Panama": 0,
@@ -610,12 +610,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:28:20.247Z",
+      "lastChecked": "2026-06-28T22:44:07.787Z",
       "espnId": "760480",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:28:20.247Z",
+      "resultLastChecked": "2026-06-28T22:44:07.787Z",
       "resolvedOutcome": "Croatia",
       "score": {
         "Croatia": 2,
@@ -649,12 +649,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:28:20.247Z",
+      "lastChecked": "2026-06-28T22:44:07.787Z",
       "espnId": "760481",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:28:20.247Z",
+      "resultLastChecked": "2026-06-28T22:44:07.787Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Colombia": 0,
@@ -688,12 +688,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:28:20.247Z",
+      "lastChecked": "2026-06-28T22:44:07.787Z",
       "espnId": "760482",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:28:20.247Z",
+      "resultLastChecked": "2026-06-28T22:44:07.787Z",
       "resolvedOutcome": "DR Congo",
       "score": {
         "DR Congo": 3,
@@ -727,12 +727,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:28:20.247Z",
+      "lastChecked": "2026-06-28T22:44:07.787Z",
       "espnId": "760484",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:28:20.247Z",
+      "resultLastChecked": "2026-06-28T22:44:07.787Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Algeria": 3,
@@ -766,12 +766,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-28T15:28:20.247Z",
+      "lastChecked": "2026-06-28T22:44:07.787Z",
       "espnId": "760483",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:28:20.247Z",
+      "resultLastChecked": "2026-06-28T22:44:07.787Z",
       "resolvedOutcome": "Argentina",
       "score": {
         "Jordan": 1,
@@ -786,11 +786,17 @@
       "status": "pending",
       "url": "https://www.espn.com/soccer/match/_/gameId/760486",
       "espnId": "760486",
-      "resultStatus": "Scheduled",
-      "resultDetail": "Sun, June 28th at 3:00 PM EDT",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-28T15:28:20.247Z"
+      "resultLastChecked": "2026-06-28T22:44:07.787Z",
+      "score": {
+        "South Africa": 0,
+        "Canada": 1
+      },
+      "finalScore": "South Africa 0-1 Canada",
+      "resolvedOutcome": "Canada"
     }
   ],
-  "lastUpdated": "2026-06-28T15:28:20.247Z"
+  "lastUpdated": "2026-06-28T22:44:07.787Z"
 }

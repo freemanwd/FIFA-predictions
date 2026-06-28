@@ -1,15 +1,15 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-28T15:28:20.247Z
+Last updated: 2026-06-28T22:44:07.787Z
 
 ## SMS Leaderboard
 
-As of: June 28, 2026, 11:20 AM ET
+As of: June 28, 2026, 6:43 PM ET
 
 #1 9 pts - CARLITO.
 #2 7 pts - Enver
 #3 6 pts - KGB.
-#4 5 pts - Huy
+#3 6 pts - Huy
 #5 4 pts - Yous.
 #6 3 pts - Eric
 #6 3 pts - Connor
@@ -51,10 +51,10 @@ Enver: Algeria vs. Austria - Algeria 1-2 Austria (missed, final: Algeria 3-3 Aus
 Enver: Jordan vs. Argentina - Jordan 0-4 Argentina (correct, final: Jordan 1-3 Argentina)
 Youssef: Algeria vs. Austria - Algeria 1-2 Austria (missed, final: Algeria 3-3 Austria)
 Youssef: Jordan vs. Argentina - Jordan 0-2 Argentina (correct, final: Jordan 1-3 Argentina)
-Carlito: South Africa vs. Canada - South Africa 0-2 Canada (pending)
-Huy: South Africa vs. Canada - South Africa 0-1 Canada (pending)
-KGB.: South Africa vs. Canada - South Africa 1-2 Canada (pending)
-Youssef: South Africa vs. Canada - South Africa 0-2 Canada (pending)
+Carlito: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: South Africa 0-1 Canada)
+Huy: South Africa vs. Canada - South Africa 0-1 Canada (exact, final: South Africa 0-1 Canada)
+KGB.: South Africa vs. Canada - South Africa 1-2 Canada (correct, final: South Africa 0-1 Canada)
+Youssef: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: South Africa 0-1 Canada)
 
 ## Completed Picks
 
