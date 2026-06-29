@@ -10,6 +10,7 @@ const indexPath = path.join(root, "index.html");
 const mdPath = path.join(root, "predictions.md");
 const apiUrl = "https://gamma-api.polymarket.com/events?series_slug=soccer-fifwc&limit=500";
 const espnScoreboardUrl = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
+const upcomingScheduleDays = 7;
 
 function readData() {
   return JSON.parse(fs.readFileSync(dataPath, "utf8"));
@@ -63,6 +64,17 @@ function easternDateKey(isoDate) {
   }).formatToParts(new Date(isoDate));
   const part = (type) => parts.find((item) => item.type === type)?.value;
   return `${part("year")}${part("month")}${part("day")}`;
+}
+
+function upcomingEasternDateKeys(now, days) {
+  const date = new Date(now);
+  const keys = [];
+  for (let offset = 0; offset <= days; offset += 1) {
+    const next = new Date(date);
+    next.setUTCDate(date.getUTCDate() + offset);
+    keys.push(easternDateKey(next.toISOString()));
+  }
+  return keys;
 }
 
 function escapeHtml(value) {
@@ -345,6 +357,32 @@ function findEspnEvent(match, events) {
   });
 }
 
+function espnEventTeams(event) {
+  return (event?.competitions?.[0]?.competitors || [])
+    .map((competitor) => competitor.team?.displayName)
+    .filter(Boolean);
+}
+
+function espnMatchSlug(event) {
+  return `espn-${event.id}`;
+}
+
+function matchFromEspnEvent(event, now) {
+  const teams = espnEventTeams(event);
+  if (teams.length !== 2 || !event.id || !event.date) return null;
+  const match = {
+    slug: espnMatchSlug(event),
+    match: `${teams[0]} vs. ${teams[1]}`,
+    startTime: event.date,
+    status: "pending",
+    url: `https://www.espn.com/soccer/match/_/gameId/${event.id}`,
+    espnId: event.id,
+    resultSource: "ESPN FIFA World Cup scoreboard",
+    resultLastChecked: now
+  };
+  return mergeEspnScore(match, event, now);
+}
+
 function scoreFromEspnEvent(event) {
   const competition = event?.competitions?.[0];
   if (!competition) return null;
@@ -397,9 +435,16 @@ function mergeEspnScore(match, espnEvent, now) {
   return next;
 }
 
+function upcomingScheduleRows(data) {
+  return data.matches
+    .filter((match) => !match.pickedOutcome && !match.finalScore)
+    .sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
+}
+
 function makeMarkdown(data) {
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
   const smsScorePicks = scorePickRows(data);
+  const upcomingRows = upcomingScheduleRows(data);
   const lines = [
     "# Freeman's FIFA Predictions and Tally",
     "",
@@ -421,6 +466,14 @@ function makeMarkdown(data) {
     for (const row of smsScorePicks) {
       const finalScore = row.match.finalScore ? `, final: ${row.match.finalScore}` : "";
       lines.push(`${row.player.name}: ${row.match.match} - ${row.pickText} (${row.scored.status}${finalScore})`);
+    }
+  }
+
+  if (upcomingRows.length) {
+    lines.push("", "## Upcoming Matches", "");
+    for (const match of upcomingRows) {
+      const kickoff = new Date(match.startTime).toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" });
+      lines.push(`${match.match} - ${kickoff} ET (${match.resultStatus || "Scheduled"})`);
     }
   }
 
@@ -448,6 +501,7 @@ function makeMarkdown(data) {
 function makeHtml(data) {
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
   const smsScorePicks = scorePickRows(data);
+  const upcomingRows = upcomingScheduleRows(data);
   const smsRows = smsStandings
     .map(
       (entry) => `<tr>
@@ -465,6 +519,15 @@ function makeHtml(data) {
         <td>${escapeHtml(row.pickText)}<span>${escapeHtml(row.pick.outcome)}</span></td>
         <td class="status ${escapeHtml(row.scored.status)}">${escapeHtml(row.scored.status)}</td>
         <td>${escapeHtml(row.match.finalScore || "TBD")}<span>${escapeHtml(row.match.resultStatus || "Awaiting final")}</span></td>
+      </tr>`
+    )
+    .join("\n");
+  const upcomingMatchRows = upcomingRows
+    .map(
+      (match) => `<tr>
+        <td><a href="${escapeHtml(match.url || "#")}">${escapeHtml(match.match)}</a></td>
+        <td>${escapeHtml(new Date(match.startTime).toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" }))} ET</td>
+        <td>${escapeHtml(match.resultStatus || "Scheduled")}</td>
       </tr>`
     )
     .join("\n");
@@ -567,6 +630,20 @@ function makeHtml(data) {
         <tbody>${smsScoreRows}</tbody>
       </table>
     </div>` : ""}
+    ${upcomingMatchRows ? `<h2 class="section-title">Upcoming Matches</h2>
+    <p class="section-note">ESPN schedule for the next week. Use these match names when sending new SMS predictions.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Match</th>
+            <th>Kickoff</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>${upcomingMatchRows}</tbody>
+      </table>
+    </div>` : ""}
     <h2 class="section-title">Match Picks</h2>
     <div class="table-wrap">
       <table>
@@ -622,15 +699,32 @@ async function main() {
 
   data.matches = [...existingBySlug.values()].sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
   try {
-    const dateKeys = [...new Set(data.matches.map((match) => easternDateKey(match.startTime)))];
+    const dateKeys = [
+      ...new Set([
+        ...data.matches.map((match) => easternDateKey(match.startTime)),
+        ...upcomingEasternDateKeys(now, upcomingScheduleDays)
+      ])
+    ];
     const espnEvents = await fetchEspnEvents(dateKeys);
+    const existingEspnIds = new Set(data.matches.map((match) => String(match.espnId || "")).filter(Boolean));
+    for (const espnEvent of espnEvents) {
+      if (existingEspnIds.has(String(espnEvent.id))) continue;
+      const espnMatch = matchFromEspnEvent(espnEvent, now);
+      if (espnMatch) {
+        data.matches.push(espnMatch);
+        existingEspnIds.add(String(espnEvent.id));
+      }
+    }
     data.matches = data.matches.map((match) => {
-      const espnEvent = findEspnEvent(match, espnEvents);
+      const espnEvent = match.espnId
+        ? espnEvents.find((event) => String(event.id) === String(match.espnId))
+        : findEspnEvent(match, espnEvents);
       return espnEvent ? mergeEspnScore(match, espnEvent, now) : match;
     });
   } catch (error) {
     console.warn(`ESPN score refresh skipped: ${error.message}`);
   }
+  data.matches = data.matches.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
   ensurePlayers(data);
   data.lastUpdated = now;
 

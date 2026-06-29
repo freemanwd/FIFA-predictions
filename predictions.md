@@ -1,6 +1,6 @@
 # Freeman's FIFA Predictions and Tally
 
-Last updated: 2026-06-28T22:44:07.787Z
+Last updated: 2026-06-29T01:51:47.734Z
 
 ## SMS Leaderboard
 
@@ -55,6 +55,28 @@ Carlito: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: Sout
 Huy: South Africa vs. Canada - South Africa 0-1 Canada (exact, final: South Africa 0-1 Canada)
 KGB.: South Africa vs. Canada - South Africa 1-2 Canada (correct, final: South Africa 0-1 Canada)
 Youssef: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: South Africa 0-1 Canada)
+
+## Upcoming Matches
+
+Brazil vs. Japan - Jun 29, 2026, 1:00 PM ET (Scheduled)
+Germany vs. Paraguay - Jun 29, 2026, 4:30 PM ET (Scheduled)
+Netherlands vs. Morocco - Jun 29, 2026, 9:00 PM ET (Scheduled)
+Ivory Coast vs. Norway - Jun 30, 2026, 1:00 PM ET (Scheduled)
+France vs. Sweden - Jun 30, 2026, 5:00 PM ET (Scheduled)
+Mexico vs. Ecuador - Jun 30, 2026, 9:00 PM ET (Scheduled)
+England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Scheduled)
+Belgium vs. Senegal - Jul 1, 2026, 4:00 PM ET (Scheduled)
+United States vs. Bosnia-Herzegovina - Jul 1, 2026, 8:00 PM ET (Scheduled)
+Spain vs. Austria - Jul 2, 2026, 3:00 PM ET (Scheduled)
+Portugal vs. Croatia - Jul 2, 2026, 7:00 PM ET (Scheduled)
+Switzerland vs. Algeria - Jul 2, 2026, 11:00 PM ET (Scheduled)
+Australia vs. Egypt - Jul 3, 2026, 2:00 PM ET (Scheduled)
+Argentina vs. Cape Verde - Jul 3, 2026, 6:00 PM ET (Scheduled)
+Colombia vs. Ghana - Jul 3, 2026, 9:30 PM ET (Scheduled)
+Canada vs. Round of 32 3 Winner - Jul 4, 2026, 1:00 PM ET (Scheduled)
+Round of 32 2 Winner vs. Round of 32 5 Winner - Jul 4, 2026, 5:00 PM ET (Scheduled)
+Round of 32 4 Winner vs. Round of 32 6 Winner - Jul 5, 2026, 4:00 PM ET (Scheduled)
+Round of 32 7 Winner vs. Round of 32 8 Winner - Jul 5, 2026, 8:00 PM ET (Scheduled)
 
 ## Completed Picks
 
