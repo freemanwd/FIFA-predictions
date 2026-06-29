@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-29T13:03:59.668Z
+Last updated: 2026-06-29T13:18:03.187Z
 
 ## SMS Leaderboard
 
@@ -57,10 +57,13 @@ KGB.: South Africa vs. Canada - South Africa 1-2 Canada (correct, final: South A
 Youssef: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: South Africa 0-1 Canada)
 Connor: Brazil vs. Japan - Brazil 3-2 Japan (pending)
 KGB.: Brazil vs. Japan - Brazil on penalties (pending)
+Youssef: Brazil vs. Japan - Brazil 2-1 Japan (pending)
 Connor: Germany vs. Paraguay - Germany 2-0 Paraguay (pending)
 KGB.: Germany vs. Paraguay - Germany 3-1 Paraguay (pending)
+Youssef: Germany vs. Paraguay - Germany 3-1 Paraguay (pending)
 Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (pending)
 KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (pending)
+Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (pending)
 
 ## Upcoming Matches
 
