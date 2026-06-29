@@ -446,7 +446,7 @@ function makeMarkdown(data) {
   const smsScorePicks = scorePickRows(data);
   const upcomingRows = upcomingScheduleRows(data);
   const lines = [
-    "# Freeman's FIFA Predictions and Tally",
+    `# ${data.title || "FIFA Predictions, MaletasUnited Rankings,"}`,
     "",
     `Last updated: ${data.lastUpdated}`,
     ""
@@ -558,7 +558,7 @@ function makeHtml(data) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Freeman's FIFA Predictions and Tally</title>
+  <title>${escapeHtml(data.title || "FIFA Predictions, MaletasUnited Rankings,")}</title>
   <style>
     :root { color-scheme: light; --ink: #17202a; --muted: #637083; --line: #d9e1ea; --bg: #f6f8fb; --panel: #fff; --accent: #0f6b5f; }
     body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
@@ -596,8 +596,8 @@ function makeHtml(data) {
 </head>
 <body>
   <header>
-    <h1>Freeman's FIFA Predictions and Tally</h1>
-    <p>Polymarket moneyline picks, ESPN final scores, and a running pool tally through the July 19, 2026 final.</p>
+    <h1>${escapeHtml(data.title || "FIFA Predictions, MaletasUnited Rankings,")}</h1>
+    <p>Polymarket moneyline picks, ESPN final scores.</p>
   </header>
   <main>
     ${smsRows ? `<h2 class="section-title">${escapeHtml(data.manualLeaderboard?.title || "SMS Leaderboard")}</h2>
