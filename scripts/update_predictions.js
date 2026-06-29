@@ -224,7 +224,7 @@ function scorePickRows(data) {
     .filter((player) => player.id !== "freeman")
     .flatMap((player) =>
       Object.entries(player.picks || [])
-        .filter(([, pick]) => pick.score)
+        .filter(([, pick]) => pick.score || pick.label || pick.note)
         .map(([slug, pick]) => {
           const match = matchesBySlug.get(slug);
           if (!match) return null;
@@ -234,7 +234,7 @@ function scorePickRows(data) {
             match,
             pick,
             scored,
-            pickText: scoreTextForMatch(match, pick.score)
+            pickText: pick.score ? scoreTextForMatch(match, pick.score) : pick.label || pick.note || pick.outcome
           };
         })
         .filter(Boolean)

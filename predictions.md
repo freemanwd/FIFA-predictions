@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-29T02:10:09.666Z
+Last updated: 2026-06-29T13:03:59.668Z
 
 ## SMS Leaderboard
 
@@ -55,6 +55,12 @@ Carlito: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: Sout
 Huy: South Africa vs. Canada - South Africa 0-1 Canada (exact, final: South Africa 0-1 Canada)
 KGB.: South Africa vs. Canada - South Africa 1-2 Canada (correct, final: South Africa 0-1 Canada)
 Youssef: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: South Africa 0-1 Canada)
+Connor: Brazil vs. Japan - Brazil 3-2 Japan (pending)
+KGB.: Brazil vs. Japan - Brazil on penalties (pending)
+Connor: Germany vs. Paraguay - Germany 2-0 Paraguay (pending)
+KGB.: Germany vs. Paraguay - Germany 3-1 Paraguay (pending)
+Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (pending)
+KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (pending)
 
 ## Upcoming Matches
 
@@ -77,6 +83,8 @@ Canada vs. Round of 32 3 Winner - Jul 4, 2026, 1:00 PM ET (Scheduled)
 Round of 32 2 Winner vs. Round of 32 5 Winner - Jul 4, 2026, 5:00 PM ET (Scheduled)
 Round of 32 4 Winner vs. Round of 32 6 Winner - Jul 5, 2026, 4:00 PM ET (Scheduled)
 Round of 32 7 Winner vs. Round of 32 8 Winner - Jul 5, 2026, 8:00 PM ET (Scheduled)
+Round of 32 11 Winner vs. Round of 32 12 Winner - Jul 6, 2026, 3:00 PM ET (Scheduled)
+Round of 32 9 Winner vs. Round of 32 10 Winner - Jul 6, 2026, 8:00 PM ET (Scheduled)
 
 ## Completed Picks
 
