@@ -218,6 +218,10 @@ function scoreTextForMatch(match, score) {
     .join(", ");
 }
 
+function decisionLabel(pick) {
+  return pick?.decision || pick?.decisionWindow || "";
+}
+
 function scorePickRows(data) {
   const matchesBySlug = new Map(data.matches.map((match) => [match.slug, match]));
   return data.players
@@ -234,7 +238,8 @@ function scorePickRows(data) {
             match,
             pick,
             scored,
-            pickText: pick.score ? scoreTextForMatch(match, pick.score) : pick.label || pick.note || pick.outcome
+            pickText: pick.score ? scoreTextForMatch(match, pick.score) : pick.label || pick.note || pick.outcome,
+            decision: decisionLabel(pick)
           };
         })
         .filter(Boolean)
@@ -465,7 +470,8 @@ function makeMarkdown(data) {
     lines.push("", "## SMS Score Picks", "");
     for (const row of smsScorePicks) {
       const finalScore = row.match.finalScore ? `, final: ${row.match.finalScore}` : "";
-      lines.push(`${row.player.name}: ${row.match.match} - ${row.pickText} (${row.scored.status}${finalScore})`);
+      const decision = row.decision ? `, decision: ${row.decision}` : "";
+      lines.push(`${row.player.name}: ${row.match.match} - ${row.pickText} (${row.scored.status}${decision}${finalScore})`);
     }
   }
 
@@ -517,6 +523,7 @@ function makeHtml(data) {
         <td>${escapeHtml(row.player.name)}<span>${escapeHtml(row.player.source || "")}</span></td>
         <td>${escapeHtml(row.match.match)}<span>${escapeHtml(new Date(row.match.startTime).toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" }))} ET</span></td>
         <td>${escapeHtml(row.pickText)}<span>${escapeHtml(row.pick.outcome)}</span></td>
+        <td>${escapeHtml(row.decision || "")}</td>
         <td class="status ${escapeHtml(row.scored.status)}">${escapeHtml(row.scored.status)}</td>
         <td>${escapeHtml(row.match.finalScore || "TBD")}<span>${escapeHtml(row.match.resultStatus || "Awaiting final")}</span></td>
       </tr>`
@@ -615,7 +622,7 @@ function makeHtml(data) {
       </table>
     </div>` : ""}
     ${smsScoreRows ? `<h2 class="section-title">SMS Score Picks</h2>
-    <p class="section-note">From the SMS thread. ESPN final scores will grade winner and exact-score points as matches complete.</p>
+    <p class="section-note">From the SMS thread. Decision shows whether the pick is for 90 min, 120 min/ET, or PK.</p>
     <div class="table-wrap">
       <table>
         <thead>
@@ -623,6 +630,7 @@ function makeHtml(data) {
             <th>Player</th>
             <th>Match</th>
             <th>Pick</th>
+            <th>Decision</th>
             <th>Status</th>
             <th>Final Score</th>
           </tr>
