@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-30T12:41:50.390Z
+Last updated: 2026-06-30T14:50:57.437Z
 
 ## SMS Leaderboard
 
@@ -86,7 +86,7 @@ Billy E (BE): Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
 Connor: Mexico vs. Ecuador - Mexico 0-1 Ecuador (pending)
 Enver: Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
 Huy: Mexico vs. Ecuador - Mexico 1-1 Ecuador (pending)
-KGB.: Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
+KGB.: Mexico vs. Ecuador - Mexico 1-1 Ecuador (pending, decision: PK)
 Youssef: Mexico vs. Ecuador - Mexico 2-0 Ecuador (pending)
 
 ## Upcoming Matches
