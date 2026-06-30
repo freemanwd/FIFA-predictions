@@ -1,21 +1,21 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-30T20:16:16.954Z
+Last updated: 2026-06-30T20:27:05.492Z
 
 ## SMS Leaderboard
 
-As of: June 30, 2026, 5:56 AM ET
+As of: June 30, 2026, 4:25 PM ET
 
 #1 9 pts - CARLITO.
 #2 8 pts - Enver
-#3 6 pts - KGB.
-#3 6 pts - Huy
-#5 5 pts - Yous.
-#6 4 pts - Diana
-#7 3 pts - Eric
-#7 3 pts - Connor
-#9 2 pts - BE.
-#9 2 pts - Cole
+#3 7 pts - KGB.
+#3 7 pts - Huy
+#5 6 pts - Yous.
+#6 5 pts - Diana
+#7 4 pts - Connor
+#8 3 pts - BE.
+#8 3 pts - Eric
+#10 2 pts - Cole
 #11 1 pts - Diego
 #12 0 pts - Kwame
 
