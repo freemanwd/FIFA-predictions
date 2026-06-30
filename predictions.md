@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-30T11:03:45.727Z
+Last updated: 2026-06-30T11:35:18.755Z
 
 ## SMS Leaderboard
 
@@ -70,6 +70,9 @@ Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (missed, final: Nether
 Enver: Netherlands vs. Morocco - Netherlands 1-2 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
 KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
 Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
+Enver: Ivory Coast vs. Norway - Ivory Coast 1-0 Norway (pending)
+Enver: France vs. Sweden - France 3-0 Sweden (pending)
+Enver: Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
 
 ## Upcoming Matches
 
