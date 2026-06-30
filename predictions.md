@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-30T10:43:04.278Z
+Last updated: 2026-06-30T11:03:45.727Z
 
 ## SMS Leaderboard
 
@@ -60,16 +60,16 @@ Connor: Brazil vs. Japan - Brazil 3-2 Japan (correct, final: Brazil 2-1 Japan)
 Enver: Brazil vs. Japan - Brazil 2-1 Japan (exact, final: Brazil 2-1 Japan)
 KGB.: Brazil vs. Japan - Brazil on penalties (correct, decision: PK, final: Brazil 2-1 Japan)
 Youssef: Brazil vs. Japan - Brazil 2-1 Japan (exact, final: Brazil 2-1 Japan)
-Billy E (BE): Germany vs. Paraguay - Germany 3-1 Paraguay (missed, decision: 90 min, final: Germany 1-1 Paraguay)
-Connor: Germany vs. Paraguay - Germany 2-0 Paraguay (missed, final: Germany 1-1 Paraguay)
-Enver: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay)
-KGB.: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay)
-Youssef: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay)
-Billy E (BE): Netherlands vs. Morocco - Netherlands 3-2 Morocco (missed, decision: 90 min, final: Netherlands 1-1 Morocco)
-Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (missed, final: Netherlands 1-1 Morocco)
-Enver: Netherlands vs. Morocco - Netherlands 1-2 Morocco (missed, final: Netherlands 1-1 Morocco)
-KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco)
-Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco)
+Billy E (BE): Germany vs. Paraguay - Germany 3-1 Paraguay (missed, decision: 90 min, final: Germany 1-1 Paraguay (3-4 PK))
+Connor: Germany vs. Paraguay - Germany 2-0 Paraguay (missed, final: Germany 1-1 Paraguay (3-4 PK))
+Enver: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay (3-4 PK))
+KGB.: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay (3-4 PK))
+Youssef: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay (3-4 PK))
+Billy E (BE): Netherlands vs. Morocco - Netherlands 3-2 Morocco (missed, decision: 90 min, final: Netherlands 1-1 Morocco (2-3 PK))
+Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
+Enver: Netherlands vs. Morocco - Netherlands 1-2 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
+KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
+Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
 
 ## Upcoming Matches
 

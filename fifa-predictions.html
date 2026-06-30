@@ -176,6 +176,35 @@
     }
     .team-node--winner { border-color: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft), 0 10px 24px rgba(15,107,95,.24); }
     .team-node--eliminated { opacity: .42; filter: grayscale(.8); }
+    .advance-node {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: clamp(30px, 3.8vw, 44px);
+      height: clamp(30px, 3.8vw, 44px);
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      background: var(--surface-raised);
+      box-shadow: 0 0 0 5px var(--accent-soft), 0 12px 24px rgba(17,19,18,.16);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      z-index: 4;
+    }
+    .advance-node span {
+      position: absolute;
+      inset: auto 0 3px;
+      text-align: center;
+      color: white;
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 4px rgba(0,0,0,.75);
+    }
+    .advance-node--qf { width: clamp(34px, 4.1vw, 48px); height: clamp(34px, 4.1vw, 48px); z-index: 5; }
+    .advance-node--sf { width: clamp(38px, 4.4vw, 52px); height: clamp(38px, 4.4vw, 52px); z-index: 6; }
+    .advance-node--final { width: clamp(42px, 4.8vw, 56px); height: clamp(42px, 4.8vw, 56px); z-index: 7; }
     .team-flag {
       display: block;
       width: 100%;
@@ -335,6 +364,8 @@
       .orbit-board { min-width: 0; width: min(100%, 540px); }
       .team-node { width: 35px; height: 35px; }
       .team-node span { display: none; }
+      .advance-node { width: 28px; height: 28px; }
+      .advance-node span { display: none; }
       .trophy-mark { width: 94px; }
       .knockout-card-grid { grid-template-columns: 1fr; max-height: 360px; overflow: auto; padding-right: 2px; }
       main.content { padding: 18px 16px 28px; }
@@ -365,6 +396,7 @@
             <circle cx="50" cy="50" r="43"></circle>
             <circle cx="50" cy="50" r="29"></circle>
             <circle cx="50" cy="50" r="15"></circle>
+            <circle cx="50" cy="50" r="7"></circle>
           </svg>
           <div class="team-node team-node--winner " style="--x:50.00%;--y:7.00%;" title="Brazil">
           <img class="team-flag" src="https://flagcdn.com/br.svg" alt="">
@@ -462,11 +494,11 @@
           <img class="team-flag" src="https://flagcdn.com/hr.svg" alt="">
           <span>C</span>
         </div>
-<div class="team-node  " style="--x:7.00%;--y:50.00%;" title="Netherlands">
+<div class="team-node  team-node--eliminated" style="--x:7.00%;--y:50.00%;" title="Netherlands">
           <img class="team-flag" src="https://flagcdn.com/nl.svg" alt="">
           <span>N</span>
         </div>
-<div class="team-node  " style="--x:7.83%;--y:41.61%;" title="Morocco">
+<div class="team-node team-node--winner " style="--x:7.83%;--y:41.61%;" title="Morocco">
           <img class="team-flag" src="https://flagcdn.com/ma.svg" alt="">
           <span>M</span>
         </div>
@@ -486,13 +518,29 @@
           <img class="team-flag" src="https://flagcdn.com/se.svg" alt="">
           <span>S</span>
         </div>
-<div class="team-node  " style="--x:33.54%;--y:10.27%;" title="Germany">
+<div class="team-node  team-node--eliminated" style="--x:33.54%;--y:10.27%;" title="Germany">
           <img class="team-flag" src="https://flagcdn.com/de.svg" alt="">
           <span>G</span>
         </div>
-<div class="team-node  " style="--x:41.61%;--y:7.83%;" title="Paraguay">
+<div class="team-node team-node--winner " style="--x:41.61%;--y:7.83%;" title="Paraguay">
           <img class="team-flag" src="https://flagcdn.com/py.svg" alt="">
           <span>P</span>
+        </div>
+          <div class="advance-node advance-node--r16" style="--x:52.84%;--y:21.14%;" title="R16: Brazil (Brazil 2-1 Japan)">
+          <img class="team-flag" src="https://flagcdn.com/br.svg" alt="">
+          <span>R16</span>
+        </div>
+<div class="advance-node advance-node--r16" style="--x:21.14%;--y:47.16%;" title="R16: Morocco (Netherlands 1-1 Morocco (2-3 PK))">
+          <img class="team-flag" src="https://flagcdn.com/ma.svg" alt="">
+          <span>R16</span>
+        </div>
+<div class="advance-node advance-node--r16" style="--x:24.42%;--y:36.33%;" title="R16: Canada (South Africa 0-1 Canada)">
+          <img class="team-flag" src="https://flagcdn.com/ca.svg" alt="">
+          <span>R16</span>
+        </div>
+<div class="advance-node advance-node--r16" style="--x:41.58%;--y:22.25%;" title="R16: Paraguay (Germany 1-1 Paraguay (3-4 PK))">
+          <img class="team-flag" src="https://flagcdn.com/py.svg" alt="">
+          <span>R16</span>
         </div>
           <div class="trophy-mark"><span>2026</span><strong>Final</strong><em>Jul 19</em></div>
         </div>
@@ -652,18 +700,18 @@
           </div>
           <div class="knockout-card__meta">Scheduled</div>
         </article>
-<article class="knockout-card ">
+<article class="knockout-card knockout-card--final">
           <div class="knockout-card__round">R32 13</div>
           <div class="knockout-card__teams">
             <div class="knockout-card__team ">
                   <img class="team-flag" src="https://flagcdn.com/nl.svg" alt="">
                   <span>Netherlands</span>
-                </div><div class="knockout-card__team ">
+                </div><div class="knockout-card__team is-winner">
                   <img class="team-flag" src="https://flagcdn.com/ma.svg" alt="">
                   <span>Morocco</span>
                 </div>
           </div>
-          <div class="knockout-card__meta">Netherlands 1-1 Morocco</div>
+          <div class="knockout-card__meta">Netherlands 1-1 Morocco (2-3 PK)</div>
         </article>
 <article class="knockout-card knockout-card--final">
           <div class="knockout-card__round">R32 14</div>
@@ -691,18 +739,18 @@
           </div>
           <div class="knockout-card__meta">Scheduled</div>
         </article>
-<article class="knockout-card ">
+<article class="knockout-card knockout-card--final">
           <div class="knockout-card__round">R32 16</div>
           <div class="knockout-card__teams">
             <div class="knockout-card__team ">
                   <img class="team-flag" src="https://flagcdn.com/de.svg" alt="">
                   <span>Germany</span>
-                </div><div class="knockout-card__team ">
+                </div><div class="knockout-card__team is-winner">
                   <img class="team-flag" src="https://flagcdn.com/py.svg" alt="">
                   <span>Paraguay</span>
                 </div>
           </div>
-          <div class="knockout-card__meta">Germany 1-1 Paraguay</div>
+          <div class="knockout-card__meta">Germany 1-1 Paraguay (3-4 PK)</div>
         </article></div>
       </div>
     </section>
@@ -1112,7 +1160,7 @@
         <td>Germany 3-1 Paraguay<span>Germany</span></td>
         <td>90 min</td>
         <td class="status missed">missed</td>
-        <td>Germany 1-1 Paraguay<span>Final Score - After Penalties</span></td>
+        <td>Germany 1-1 Paraguay (3-4 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>Connor<span>SMS text from Conor Keeley</span></td>
@@ -1120,7 +1168,7 @@
         <td>Germany 2-0 Paraguay<span>Germany</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Germany 1-1 Paraguay<span>Final Score - After Penalties</span></td>
+        <td>Germany 1-1 Paraguay (3-4 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>Enver<span>SMS text from Enver</span></td>
@@ -1128,7 +1176,7 @@
         <td>Germany 3-1 Paraguay<span>Germany</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Germany 1-1 Paraguay<span>Final Score - After Penalties</span></td>
+        <td>Germany 1-1 Paraguay (3-4 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>KGB.<span>SMS text from Dave G</span></td>
@@ -1136,7 +1184,7 @@
         <td>Germany 3-1 Paraguay<span>Germany</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Germany 1-1 Paraguay<span>Final Score - After Penalties</span></td>
+        <td>Germany 1-1 Paraguay (3-4 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>Youssef<span>SMS screenshot from Youssef Khachanet</span></td>
@@ -1144,7 +1192,7 @@
         <td>Germany 3-1 Paraguay<span>Germany</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Germany 1-1 Paraguay<span>Final Score - After Penalties</span></td>
+        <td>Germany 1-1 Paraguay (3-4 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>Billy E (BE)<span>SMS text from Billy Edwards</span></td>
@@ -1152,7 +1200,7 @@
         <td>Netherlands 3-2 Morocco<span>Netherlands</span></td>
         <td>90 min</td>
         <td class="status missed">missed</td>
-        <td>Netherlands 1-1 Morocco<span>Final Score - After Penalties</span></td>
+        <td>Netherlands 1-1 Morocco (2-3 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>Connor<span>SMS text from Conor Keeley</span></td>
@@ -1160,7 +1208,7 @@
         <td>Netherlands 1-0 Morocco<span>Netherlands</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Netherlands 1-1 Morocco<span>Final Score - After Penalties</span></td>
+        <td>Netherlands 1-1 Morocco (2-3 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>Enver<span>SMS text from Enver</span></td>
@@ -1168,7 +1216,7 @@
         <td>Netherlands 1-2 Morocco<span>Morocco</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Netherlands 1-1 Morocco<span>Final Score - After Penalties</span></td>
+        <td>Netherlands 1-1 Morocco (2-3 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>KGB.<span>SMS text from Dave G</span></td>
@@ -1176,7 +1224,7 @@
         <td>Netherlands 2-1 Morocco<span>Netherlands</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Netherlands 1-1 Morocco<span>Final Score - After Penalties</span></td>
+        <td>Netherlands 1-1 Morocco (2-3 PK)<span>Final Score - After Penalties</span></td>
       </tr>
 <tr>
         <td>Youssef<span>SMS screenshot from Youssef Khachanet</span></td>
@@ -1184,7 +1232,7 @@
         <td>Netherlands 2-1 Morocco<span>Netherlands</span></td>
         <td></td>
         <td class="status missed">missed</td>
-        <td>Netherlands 1-1 Morocco<span>Final Score - After Penalties</span></td>
+        <td>Netherlands 1-1 Morocco (2-3 PK)<span>Final Score - After Penalties</span></td>
       </tr></tbody>
       </table>
     </div>

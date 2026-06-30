@@ -348,8 +348,7 @@ function orderedKnockoutTeams(match) {
 }
 
 function winnerForMatch(match) {
-  if (!match.resolvedOutcome || match.resolvedOutcome === "Draw") return "";
-  return match.resolvedOutcome;
+  return match.advancingOutcome || (match.resolvedOutcome && match.resolvedOutcome !== "Draw" ? match.resolvedOutcome : "");
 }
 
 function flagHtml(team) {
@@ -358,18 +357,81 @@ function flagHtml(team) {
   return `<img class="team-flag" src="https://flagcdn.com/${escapeHtml(code)}.svg" alt="">`;
 }
 
+function polarPoint(angle, radius) {
+  const radians = (angle * Math.PI) / 180;
+  return {
+    x: 50 + Math.cos(radians) * radius,
+    y: 50 + Math.sin(radians) * radius
+  };
+}
+
+function angleForTeam(team, totalTeams = knockoutTeamOrder.length) {
+  const index = knockoutOrderIndex.get(normalizeTeam(team));
+  if (!Number.isFinite(index)) return null;
+  return -90 + (index * 360) / totalTeams;
+}
+
+function angleForMatch(match) {
+  const angles = orderedKnockoutTeams(match)
+    .map((team) => angleForTeam(team))
+    .filter(Number.isFinite);
+  if (!angles.length) return null;
+  return angles.reduce((total, angle) => total + angle, 0) / angles.length;
+}
+
+function matchRound(match) {
+  const start = new Date(match.startTime);
+  if (start < new Date("2026-07-04T07:00:00Z")) return "R32";
+  if (start < new Date("2026-07-09T07:00:00Z")) return "R16";
+  if (start < new Date("2026-07-14T07:00:00Z")) return "QF";
+  if (start < new Date("2026-07-18T07:00:00Z")) return "SF";
+  return "F";
+}
+
+function advancementNodes(data, roundMatches) {
+  const round32Nodes = roundMatches
+    .map((match) => {
+      const winner = winnerForMatch(match);
+      const angle = winner ? angleForMatch(match) : null;
+      if (!winner || !Number.isFinite(angle)) return null;
+      return { team: winner, round: "R16", angle, radius: 29, source: match.finalScore || match.resultStatus || "" };
+    })
+    .filter(Boolean);
+
+  const laterNodes = data.matches
+    .filter((match) => winnerForMatch(match) && matchRound(match) !== "R32")
+    .map((match) => {
+      const winner = winnerForMatch(match);
+      const angle = angleForTeam(winner);
+      const round = matchRound(match);
+      const radiusByRound = { R16: 20, QF: 13, SF: 7, F: 0 };
+      if (!winner || !Number.isFinite(angle) || round === "F") return null;
+      return { team: winner, round: round === "R16" ? "QF" : round === "QF" ? "SF" : "Final", angle, radius: radiusByRound[round], source: match.finalScore || match.resultStatus || "" };
+    })
+    .filter(Boolean);
+
+  return [...round32Nodes, ...laterNodes]
+    .map((node) => {
+      const point = polarPoint(node.angle, node.radius);
+      return `<div class="advance-node advance-node--${escapeHtml(node.round.toLowerCase())}" style="--x:${point.x.toFixed(2)}%;--y:${point.y.toFixed(2)}%;" title="${escapeHtml(`${node.round}: ${node.team}${node.source ? ` (${node.source})` : ""}`)}">
+          ${flagHtml(node.team)}
+          <span>${escapeHtml(node.round)}</span>
+        </div>`;
+    })
+    .join("\n");
+}
+
 function knockoutVisualHtml(data, smsStandings, upcomingRows) {
   const roundMatches = round32Matches(data);
   const teams = roundMatches.flatMap((match) => orderedKnockoutTeams(match));
   const totalTeams = teams.length || 1;
   const topThree = smsStandings.slice(0, 3);
   const nextMatches = upcomingRows.slice(0, 3);
+  const advances = advancementNodes(data, roundMatches);
   const teamNodes = teams
     .map((team, index) => {
       const angle = -90 + (index * 360) / totalTeams;
-      const radians = (angle * Math.PI) / 180;
-      const x = 50 + Math.cos(radians) * 43;
-      const y = 50 + Math.sin(radians) * 43;
+      const { x, y } = polarPoint(angle, 43);
       const match = roundMatches[Math.floor(index / 2)];
       const winner = winnerForMatch(match);
       const isWinner = winner && normalizeTeam(winner) === normalizeTeam(team);
@@ -422,8 +484,10 @@ function knockoutVisualHtml(data, smsStandings, upcomingRows) {
             <circle cx="50" cy="50" r="43"></circle>
             <circle cx="50" cy="50" r="29"></circle>
             <circle cx="50" cy="50" r="15"></circle>
+            <circle cx="50" cy="50" r="7"></circle>
           </svg>
           ${teamNodes}
+          ${advances}
           <div class="trophy-mark"><span>2026</span><strong>Final</strong><em>Jul 19</em></div>
         </div>
         <div class="knockout-card-grid">${matchCards}</div>
@@ -603,11 +667,20 @@ function scoreFromEspnEvent(event) {
   const competitors = competition.competitors || [];
   const status = competition.status?.type || event.status?.type || {};
   const scores = {};
+  const shootoutScores = {};
+  let advancingOutcome = "";
   for (const competitor of competitors) {
     const team = competitor.team?.displayName;
     const score = Number(competitor.score);
     if (team && Number.isFinite(score)) {
       scores[normalizeTeam(team)] = score;
+    }
+    const shootoutScore = Number(competitor.shootoutScore);
+    if (team && Number.isFinite(shootoutScore)) {
+      shootoutScores[normalizeTeam(team)] = shootoutScore;
+    }
+    if (team && (competitor.advance || competitor.winner)) {
+      advancingOutcome = team;
     }
   }
   return {
@@ -615,7 +688,9 @@ function scoreFromEspnEvent(event) {
     completed: Boolean(status.completed),
     status: status.description || "Scheduled",
     detail: status.detail || status.shortDetail || "",
-    scores
+    scores,
+    shootoutScores,
+    advancingOutcome
   };
 }
 
@@ -641,7 +716,14 @@ function mergeEspnScore(match, espnEvent, now) {
 
   if (scoreEvent.completed && hasScore) {
     next.score = { [left]: leftScore, [right]: rightScore };
-    next.finalScore = `${left} ${leftScore}-${rightScore} ${right}`;
+    const leftShootout = scoreEvent.shootoutScores[normalizeTeam(left)];
+    const rightShootout = scoreEvent.shootoutScores[normalizeTeam(right)];
+    const hasShootout = Number.isFinite(leftShootout) && Number.isFinite(rightShootout);
+    next.finalScore = hasShootout
+      ? `${left} ${leftScore}-${rightScore} ${right} (${leftShootout}-${rightShootout} PK)`
+      : `${left} ${leftScore}-${rightScore} ${right}`;
+    next.shootoutScore = hasShootout ? { [left]: leftShootout, [right]: rightShootout } : undefined;
+    next.advancingOutcome = scoreEvent.advancingOutcome || undefined;
     next.resolvedOutcome = leftScore === rightScore ? "Draw" : leftScore > rightScore ? left : right;
     next.status = statusFor(next);
   }
@@ -948,6 +1030,35 @@ function makeHtml(data) {
     }
     .team-node--winner { border-color: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft), 0 10px 24px rgba(15,107,95,.24); }
     .team-node--eliminated { opacity: .42; filter: grayscale(.8); }
+    .advance-node {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: clamp(30px, 3.8vw, 44px);
+      height: clamp(30px, 3.8vw, 44px);
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      background: var(--surface-raised);
+      box-shadow: 0 0 0 5px var(--accent-soft), 0 12px 24px rgba(17,19,18,.16);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      z-index: 4;
+    }
+    .advance-node span {
+      position: absolute;
+      inset: auto 0 3px;
+      text-align: center;
+      color: white;
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 4px rgba(0,0,0,.75);
+    }
+    .advance-node--qf { width: clamp(34px, 4.1vw, 48px); height: clamp(34px, 4.1vw, 48px); z-index: 5; }
+    .advance-node--sf { width: clamp(38px, 4.4vw, 52px); height: clamp(38px, 4.4vw, 52px); z-index: 6; }
+    .advance-node--final { width: clamp(42px, 4.8vw, 56px); height: clamp(42px, 4.8vw, 56px); z-index: 7; }
     .team-flag {
       display: block;
       width: 100%;
@@ -1107,6 +1218,8 @@ function makeHtml(data) {
       .orbit-board { min-width: 0; width: min(100%, 540px); }
       .team-node { width: 35px; height: 35px; }
       .team-node span { display: none; }
+      .advance-node { width: 28px; height: 28px; }
+      .advance-node span { display: none; }
       .trophy-mark { width: 94px; }
       .knockout-card-grid { grid-template-columns: 1fr; max-height: 360px; overflow: auto; padding-right: 2px; }
       main.content { padding: 18px 16px 28px; }
