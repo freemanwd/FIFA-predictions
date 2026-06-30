@@ -1,19 +1,19 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-29T15:39:57.134Z
+Last updated: 2026-06-30T09:56:41.580Z
 
 ## SMS Leaderboard
 
-As of: June 28, 2026, 6:43 PM ET
+As of: June 30, 2026, 5:56 AM ET
 
 #1 9 pts - CARLITO.
-#2 7 pts - Enver
+#2 8 pts - Enver
 #3 6 pts - KGB.
 #3 6 pts - Huy
-#5 4 pts - Yous.
-#6 3 pts - Eric
-#6 3 pts - Connor
-#6 3 pts - Diana
+#5 5 pts - Yous.
+#6 4 pts - Diana
+#7 3 pts - Eric
+#7 3 pts - Connor
 #9 2 pts - BE.
 #9 2 pts - Cole
 #11 1 pts - Diego
@@ -55,27 +55,24 @@ Carlito: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: Sout
 Huy: South Africa vs. Canada - South Africa 0-1 Canada (exact, final: South Africa 0-1 Canada)
 KGB.: South Africa vs. Canada - South Africa 1-2 Canada (correct, final: South Africa 0-1 Canada)
 Youssef: South Africa vs. Canada - South Africa 0-2 Canada (correct, final: South Africa 0-1 Canada)
-Billy E (BE): Brazil vs. Japan - Brazil 2-2 Japan (pending, decision: 90 min)
-Connor: Brazil vs. Japan - Brazil 3-2 Japan (pending)
-Enver: Brazil vs. Japan - Brazil 2-1 Japan (pending)
-KGB.: Brazil vs. Japan - Brazil on penalties (pending, decision: PK)
-Youssef: Brazil vs. Japan - Brazil 2-1 Japan (pending)
-Billy E (BE): Germany vs. Paraguay - Germany 3-1 Paraguay (pending, decision: 90 min)
-Connor: Germany vs. Paraguay - Germany 2-0 Paraguay (pending)
-Enver: Germany vs. Paraguay - Germany 3-1 Paraguay (pending)
-KGB.: Germany vs. Paraguay - Germany 3-1 Paraguay (pending)
-Youssef: Germany vs. Paraguay - Germany 3-1 Paraguay (pending)
-Billy E (BE): Netherlands vs. Morocco - Netherlands 3-2 Morocco (pending, decision: 90 min)
-Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (pending)
-Enver: Netherlands vs. Morocco - Netherlands 1-2 Morocco (pending)
-KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (pending)
-Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (pending)
+Billy E (BE): Brazil vs. Japan - Brazil 2-2 Japan (missed, decision: 90 min, final: Brazil 2-1 Japan)
+Connor: Brazil vs. Japan - Brazil 3-2 Japan (correct, final: Brazil 2-1 Japan)
+Enver: Brazil vs. Japan - Brazil 2-1 Japan (exact, final: Brazil 2-1 Japan)
+KGB.: Brazil vs. Japan - Brazil on penalties (correct, decision: PK, final: Brazil 2-1 Japan)
+Youssef: Brazil vs. Japan - Brazil 2-1 Japan (exact, final: Brazil 2-1 Japan)
+Billy E (BE): Germany vs. Paraguay - Germany 3-1 Paraguay (missed, decision: 90 min, final: Germany 1-1 Paraguay)
+Connor: Germany vs. Paraguay - Germany 2-0 Paraguay (missed, final: Germany 1-1 Paraguay)
+Enver: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay)
+KGB.: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay)
+Youssef: Germany vs. Paraguay - Germany 3-1 Paraguay (missed, final: Germany 1-1 Paraguay)
+Billy E (BE): Netherlands vs. Morocco - Netherlands 3-2 Morocco (missed, decision: 90 min, final: Netherlands 1-1 Morocco)
+Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (missed, final: Netherlands 1-1 Morocco)
+Enver: Netherlands vs. Morocco - Netherlands 1-2 Morocco (missed, final: Netherlands 1-1 Morocco)
+KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco)
+Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco)
 
 ## Upcoming Matches
 
-Brazil vs. Japan - Jun 29, 2026, 1:00 PM ET (Scheduled)
-Germany vs. Paraguay - Jun 29, 2026, 4:30 PM ET (Scheduled)
-Netherlands vs. Morocco - Jun 29, 2026, 9:00 PM ET (Scheduled)
 Ivory Coast vs. Norway - Jun 30, 2026, 1:00 PM ET (Scheduled)
 France vs. Sweden - Jun 30, 2026, 5:00 PM ET (Scheduled)
 Mexico vs. Ecuador - Jun 30, 2026, 9:00 PM ET (Scheduled)
@@ -94,6 +91,8 @@ Round of 32 4 Winner vs. Round of 32 6 Winner - Jul 5, 2026, 4:00 PM ET (Schedul
 Round of 32 7 Winner vs. Round of 32 8 Winner - Jul 5, 2026, 8:00 PM ET (Scheduled)
 Round of 32 11 Winner vs. Round of 32 12 Winner - Jul 6, 2026, 3:00 PM ET (Scheduled)
 Round of 32 9 Winner vs. Round of 32 10 Winner - Jul 6, 2026, 8:00 PM ET (Scheduled)
+Round of 32 14 Winner vs. Round of 32 16 Winner - Jul 7, 2026, 12:00 PM ET (Scheduled)
+Round of 32 13 Winner vs. Round of 32 15 Winner - Jul 7, 2026, 4:00 PM ET (Scheduled)
 
 ## Completed Picks
 
