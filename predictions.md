@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-30T16:47:19.303Z
+Last updated: 2026-06-30T19:05:29.672Z
 
 ## SMS Leaderboard
 
@@ -70,13 +70,13 @@ Connor: Netherlands vs. Morocco - Netherlands 1-0 Morocco (missed, final: Nether
 Enver: Netherlands vs. Morocco - Netherlands 1-2 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
 KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
 Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
-Billy E (BE): Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
-Connor: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
-Diana: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
-Enver: Ivory Coast vs. Norway - Ivory Coast 1-0 Norway (pending)
-Huy: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
-KGB.: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
-Youssef: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
+Billy E (BE): Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
+Connor: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
+Diana: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
+Enver: Ivory Coast vs. Norway - Ivory Coast 1-0 Norway (missed, final: Ivory Coast 1-2 Norway)
+Huy: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
+KGB.: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
+Youssef: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
 Billy E (BE): France vs. Sweden - France 3-1 Sweden (pending)
 Connor: France vs. Sweden - France 2-1 Sweden (pending)
 Diana: France vs. Sweden - France 3-1 Sweden (pending)
@@ -94,7 +94,6 @@ Youssef: Mexico vs. Ecuador - Mexico 2-0 Ecuador (pending)
 
 ## Upcoming Matches
 
-Ivory Coast vs. Norway - Jun 30, 2026, 1:00 PM ET (Scheduled)
 France vs. Sweden - Jun 30, 2026, 5:00 PM ET (Scheduled)
 Mexico vs. Ecuador - Jun 30, 2026, 9:00 PM ET (Scheduled)
 England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Scheduled)

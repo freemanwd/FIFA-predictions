@@ -911,12 +911,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-30T16:47:19.303Z",
+      "lastChecked": "2026-06-30T19:05:29.672Z",
       "espnId": "760485",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resolvedOutcome": "England",
       "score": {
         "Panama": 0,
@@ -951,12 +951,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-30T16:47:19.303Z",
+      "lastChecked": "2026-06-30T19:05:29.672Z",
       "espnId": "760480",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resolvedOutcome": "Croatia",
       "score": {
         "Croatia": 2,
@@ -991,12 +991,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-30T16:47:19.303Z",
+      "lastChecked": "2026-06-30T19:05:29.672Z",
       "espnId": "760481",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Colombia": 0,
@@ -1030,12 +1030,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-30T16:47:19.303Z",
+      "lastChecked": "2026-06-30T19:05:29.672Z",
       "espnId": "760482",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resolvedOutcome": "DR Congo",
       "score": {
         "DR Congo": 3,
@@ -1070,12 +1070,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-30T16:47:19.303Z",
+      "lastChecked": "2026-06-30T19:05:29.672Z",
       "espnId": "760484",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resolvedOutcome": "Draw",
       "score": {
         "Algeria": 3,
@@ -1109,12 +1109,12 @@
           "bestAsk": 0.001
         }
       ],
-      "lastChecked": "2026-06-30T16:47:19.303Z",
+      "lastChecked": "2026-06-30T19:05:29.672Z",
       "espnId": "760483",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resolvedOutcome": "Argentina",
       "score": {
         "Jordan": 1,
@@ -1133,7 +1133,7 @@
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "score": {
         "South Africa": 0,
         "Canada": 1
@@ -1150,7 +1150,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760487",
       "espnId": "760487",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Full Time",
       "resultDetail": "FT",
       "score": {
@@ -1169,7 +1169,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760489",
       "espnId": "760489",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Final Score - After Penalties",
       "resultDetail": "FT-Pens",
       "score": {
@@ -1192,7 +1192,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760488",
       "espnId": "760488",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Final Score - After Penalties",
       "resultDetail": "FT-Pens",
       "score": {
@@ -1215,9 +1215,16 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760490",
       "espnId": "760490",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
-      "resultStatus": "Scheduled",
-      "resultDetail": "Tue, June 30th at 1:00 PM EDT"
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
+      "resultStatus": "Full Time",
+      "resultDetail": "FT",
+      "score": {
+        "Ivory Coast": 1,
+        "Norway": 2
+      },
+      "finalScore": "Ivory Coast 1-2 Norway",
+      "advancingOutcome": "Norway",
+      "resolvedOutcome": "Norway"
     },
     {
       "slug": "espn-760492",
@@ -1227,7 +1234,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760492",
       "espnId": "760492",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Tue, June 30th at 5:00 PM EDT"
     },
@@ -1239,7 +1246,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760491",
       "espnId": "760491",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Tue, June 30th at 9:00 PM EDT"
     },
@@ -1251,7 +1258,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760495",
       "espnId": "760495",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Wed, July 1st at 12:00 PM EDT"
     },
@@ -1263,7 +1270,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760493",
       "espnId": "760493",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Wed, July 1st at 4:00 PM EDT"
     },
@@ -1275,7 +1282,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760494",
       "espnId": "760494",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Wed, July 1st at 8:00 PM EDT"
     },
@@ -1287,7 +1294,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760497",
       "espnId": "760497",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Thu, July 2nd at 3:00 PM EDT"
     },
@@ -1299,7 +1306,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760496",
       "espnId": "760496",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Thu, July 2nd at 7:00 PM EDT"
     },
@@ -1311,7 +1318,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760498",
       "espnId": "760498",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Thu, July 2nd at 11:00 PM EDT"
     },
@@ -1323,7 +1330,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760499",
       "espnId": "760499",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Fri, July 3rd at 2:00 PM EDT"
     },
@@ -1335,7 +1342,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760500",
       "espnId": "760500",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Fri, July 3rd at 6:00 PM EDT"
     },
@@ -1347,7 +1354,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760501",
       "espnId": "760501",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Fri, July 3rd at 9:30 PM EDT"
     },
@@ -1359,7 +1366,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760502",
       "espnId": "760502",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, July 4th at 1:00 PM EDT"
     },
@@ -1371,7 +1378,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760503",
       "espnId": "760503",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Sat, July 4th at 5:00 PM EDT"
     },
@@ -1383,7 +1390,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760504",
       "espnId": "760504",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Sun, July 5th at 4:00 PM EDT"
     },
@@ -1395,7 +1402,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760505",
       "espnId": "760505",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Sun, July 5th at 8:00 PM EDT"
     },
@@ -1407,7 +1414,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760506",
       "espnId": "760506",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Mon, July 6th at 3:00 PM EDT"
     },
@@ -1419,7 +1426,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760507",
       "espnId": "760507",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Mon, July 6th at 8:00 PM EDT"
     },
@@ -1431,7 +1438,7 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760509",
       "espnId": "760509",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Tue, July 7th at 12:00 PM EDT"
     },
@@ -1443,10 +1450,10 @@
       "url": "https://www.espn.com/soccer/match/_/gameId/760508",
       "espnId": "760508",
       "resultSource": "ESPN FIFA World Cup scoreboard",
-      "resultLastChecked": "2026-06-30T16:47:19.303Z",
+      "resultLastChecked": "2026-06-30T19:05:29.672Z",
       "resultStatus": "Scheduled",
       "resultDetail": "Tue, July 7th at 4:00 PM EDT"
     }
   ],
-  "lastUpdated": "2026-06-30T16:47:19.303Z"
+  "lastUpdated": "2026-06-30T19:05:29.672Z"
 }
