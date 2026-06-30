@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-30T15:24:17.535Z
+Last updated: 2026-06-30T16:47:19.303Z
 
 ## SMS Leaderboard
 
@@ -72,18 +72,21 @@ KGB.: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherla
 Youssef: Netherlands vs. Morocco - Netherlands 2-1 Morocco (missed, final: Netherlands 1-1 Morocco (2-3 PK))
 Billy E (BE): Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
 Connor: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
+Diana: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
 Enver: Ivory Coast vs. Norway - Ivory Coast 1-0 Norway (pending)
 Huy: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
 KGB.: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
 Youssef: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (pending)
 Billy E (BE): France vs. Sweden - France 3-1 Sweden (pending)
 Connor: France vs. Sweden - France 2-1 Sweden (pending)
+Diana: France vs. Sweden - France 3-1 Sweden (pending)
 Enver: France vs. Sweden - France 3-0 Sweden (pending)
 Huy: France vs. Sweden - France 2-1 Sweden (pending)
 KGB.: France vs. Sweden - France 3-1 Sweden (pending)
 Youssef: France vs. Sweden - France 3-1 Sweden (pending)
 Billy E (BE): Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
 Connor: Mexico vs. Ecuador - Mexico 0-1 Ecuador (pending)
+Diana: Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
 Enver: Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
 Huy: Mexico vs. Ecuador - Mexico 1-1 Ecuador (pending)
 KGB.: Mexico vs. Ecuador - Mexico 1-1 Ecuador (pending, decision: PK)
