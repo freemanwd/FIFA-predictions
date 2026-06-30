@@ -365,6 +365,60 @@ function polarPoint(angle, radius) {
   };
 }
 
+function svgPoint(angle, radius) {
+  const point = polarPoint(angle, radius);
+  return `${point.x.toFixed(2)} ${point.y.toFixed(2)}`;
+}
+
+function svgCircle(angle, radius, className = "bracket-wire__dot") {
+  const point = polarPoint(angle, radius);
+  return `<circle class="${className}" cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r=".46"></circle>`;
+}
+
+function bracketWireHtml(roundMatches) {
+  const slotCount = Math.max(roundMatches.length, 16);
+  const teamCount = slotCount * 2;
+  const slotAngles = Array.from({ length: slotCount }, (_, index) => -90 + ((index * 2 + 0.5) * 360) / teamCount);
+  const paths = [];
+  const dots = [];
+
+  slotAngles.forEach((slotAngle, index) => {
+    const leftAngle = -90 + ((index * 2) * 360) / teamCount;
+    const rightAngle = -90 + ((index * 2 + 1) * 360) / teamCount;
+    for (const teamAngle of [leftAngle, rightAngle]) {
+      paths.push(`<path d="M ${svgPoint(teamAngle, 39.4)} L ${svgPoint(teamAngle, 35.7)} L ${svgPoint(slotAngle, 31.8)}"></path>`);
+      dots.push(svgCircle(teamAngle, 35.7));
+    }
+    paths.push(`<path class="bracket-wire__trunk" d="M ${svgPoint(slotAngle, 31.8)} L ${svgPoint(slotAngle, 29)}"></path>`);
+    dots.push(svgCircle(slotAngle, 31.8, "bracket-wire__merge"));
+  });
+
+  const connectRound = (sourceAngles, fromRadius, toRadius) => {
+    const nextAngles = [];
+    for (let index = 0; index < sourceAngles.length; index += 2) {
+      const left = sourceAngles[index];
+      const right = sourceAngles[index + 1];
+      if (!Number.isFinite(left) || !Number.isFinite(right)) continue;
+      const mid = (left + right) / 2;
+      const bendRadius = (fromRadius + toRadius) / 2;
+      paths.push(`<path d="M ${svgPoint(left, fromRadius)} L ${svgPoint(left, bendRadius)} L ${svgPoint(mid, toRadius)}"></path>`);
+      paths.push(`<path d="M ${svgPoint(right, fromRadius)} L ${svgPoint(right, bendRadius)} L ${svgPoint(mid, toRadius)}"></path>`);
+      dots.push(svgCircle(left, bendRadius));
+      dots.push(svgCircle(right, bendRadius));
+      dots.push(svgCircle(mid, toRadius, "bracket-wire__merge"));
+      nextAngles.push(mid);
+    }
+    return nextAngles;
+  };
+
+  const r16Angles = connectRound(slotAngles, 29, 21.8);
+  const qfAngles = connectRound(r16Angles, 21.8, 14.8);
+  const sfAngles = connectRound(qfAngles, 14.8, 8.2);
+  connectRound(sfAngles, 8.2, 2.3);
+
+  return `<g class="bracket-wire">${paths.join("\n")}${dots.join("\n")}</g>`;
+}
+
 function angleForTeam(team, totalTeams = knockoutTeamOrder.length) {
   const index = knockoutOrderIndex.get(normalizeTeam(team));
   if (!Number.isFinite(index)) return null;
@@ -428,6 +482,7 @@ function knockoutVisualHtml(data, smsStandings, upcomingRows) {
   const topThree = smsStandings.slice(0, 3);
   const nextMatches = upcomingRows.slice(0, 3);
   const advances = advancementNodes(data, roundMatches);
+  const bracketWire = bracketWireHtml(roundMatches);
   const teamNodes = teams
     .map((team, index) => {
       const angle = -90 + (index * 360) / totalTeams;
@@ -481,10 +536,14 @@ function knockoutVisualHtml(data, smsStandings, upcomingRows) {
       <div class="knockout-main">
         <div class="orbit-board">
           <svg class="orbit-lines" viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="43"></circle>
-            <circle cx="50" cy="50" r="29"></circle>
-            <circle cx="50" cy="50" r="15"></circle>
-            <circle cx="50" cy="50" r="7"></circle>
+            ${bracketWire}
+            <g class="orbit-rings">
+              <circle cx="50" cy="50" r="43"></circle>
+              <circle cx="50" cy="50" r="29"></circle>
+              <circle cx="50" cy="50" r="21.8"></circle>
+              <circle cx="50" cy="50" r="14.8"></circle>
+              <circle cx="50" cy="50" r="8.2"></circle>
+            </g>
           </svg>
           ${teamNodes}
           ${advances}
@@ -867,6 +926,8 @@ function makeHtml(data) {
       --subtle: #7b817d;
       --line: #cfd4d0;
       --line-strong: #a8afaa;
+      --bracket-line: #272b29;
+      --bracket-dot: #272b29;
       --surface: #f7f8f5;
       --surface-raised: #ffffff;
       --surface-muted: rgba(255,255,255,.58);
@@ -997,19 +1058,42 @@ function makeHtml(data) {
       height: 100%;
       overflow: visible;
     }
-    .orbit-lines circle {
+    .orbit-rings circle {
       fill: none;
       stroke: var(--line-strong);
       stroke-width: .22;
       stroke-dasharray: 1.2 1.8;
       vector-effect: non-scaling-stroke;
     }
+    .bracket-wire {
+      opacity: .86;
+    }
+    .bracket-wire path {
+      fill: none;
+      stroke: var(--bracket-line);
+      stroke-width: .38;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+    }
+    .bracket-wire__trunk {
+      stroke-width: .52;
+    }
+    .bracket-wire circle {
+      fill: var(--bracket-dot);
+      stroke: var(--surface);
+      stroke-width: .14;
+      vector-effect: non-scaling-stroke;
+    }
+    .bracket-wire__merge {
+      r: .58;
+    }
     .team-node {
       position: absolute;
       left: var(--x);
       top: var(--y);
-      width: clamp(40px, 5.2vw, 58px);
-      height: clamp(40px, 5.2vw, 58px);
+      width: clamp(28px, 3.2vw, 36px);
+      height: clamp(28px, 3.2vw, 36px);
       transform: translate(-50%, -50%);
       border-radius: 999px;
       border: 2px solid var(--bg);
@@ -1020,13 +1104,7 @@ function makeHtml(data) {
       overflow: hidden;
     }
     .team-node span {
-      position: absolute;
-      inset: auto 0 4px;
-      text-align: center;
-      color: white;
-      font-size: 9px;
-      font-weight: 800;
-      text-shadow: 0 1px 4px rgba(0,0,0,.65);
+      display: none;
     }
     .team-node--winner { border-color: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft), 0 10px 24px rgba(15,107,95,.24); }
     .team-node--eliminated { opacity: .42; filter: grayscale(.8); }
@@ -1034,8 +1112,8 @@ function makeHtml(data) {
       position: absolute;
       left: var(--x);
       top: var(--y);
-      width: clamp(30px, 3.8vw, 44px);
-      height: clamp(30px, 3.8vw, 44px);
+      width: clamp(26px, 3.1vw, 36px);
+      height: clamp(26px, 3.1vw, 36px);
       transform: translate(-50%, -50%);
       border-radius: 999px;
       border: 2px solid var(--accent);
@@ -1047,18 +1125,11 @@ function makeHtml(data) {
       z-index: 4;
     }
     .advance-node span {
-      position: absolute;
-      inset: auto 0 3px;
-      text-align: center;
-      color: white;
-      font-size: 8px;
-      font-weight: 850;
-      letter-spacing: .04em;
-      text-shadow: 0 1px 4px rgba(0,0,0,.75);
+      display: none;
     }
-    .advance-node--qf { width: clamp(34px, 4.1vw, 48px); height: clamp(34px, 4.1vw, 48px); z-index: 5; }
-    .advance-node--sf { width: clamp(38px, 4.4vw, 52px); height: clamp(38px, 4.4vw, 52px); z-index: 6; }
-    .advance-node--final { width: clamp(42px, 4.8vw, 56px); height: clamp(42px, 4.8vw, 56px); z-index: 7; }
+    .advance-node--qf { width: clamp(28px, 3.4vw, 40px); height: clamp(28px, 3.4vw, 40px); z-index: 5; }
+    .advance-node--sf { width: clamp(30px, 3.6vw, 42px); height: clamp(30px, 3.6vw, 42px); z-index: 6; }
+    .advance-node--final { width: clamp(32px, 3.8vw, 44px); height: clamp(32px, 3.8vw, 44px); z-index: 7; }
     .team-flag {
       display: block;
       width: 100%;
@@ -1183,6 +1254,8 @@ function makeHtml(data) {
         --subtle: #8f8480;
         --line: #3d3835;
         --line-strong: #54504b;
+        --bracket-line: #d1cbc6;
+        --bracket-dot: #d1cbc6;
         --surface: #1f1c1a;
         --surface-raised: #2a2623;
         --surface-muted: rgba(255,255,255,.06);
@@ -1216,10 +1289,8 @@ function makeHtml(data) {
       .podium { margin: 20px 0; }
       .knockout-main { grid-template-rows: auto auto; }
       .orbit-board { min-width: 0; width: min(100%, 540px); }
-      .team-node { width: 35px; height: 35px; }
-      .team-node span { display: none; }
-      .advance-node { width: 28px; height: 28px; }
-      .advance-node span { display: none; }
+      .team-node { width: 26px; height: 26px; }
+      .advance-node { width: 24px; height: 24px; }
       .trophy-mark { width: 94px; }
       .knockout-card-grid { grid-template-columns: 1fr; max-height: 360px; overflow: auto; padding-right: 2px; }
       main.content { padding: 18px 16px 28px; }
