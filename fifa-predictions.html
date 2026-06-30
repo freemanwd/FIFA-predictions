@@ -5,46 +5,708 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FIFA Predictions, MaletasUnited Rankings,</title>
   <style>
-    :root { color-scheme: light; --ink: #17202a; --muted: #637083; --line: #d9e1ea; --bg: #f6f8fb; --panel: #fff; --accent: #0f6b5f; }
-    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
-    header { padding: 32px 24px 20px; background: #0d2b3e; color: white; }
-    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
-    h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.1; letter-spacing: 0; }
-    p { margin: 0; color: #d5e2ea; }
+    :root {
+      color-scheme: light;
+      --bg: #e8e9e5;
+      --ink: #111312;
+      --muted: #5c625f;
+      --subtle: #7b817d;
+      --line: #cfd4d0;
+      --line-strong: #a8afaa;
+      --surface: #f7f8f5;
+      --surface-raised: #ffffff;
+      --surface-muted: rgba(255,255,255,.58);
+      --accent: #0f6b5f;
+      --accent-soft: rgba(15,107,95,.12);
+      --danger: #b42318;
+      --success: #16794c;
+      --warning: #8a5a00;
+      --shadow: 0 18px 50px rgba(17,19,18,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(15,107,95,.14), transparent 30%),
+        linear-gradient(135deg, #ece8e2 0%, #e7ece8 46%, #dde5e9 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .page-shell { min-height: 100vh; }
+    .knockout-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(248px, 320px) minmax(0, 1fr);
+      gap: 18px;
+      padding: 28px;
+    }
+    .knockout-sidebar {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 56px);
+      padding: 4px 8px 4px 0;
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 14px;
+      max-width: 11ch;
+      font-size: clamp(30px, 4.8vw, 56px);
+      line-height: .98;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+    .hero-copy {
+      margin: 0;
+      max-width: 28rem;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .podium {
+      display: grid;
+      gap: 8px;
+      margin: 28px 0;
+    }
+    .podium-item {
+      display: grid;
+      grid-template-columns: 44px 44px 1fr;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface-muted);
+    }
+    .podium-item span,
+    .podium-item em {
+      color: var(--muted);
+      font-size: 13px;
+      font-style: normal;
+    }
+    .podium-item strong {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .next-up {
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    .next-up h2 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+    .next-up ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+    .next-up li span,
+    .next-up li em {
+      display: block;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .next-up li em { color: var(--subtle); font-style: normal; margin-top: 2px; }
+    .knockout-main {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: minmax(360px, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+    }
+    .orbit-board {
+      position: relative;
+      aspect-ratio: 1;
+      width: min(100%, calc(100vh - 210px), 820px);
+      min-width: 320px;
+      margin: 0 auto;
+      color: var(--ink);
+    }
+    .orbit-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .orbit-lines circle {
+      fill: none;
+      stroke: var(--line-strong);
+      stroke-width: .22;
+      stroke-dasharray: 1.2 1.8;
+      vector-effect: non-scaling-stroke;
+    }
+    .team-node {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: clamp(40px, 5.2vw, 58px);
+      height: clamp(40px, 5.2vw, 58px);
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      border: 2px solid var(--bg);
+      background: var(--surface-raised);
+      box-shadow: 0 6px 16px rgba(17,19,18,.16);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .team-node span {
+      position: absolute;
+      inset: auto 0 4px;
+      text-align: center;
+      color: white;
+      font-size: 9px;
+      font-weight: 800;
+      text-shadow: 0 1px 4px rgba(0,0,0,.65);
+    }
+    .team-node--winner { border-color: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft), 0 10px 24px rgba(15,107,95,.24); }
+    .team-node--eliminated { opacity: .42; filter: grayscale(.8); }
+    .team-flag {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .flag-fallback {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      background: #202523;
+      color: #fff;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .trophy-mark {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(104px, 14vw, 160px);
+      aspect-ratio: 1;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(247,248,245,.86);
+      display: grid;
+      place-items: center;
+      align-content: center;
+      box-shadow: var(--shadow);
+    }
+    .trophy-mark span,
+    .trophy-mark em {
+      color: var(--muted);
+      font-size: 12px;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .trophy-mark strong {
+      margin: 4px 0;
+      font-size: clamp(24px, 4vw, 42px);
+      line-height: .9;
+    }
+    .knockout-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .knockout-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--surface-muted);
+      padding: 9px;
+    }
+    .knockout-card--final { border-color: rgba(15,107,95,.34); background: rgba(255,255,255,.76); }
+    .knockout-card__round {
+      color: var(--subtle);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .knockout-card__teams { display: grid; gap: 5px; }
+    .knockout-card__team {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.1;
+    }
+    .knockout-card__team .team-flag,
+    .knockout-card__team .flag-fallback {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+    .knockout-card__team.is-winner { color: var(--ink); font-weight: 800; }
+    .knockout-card__meta {
+      margin-top: 7px;
+      color: var(--subtle);
+      font-size: 11px;
+      line-height: 1.25;
+    }
+    main.content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 28px 34px;
+    }
     .section-title { margin: 0 0 10px; font-size: 18px; }
     .section-title + .section-note { margin-top: -4px; }
     .table-wrap + .section-title { margin-top: 26px; }
     .section-note { color: var(--muted); margin: -4px 0 12px; font-size: 13px; }
-    .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+    .table-wrap { overflow-x: auto; background: var(--surface-raised); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 28px rgba(17,19,18,.04); }
     table { border-collapse: collapse; width: 100%; min-width: 920px; }
     .leaderboard { min-width: 0; table-layout: fixed; }
     .leaderboard th:nth-child(1), .leaderboard td:nth-child(1) { width: 56px; }
     .leaderboard th:nth-child(2), .leaderboard td:nth-child(2) { width: 116px; }
     .leaderboard th, .leaderboard td { padding: 10px 12px; }
     th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
-    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0; background: #fbfcfe; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0; background: #fbfcf9; }
     tr:last-child td { border-bottom: 0; }
-    a { color: #0b5cad; text-decoration: none; font-weight: 650; }
+    td a { color: #0b5cad; font-weight: 650; }
     td span { display: block; color: var(--muted); margin-top: 3px; font-size: 12px; }
     .status { font-weight: 700; text-transform: capitalize; }
-    .correct { color: #16794c; }
-    .missed { color: #b42318; }
-    .pending { color: #8a5a00; }
-    .exact { color: #0f6b5f; }
+    .correct { color: var(--success); }
+    .missed { color: var(--danger); }
+    .pending { color: var(--warning); }
+    .exact { color: var(--accent); }
     footer { color: var(--muted); font-size: 13px; margin-top: 16px; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #121316;
+        --ink: #ede8e4;
+        --muted: #b8aea8;
+        --subtle: #8f8480;
+        --line: #3d3835;
+        --line-strong: #54504b;
+        --surface: #1f1c1a;
+        --surface-raised: #2a2623;
+        --surface-muted: rgba(255,255,255,.06);
+        --accent: #6fcfbd;
+        --accent-soft: rgba(111,207,189,.16);
+        --danger: #ff7b72;
+        --success: #6fcf97;
+        --warning: #ffd166;
+        --shadow: 0 18px 50px rgba(0,0,0,.28);
+      }
+      body {
+        background:
+          radial-gradient(circle at 78% 18%, rgba(111,207,189,.1), transparent 30%),
+          linear-gradient(135deg, #121316 0%, #181615 54%, #202321 100%);
+      }
+      th { background: #211e1c; }
+      .team-node { border-color: #121316; }
+      .trophy-mark { background: rgba(31,28,26,.9); }
+    }
+    @media (max-width: 1180px) {
+      .knockout-hero { grid-template-columns: 1fr; min-height: 0; }
+      .knockout-sidebar { min-height: 0; padding-right: 0; }
+      h1 { max-width: 16ch; }
+      .next-up { margin-top: 0; }
+      .knockout-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .orbit-board { width: min(100%, 760px); }
+    }
     @media (max-width: 760px) {
-      header { padding: 24px 18px 18px; }
-      main { padding: 18px; }
-      h1 { font-size: 28px; }
+      .knockout-hero { padding: 20px 16px 14px; gap: 14px; }
+      h1 { font-size: 36px; max-width: 12ch; }
+      .podium { margin: 20px 0; }
+      .knockout-main { grid-template-rows: auto auto; }
+      .orbit-board { min-width: 0; width: min(100%, 540px); }
+      .team-node { width: 35px; height: 35px; }
+      .team-node span { display: none; }
+      .trophy-mark { width: 94px; }
+      .knockout-card-grid { grid-template-columns: 1fr; max-height: 360px; overflow: auto; padding-right: 2px; }
+      main.content { padding: 18px 16px 28px; }
+      table { min-width: 760px; }
+      .leaderboard { min-width: 0; }
+      .leaderboard th:nth-child(1), .leaderboard td:nth-child(1) { width: 48px; }
+      .leaderboard th:nth-child(2), .leaderboard td:nth-child(2) { width: 84px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>FIFA Predictions, MaletasUnited Rankings,</h1>
-    <p>Polymarket moneyline picks, ESPN final scores.</p>
-  </header>
-  <main>
+  <div class="page-shell">
+  <section class="knockout-hero" aria-label="Knockout round visual">
+      <aside class="knockout-sidebar">
+        <p class="eyebrow">Final knockout rounds</p>
+        <h1>FIFA Predictions, MaletasUnited Rankings,</h1>
+        <p class="hero-copy">Polymarket moneyline picks, ESPN final scores.</p>
+        <div class="podium"><div class="podium-item"><span>#1</span><strong>9</strong><em>CARLITO.</em></div>
+<div class="podium-item"><span>#2</span><strong>8</strong><em>Enver</em></div>
+<div class="podium-item"><span>#3</span><strong>6</strong><em>KGB.</em></div></div>
+        <div class="next-up"><h2>Next up</h2><ul><li><span>Ivory Coast vs. Norway</span><em>Jun 30, 2026, 1:00 PM ET</em></li>
+<li><span>France vs. Sweden</span><em>Jun 30, 2026, 5:00 PM ET</em></li>
+<li><span>Mexico vs. Ecuador</span><em>Jun 30, 2026, 9:00 PM ET</em></li></ul></div>
+      </aside>
+      <div class="knockout-main">
+        <div class="orbit-board">
+          <svg class="orbit-lines" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="43"></circle>
+            <circle cx="50" cy="50" r="29"></circle>
+            <circle cx="50" cy="50" r="15"></circle>
+          </svg>
+          <div class="team-node team-node--winner " style="--x:50.00%;--y:7.00%;" title="Brazil">
+          <img class="team-flag" src="https://flagcdn.com/br.svg" alt="">
+          <span>B</span>
+        </div>
+<div class="team-node  team-node--eliminated" style="--x:58.39%;--y:7.83%;" title="Japan">
+          <img class="team-flag" src="https://flagcdn.com/jp.svg" alt="">
+          <span>J</span>
+        </div>
+<div class="team-node  " style="--x:66.46%;--y:10.27%;" title="Ivory Coast">
+          <img class="team-flag" src="https://flagcdn.com/ci.svg" alt="">
+          <span>IC</span>
+        </div>
+<div class="team-node  " style="--x:73.89%;--y:14.25%;" title="Norway">
+          <img class="team-flag" src="https://flagcdn.com/no.svg" alt="">
+          <span>N</span>
+        </div>
+<div class="team-node  " style="--x:80.41%;--y:19.59%;" title="Mexico">
+          <img class="team-flag" src="https://flagcdn.com/mx.svg" alt="">
+          <span>M</span>
+        </div>
+<div class="team-node  " style="--x:85.75%;--y:26.11%;" title="Ecuador">
+          <img class="team-flag" src="https://flagcdn.com/ec.svg" alt="">
+          <span>E</span>
+        </div>
+<div class="team-node  " style="--x:89.73%;--y:33.54%;" title="England">
+          <img class="team-flag" src="https://flagcdn.com/gb-eng.svg" alt="">
+          <span>E</span>
+        </div>
+<div class="team-node  " style="--x:92.17%;--y:41.61%;" title="Congo DR">
+          <img class="team-flag" src="https://flagcdn.com/cd.svg" alt="">
+          <span>CD</span>
+        </div>
+<div class="team-node  " style="--x:93.00%;--y:50.00%;" title="Argentina">
+          <img class="team-flag" src="https://flagcdn.com/ar.svg" alt="">
+          <span>A</span>
+        </div>
+<div class="team-node  " style="--x:92.17%;--y:58.39%;" title="Cape Verde">
+          <img class="team-flag" src="https://flagcdn.com/cv.svg" alt="">
+          <span>CV</span>
+        </div>
+<div class="team-node  " style="--x:89.73%;--y:66.46%;" title="Australia">
+          <img class="team-flag" src="https://flagcdn.com/au.svg" alt="">
+          <span>A</span>
+        </div>
+<div class="team-node  " style="--x:85.75%;--y:73.89%;" title="Egypt">
+          <img class="team-flag" src="https://flagcdn.com/eg.svg" alt="">
+          <span>E</span>
+        </div>
+<div class="team-node  " style="--x:80.41%;--y:80.41%;" title="Switzerland">
+          <img class="team-flag" src="https://flagcdn.com/ch.svg" alt="">
+          <span>S</span>
+        </div>
+<div class="team-node  " style="--x:73.89%;--y:85.75%;" title="Algeria">
+          <img class="team-flag" src="https://flagcdn.com/dz.svg" alt="">
+          <span>A</span>
+        </div>
+<div class="team-node  " style="--x:66.46%;--y:89.73%;" title="Colombia">
+          <img class="team-flag" src="https://flagcdn.com/co.svg" alt="">
+          <span>C</span>
+        </div>
+<div class="team-node  " style="--x:58.39%;--y:92.17%;" title="Ghana">
+          <img class="team-flag" src="https://flagcdn.com/gh.svg" alt="">
+          <span>G</span>
+        </div>
+<div class="team-node  " style="--x:50.00%;--y:93.00%;" title="Senegal">
+          <img class="team-flag" src="https://flagcdn.com/sn.svg" alt="">
+          <span>S</span>
+        </div>
+<div class="team-node  " style="--x:41.61%;--y:92.17%;" title="Belgium">
+          <img class="team-flag" src="https://flagcdn.com/be.svg" alt="">
+          <span>B</span>
+        </div>
+<div class="team-node  " style="--x:33.54%;--y:89.73%;" title="United States">
+          <img class="team-flag" src="https://flagcdn.com/us.svg" alt="">
+          <span>US</span>
+        </div>
+<div class="team-node  " style="--x:26.11%;--y:85.75%;" title="Bosnia-Herzegovina">
+          <img class="team-flag" src="https://flagcdn.com/ba.svg" alt="">
+          <span>BH</span>
+        </div>
+<div class="team-node  " style="--x:19.59%;--y:80.41%;" title="Spain">
+          <img class="team-flag" src="https://flagcdn.com/es.svg" alt="">
+          <span>S</span>
+        </div>
+<div class="team-node  " style="--x:14.25%;--y:73.89%;" title="Austria">
+          <img class="team-flag" src="https://flagcdn.com/at.svg" alt="">
+          <span>A</span>
+        </div>
+<div class="team-node  " style="--x:10.27%;--y:66.46%;" title="Portugal">
+          <img class="team-flag" src="https://flagcdn.com/pt.svg" alt="">
+          <span>P</span>
+        </div>
+<div class="team-node  " style="--x:7.83%;--y:58.39%;" title="Croatia">
+          <img class="team-flag" src="https://flagcdn.com/hr.svg" alt="">
+          <span>C</span>
+        </div>
+<div class="team-node  " style="--x:7.00%;--y:50.00%;" title="Netherlands">
+          <img class="team-flag" src="https://flagcdn.com/nl.svg" alt="">
+          <span>N</span>
+        </div>
+<div class="team-node  " style="--x:7.83%;--y:41.61%;" title="Morocco">
+          <img class="team-flag" src="https://flagcdn.com/ma.svg" alt="">
+          <span>M</span>
+        </div>
+<div class="team-node team-node--winner " style="--x:10.27%;--y:33.54%;" title="Canada">
+          <img class="team-flag" src="https://flagcdn.com/ca.svg" alt="">
+          <span>C</span>
+        </div>
+<div class="team-node  team-node--eliminated" style="--x:14.25%;--y:26.11%;" title="South Africa">
+          <img class="team-flag" src="https://flagcdn.com/za.svg" alt="">
+          <span>SA</span>
+        </div>
+<div class="team-node  " style="--x:19.59%;--y:19.59%;" title="France">
+          <img class="team-flag" src="https://flagcdn.com/fr.svg" alt="">
+          <span>F</span>
+        </div>
+<div class="team-node  " style="--x:26.11%;--y:14.25%;" title="Sweden">
+          <img class="team-flag" src="https://flagcdn.com/se.svg" alt="">
+          <span>S</span>
+        </div>
+<div class="team-node  " style="--x:33.54%;--y:10.27%;" title="Germany">
+          <img class="team-flag" src="https://flagcdn.com/de.svg" alt="">
+          <span>G</span>
+        </div>
+<div class="team-node  " style="--x:41.61%;--y:7.83%;" title="Paraguay">
+          <img class="team-flag" src="https://flagcdn.com/py.svg" alt="">
+          <span>P</span>
+        </div>
+          <div class="trophy-mark"><span>2026</span><strong>Final</strong><em>Jul 19</em></div>
+        </div>
+        <div class="knockout-card-grid"><article class="knockout-card knockout-card--final">
+          <div class="knockout-card__round">R32 1</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team is-winner">
+                  <img class="team-flag" src="https://flagcdn.com/br.svg" alt="">
+                  <span>Brazil</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/jp.svg" alt="">
+                  <span>Japan</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Brazil 2-1 Japan</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 2</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/ci.svg" alt="">
+                  <span>Ivory Coast</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/no.svg" alt="">
+                  <span>Norway</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 3</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/mx.svg" alt="">
+                  <span>Mexico</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/ec.svg" alt="">
+                  <span>Ecuador</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 4</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/gb-eng.svg" alt="">
+                  <span>England</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/cd.svg" alt="">
+                  <span>Congo DR</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 5</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/ar.svg" alt="">
+                  <span>Argentina</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/cv.svg" alt="">
+                  <span>Cape Verde</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 6</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/au.svg" alt="">
+                  <span>Australia</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/eg.svg" alt="">
+                  <span>Egypt</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 7</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/ch.svg" alt="">
+                  <span>Switzerland</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/dz.svg" alt="">
+                  <span>Algeria</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 8</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/co.svg" alt="">
+                  <span>Colombia</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/gh.svg" alt="">
+                  <span>Ghana</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 9</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/sn.svg" alt="">
+                  <span>Senegal</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/be.svg" alt="">
+                  <span>Belgium</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 10</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/us.svg" alt="">
+                  <span>United States</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/ba.svg" alt="">
+                  <span>Bosnia-Herzegovina</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 11</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/es.svg" alt="">
+                  <span>Spain</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/at.svg" alt="">
+                  <span>Austria</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 12</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/pt.svg" alt="">
+                  <span>Portugal</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/hr.svg" alt="">
+                  <span>Croatia</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 13</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/nl.svg" alt="">
+                  <span>Netherlands</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/ma.svg" alt="">
+                  <span>Morocco</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Netherlands 1-1 Morocco</div>
+        </article>
+<article class="knockout-card knockout-card--final">
+          <div class="knockout-card__round">R32 14</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team is-winner">
+                  <img class="team-flag" src="https://flagcdn.com/ca.svg" alt="">
+                  <span>Canada</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/za.svg" alt="">
+                  <span>South Africa</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">South Africa 0-1 Canada</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 15</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/fr.svg" alt="">
+                  <span>France</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/se.svg" alt="">
+                  <span>Sweden</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Scheduled</div>
+        </article>
+<article class="knockout-card ">
+          <div class="knockout-card__round">R32 16</div>
+          <div class="knockout-card__teams">
+            <div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/de.svg" alt="">
+                  <span>Germany</span>
+                </div><div class="knockout-card__team ">
+                  <img class="team-flag" src="https://flagcdn.com/py.svg" alt="">
+                  <span>Paraguay</span>
+                </div>
+          </div>
+          <div class="knockout-card__meta">Germany 1-1 Paraguay</div>
+        </article></div>
+      </div>
+    </section>
+  <main class="content">
     <h2 class="section-title">SMS Leaderboard</h2>
     <p class="section-note">As of June 30, 2026, 5:56 AM ET. Source: SMS thread.</p>
     <div class="table-wrap">
@@ -704,5 +1366,6 @@
     </div>
     <footer>Sources: Polymarket FIFA World Cup moneyline markets for picks; ESPN FIFA World Cup scoreboard for final scores. Prices can move before kickoff.</footer>
   </main>
+  </div>
 </body>
 </html>

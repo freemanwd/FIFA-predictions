@@ -222,6 +222,215 @@ function decisionLabel(pick) {
   return pick?.decision || pick?.decisionWindow || "";
 }
 
+const teamFlagCodes = {
+  algeria: "dz",
+  argentina: "ar",
+  australia: "au",
+  austria: "at",
+  belgium: "be",
+  bosniaherzegovina: "ba",
+  brazil: "br",
+  canada: "ca",
+  capeverde: "cv",
+  colombia: "co",
+  congodr: "cd",
+  coteivoire: "ci",
+  ctedivoire: "ci",
+  croatia: "hr",
+  drcongo: "cd",
+  ecuador: "ec",
+  egypt: "eg",
+  england: "gb-eng",
+  france: "fr",
+  germany: "de",
+  ghana: "gh",
+  ivorycoast: "ci",
+  japan: "jp",
+  mexico: "mx",
+  morocco: "ma",
+  netherlands: "nl",
+  norway: "no",
+  panama: "pa",
+  paraguay: "py",
+  portugal: "pt",
+  senegal: "sn",
+  southafrica: "za",
+  spain: "es",
+  sweden: "se",
+  switzerland: "ch",
+  unitedstates: "us",
+  uzbekistan: "uz"
+};
+
+const knockoutTeamOrder = [
+  "Brazil",
+  "Japan",
+  "Ivory Coast",
+  "Norway",
+  "Mexico",
+  "Ecuador",
+  "England",
+  "DR Congo",
+  "Argentina",
+  "Cape Verde",
+  "Australia",
+  "Egypt",
+  "Switzerland",
+  "Algeria",
+  "Colombia",
+  "Ghana",
+  "Senegal",
+  "Belgium",
+  "United States",
+  "Bosnia-Herzegovina",
+  "Spain",
+  "Austria",
+  "Portugal",
+  "Croatia",
+  "Netherlands",
+  "Morocco",
+  "Canada",
+  "South Africa",
+  "France",
+  "Sweden",
+  "Germany",
+  "Paraguay"
+];
+
+const knockoutOrderIndex = new Map(knockoutTeamOrder.map((team, index) => [normalizeTeam(team), index]));
+
+function flagCodeForTeam(team) {
+  return teamFlagCodes[normalizeTeam(team)] || "";
+}
+
+function teamInitials(team) {
+  return String(team || "")
+    .split(/\s+|-/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
+}
+
+function formatKickoff(startTime) {
+  return `${new Date(startTime).toLocaleString("en-US", {
+    timeZone: "America/New_York",
+    dateStyle: "medium",
+    timeStyle: "short"
+  })} ET`;
+}
+
+function round32Matches(data) {
+  const cutoff = new Date("2026-06-28T00:00:00Z");
+  return data.matches
+    .filter((match) => {
+      const teams = matchTeams(match.match);
+      const indexes = teams.map((team) => knockoutOrderIndex.get(normalizeTeam(team)));
+      return (
+        teams.length === 2 &&
+        new Date(match.startTime) >= cutoff &&
+        !teams.some((team) => /round of 32/i.test(team)) &&
+        indexes.every(Number.isFinite) &&
+        Math.floor(indexes[0] / 2) === Math.floor(indexes[1] / 2)
+      );
+    })
+    .sort((a, b) => {
+      const aOrder = Math.min(...matchTeams(a.match).map((team) => knockoutOrderIndex.get(normalizeTeam(team)) ?? 999));
+      const bOrder = Math.min(...matchTeams(b.match).map((team) => knockoutOrderIndex.get(normalizeTeam(team)) ?? 999));
+      return aOrder - bOrder || new Date(a.startTime) - new Date(b.startTime);
+    });
+}
+
+function orderedKnockoutTeams(match) {
+  return matchTeams(match.match).sort((a, b) => {
+    return (knockoutOrderIndex.get(normalizeTeam(a)) ?? 999) - (knockoutOrderIndex.get(normalizeTeam(b)) ?? 999);
+  });
+}
+
+function winnerForMatch(match) {
+  if (!match.resolvedOutcome || match.resolvedOutcome === "Draw") return "";
+  return match.resolvedOutcome;
+}
+
+function flagHtml(team) {
+  const code = flagCodeForTeam(team);
+  if (!code) return `<span class="flag-fallback">${escapeHtml(teamInitials(team))}</span>`;
+  return `<img class="team-flag" src="https://flagcdn.com/${escapeHtml(code)}.svg" alt="">`;
+}
+
+function knockoutVisualHtml(data, smsStandings, upcomingRows) {
+  const roundMatches = round32Matches(data);
+  const teams = roundMatches.flatMap((match) => orderedKnockoutTeams(match));
+  const totalTeams = teams.length || 1;
+  const topThree = smsStandings.slice(0, 3);
+  const nextMatches = upcomingRows.slice(0, 3);
+  const teamNodes = teams
+    .map((team, index) => {
+      const angle = -90 + (index * 360) / totalTeams;
+      const radians = (angle * Math.PI) / 180;
+      const x = 50 + Math.cos(radians) * 43;
+      const y = 50 + Math.sin(radians) * 43;
+      const match = roundMatches[Math.floor(index / 2)];
+      const winner = winnerForMatch(match);
+      const isWinner = winner && normalizeTeam(winner) === normalizeTeam(team);
+      const isEliminated = winner && !isWinner;
+      return `<div class="team-node ${isWinner ? "team-node--winner" : ""} ${isEliminated ? "team-node--eliminated" : ""}" style="--x:${x.toFixed(2)}%;--y:${y.toFixed(2)}%;" title="${escapeHtml(team)}">
+          ${flagHtml(team)}
+          <span>${escapeHtml(teamInitials(team))}</span>
+        </div>`;
+    })
+    .join("\n");
+  const matchCards = roundMatches
+    .map((match, index) => {
+      const teams = orderedKnockoutTeams(match);
+      const winner = winnerForMatch(match);
+      const finalText = match.finalScore || match.resultStatus || "Scheduled";
+      return `<article class="knockout-card ${winner ? "knockout-card--final" : ""}">
+          <div class="knockout-card__round">R32 ${index + 1}</div>
+          <div class="knockout-card__teams">
+            ${teams
+              .map(
+                (team) => `<div class="knockout-card__team ${winner && normalizeTeam(winner) === normalizeTeam(team) ? "is-winner" : ""}">
+                  ${flagHtml(team)}
+                  <span>${escapeHtml(team)}</span>
+                </div>`
+              )
+              .join("")}
+          </div>
+          <div class="knockout-card__meta">${escapeHtml(finalText)}</div>
+        </article>`;
+    })
+    .join("\n");
+  const podium = topThree
+    .map((entry) => `<div class="podium-item"><span>#${entry.rank}</span><strong>${escapeHtml(entry.points)}</strong><em>${escapeHtml(entry.name)}</em></div>`)
+    .join("\n");
+  const nextUp = nextMatches
+    .map((match) => `<li><span>${escapeHtml(match.match)}</span><em>${escapeHtml(formatKickoff(match.startTime))}</em></li>`)
+    .join("\n");
+
+  return `<section class="knockout-hero" aria-label="Knockout round visual">
+      <aside class="knockout-sidebar">
+        <p class="eyebrow">Final knockout rounds</p>
+        <h1>${escapeHtml(data.title || "FIFA Predictions, MaletasUnited Rankings,")}</h1>
+        <p class="hero-copy">Polymarket moneyline picks, ESPN final scores.</p>
+        <div class="podium">${podium}</div>
+        ${nextUp ? `<div class="next-up"><h2>Next up</h2><ul>${nextUp}</ul></div>` : ""}
+      </aside>
+      <div class="knockout-main">
+        <div class="orbit-board">
+          <svg class="orbit-lines" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="43"></circle>
+            <circle cx="50" cy="50" r="29"></circle>
+            <circle cx="50" cy="50" r="15"></circle>
+          </svg>
+          ${teamNodes}
+          <div class="trophy-mark"><span>2026</span><strong>Final</strong><em>Jul 19</em></div>
+        </div>
+        <div class="knockout-card-grid">${matchCards}</div>
+      </div>
+    </section>`;
+}
+
 function scorePickRows(data) {
   const matchesBySlug = new Map(data.matches.map((match) => [match.slug, match]));
   return data.players
@@ -508,6 +717,7 @@ function makeHtml(data) {
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
   const smsScorePicks = scorePickRows(data);
   const upcomingRows = upcomingScheduleRows(data);
+  const knockoutVisual = knockoutVisualHtml(data, smsStandings, upcomingRows);
   const smsRows = smsStandings
     .map(
       (entry) => `<tr>
@@ -521,7 +731,7 @@ function makeHtml(data) {
     .map(
       (row) => `<tr>
         <td>${escapeHtml(row.player.name)}<span>${escapeHtml(row.player.source || "")}</span></td>
-        <td>${escapeHtml(row.match.match)}<span>${escapeHtml(new Date(row.match.startTime).toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" }))} ET</span></td>
+        <td>${escapeHtml(row.match.match)}<span>${escapeHtml(formatKickoff(row.match.startTime))}</span></td>
         <td>${escapeHtml(row.pickText)}<span>${escapeHtml(row.pick.outcome)}</span></td>
         <td>${escapeHtml(row.decision || "")}</td>
         <td class="status ${escapeHtml(row.scored.status)}">${escapeHtml(row.scored.status)}</td>
@@ -533,7 +743,7 @@ function makeHtml(data) {
     .map(
       (match) => `<tr>
         <td><a href="${escapeHtml(match.url || "#")}">${escapeHtml(match.match)}</a></td>
-        <td>${escapeHtml(new Date(match.startTime).toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" }))} ET</td>
+        <td>${escapeHtml(formatKickoff(match.startTime))}</td>
         <td>${escapeHtml(match.resultStatus || "Scheduled")}</td>
       </tr>`
     )
@@ -550,7 +760,7 @@ function makeHtml(data) {
         .map((market) => `${market.title} ${pct(market.price)}`)
         .join(" | ");
       return `<tr>
-        <td><a href="${escapeHtml(match.url)}">${escapeHtml(match.match)}</a><span>${escapeHtml(new Date(match.startTime).toLocaleString("en-US", { timeZone: "America/New_York", dateStyle: "medium", timeStyle: "short" }))} ET</span></td>
+        <td><a href="${escapeHtml(match.url)}">${escapeHtml(match.match)}</a><span>${escapeHtml(formatKickoff(match.startTime))}</span></td>
         <td>${escapeHtml(freemanPick?.outcome || match.pickedOutcome)}<span>${escapeHtml(pct(freemanPick?.probability || match.pickedProbability))}</span></td>
         <td>${escapeHtml(pct(match.pickedProbability))}</td>
         <td class="status ${escapeHtml(freemanStatus)}">${escapeHtml(freemanStatus)}</td>
@@ -567,46 +777,350 @@ function makeHtml(data) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(data.title || "FIFA Predictions, MaletasUnited Rankings,")}</title>
   <style>
-    :root { color-scheme: light; --ink: #17202a; --muted: #637083; --line: #d9e1ea; --bg: #f6f8fb; --panel: #fff; --accent: #0f6b5f; }
-    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
-    header { padding: 32px 24px 20px; background: #0d2b3e; color: white; }
-    main { max-width: 1120px; margin: 0 auto; padding: 24px; }
-    h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.1; letter-spacing: 0; }
-    p { margin: 0; color: #d5e2ea; }
+    :root {
+      color-scheme: light;
+      --bg: #e8e9e5;
+      --ink: #111312;
+      --muted: #5c625f;
+      --subtle: #7b817d;
+      --line: #cfd4d0;
+      --line-strong: #a8afaa;
+      --surface: #f7f8f5;
+      --surface-raised: #ffffff;
+      --surface-muted: rgba(255,255,255,.58);
+      --accent: #0f6b5f;
+      --accent-soft: rgba(15,107,95,.12);
+      --danger: #b42318;
+      --success: #16794c;
+      --warning: #8a5a00;
+      --shadow: 0 18px 50px rgba(17,19,18,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(15,107,95,.14), transparent 30%),
+        linear-gradient(135deg, #ece8e2 0%, #e7ece8 46%, #dde5e9 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .page-shell { min-height: 100vh; }
+    .knockout-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(248px, 320px) minmax(0, 1fr);
+      gap: 18px;
+      padding: 28px;
+    }
+    .knockout-sidebar {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 56px);
+      padding: 4px 8px 4px 0;
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 14px;
+      max-width: 11ch;
+      font-size: clamp(30px, 4.8vw, 56px);
+      line-height: .98;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+    .hero-copy {
+      margin: 0;
+      max-width: 28rem;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .podium {
+      display: grid;
+      gap: 8px;
+      margin: 28px 0;
+    }
+    .podium-item {
+      display: grid;
+      grid-template-columns: 44px 44px 1fr;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface-muted);
+    }
+    .podium-item span,
+    .podium-item em {
+      color: var(--muted);
+      font-size: 13px;
+      font-style: normal;
+    }
+    .podium-item strong {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .next-up {
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    .next-up h2 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+    .next-up ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+    .next-up li span,
+    .next-up li em {
+      display: block;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .next-up li em { color: var(--subtle); font-style: normal; margin-top: 2px; }
+    .knockout-main {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: minmax(360px, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+    }
+    .orbit-board {
+      position: relative;
+      aspect-ratio: 1;
+      width: min(100%, calc(100vh - 210px), 820px);
+      min-width: 320px;
+      margin: 0 auto;
+      color: var(--ink);
+    }
+    .orbit-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .orbit-lines circle {
+      fill: none;
+      stroke: var(--line-strong);
+      stroke-width: .22;
+      stroke-dasharray: 1.2 1.8;
+      vector-effect: non-scaling-stroke;
+    }
+    .team-node {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: clamp(40px, 5.2vw, 58px);
+      height: clamp(40px, 5.2vw, 58px);
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      border: 2px solid var(--bg);
+      background: var(--surface-raised);
+      box-shadow: 0 6px 16px rgba(17,19,18,.16);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .team-node span {
+      position: absolute;
+      inset: auto 0 4px;
+      text-align: center;
+      color: white;
+      font-size: 9px;
+      font-weight: 800;
+      text-shadow: 0 1px 4px rgba(0,0,0,.65);
+    }
+    .team-node--winner { border-color: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft), 0 10px 24px rgba(15,107,95,.24); }
+    .team-node--eliminated { opacity: .42; filter: grayscale(.8); }
+    .team-flag {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .flag-fallback {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      background: #202523;
+      color: #fff;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .trophy-mark {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(104px, 14vw, 160px);
+      aspect-ratio: 1;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(247,248,245,.86);
+      display: grid;
+      place-items: center;
+      align-content: center;
+      box-shadow: var(--shadow);
+    }
+    .trophy-mark span,
+    .trophy-mark em {
+      color: var(--muted);
+      font-size: 12px;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .trophy-mark strong {
+      margin: 4px 0;
+      font-size: clamp(24px, 4vw, 42px);
+      line-height: .9;
+    }
+    .knockout-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .knockout-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--surface-muted);
+      padding: 9px;
+    }
+    .knockout-card--final { border-color: rgba(15,107,95,.34); background: rgba(255,255,255,.76); }
+    .knockout-card__round {
+      color: var(--subtle);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .knockout-card__teams { display: grid; gap: 5px; }
+    .knockout-card__team {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.1;
+    }
+    .knockout-card__team .team-flag,
+    .knockout-card__team .flag-fallback {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+    .knockout-card__team.is-winner { color: var(--ink); font-weight: 800; }
+    .knockout-card__meta {
+      margin-top: 7px;
+      color: var(--subtle);
+      font-size: 11px;
+      line-height: 1.25;
+    }
+    main.content {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 28px 34px;
+    }
     .section-title { margin: 0 0 10px; font-size: 18px; }
     .section-title + .section-note { margin-top: -4px; }
     .table-wrap + .section-title { margin-top: 26px; }
     .section-note { color: var(--muted); margin: -4px 0 12px; font-size: 13px; }
-    .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+    .table-wrap { overflow-x: auto; background: var(--surface-raised); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 28px rgba(17,19,18,.04); }
     table { border-collapse: collapse; width: 100%; min-width: 920px; }
     .leaderboard { min-width: 0; table-layout: fixed; }
     .leaderboard th:nth-child(1), .leaderboard td:nth-child(1) { width: 56px; }
     .leaderboard th:nth-child(2), .leaderboard td:nth-child(2) { width: 116px; }
     .leaderboard th, .leaderboard td { padding: 10px 12px; }
     th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
-    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0; background: #fbfcfe; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0; background: #fbfcf9; }
     tr:last-child td { border-bottom: 0; }
-    a { color: #0b5cad; text-decoration: none; font-weight: 650; }
+    td a { color: #0b5cad; font-weight: 650; }
     td span { display: block; color: var(--muted); margin-top: 3px; font-size: 12px; }
     .status { font-weight: 700; text-transform: capitalize; }
-    .correct { color: #16794c; }
-    .missed { color: #b42318; }
-    .pending { color: #8a5a00; }
-    .exact { color: #0f6b5f; }
+    .correct { color: var(--success); }
+    .missed { color: var(--danger); }
+    .pending { color: var(--warning); }
+    .exact { color: var(--accent); }
     footer { color: var(--muted); font-size: 13px; margin-top: 16px; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #121316;
+        --ink: #ede8e4;
+        --muted: #b8aea8;
+        --subtle: #8f8480;
+        --line: #3d3835;
+        --line-strong: #54504b;
+        --surface: #1f1c1a;
+        --surface-raised: #2a2623;
+        --surface-muted: rgba(255,255,255,.06);
+        --accent: #6fcfbd;
+        --accent-soft: rgba(111,207,189,.16);
+        --danger: #ff7b72;
+        --success: #6fcf97;
+        --warning: #ffd166;
+        --shadow: 0 18px 50px rgba(0,0,0,.28);
+      }
+      body {
+        background:
+          radial-gradient(circle at 78% 18%, rgba(111,207,189,.1), transparent 30%),
+          linear-gradient(135deg, #121316 0%, #181615 54%, #202321 100%);
+      }
+      th { background: #211e1c; }
+      .team-node { border-color: #121316; }
+      .trophy-mark { background: rgba(31,28,26,.9); }
+    }
+    @media (max-width: 1180px) {
+      .knockout-hero { grid-template-columns: 1fr; min-height: 0; }
+      .knockout-sidebar { min-height: 0; padding-right: 0; }
+      h1 { max-width: 16ch; }
+      .next-up { margin-top: 0; }
+      .knockout-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .orbit-board { width: min(100%, 760px); }
+    }
     @media (max-width: 760px) {
-      header { padding: 24px 18px 18px; }
-      main { padding: 18px; }
-      h1 { font-size: 28px; }
+      .knockout-hero { padding: 20px 16px 14px; gap: 14px; }
+      h1 { font-size: 36px; max-width: 12ch; }
+      .podium { margin: 20px 0; }
+      .knockout-main { grid-template-rows: auto auto; }
+      .orbit-board { min-width: 0; width: min(100%, 540px); }
+      .team-node { width: 35px; height: 35px; }
+      .team-node span { display: none; }
+      .trophy-mark { width: 94px; }
+      .knockout-card-grid { grid-template-columns: 1fr; max-height: 360px; overflow: auto; padding-right: 2px; }
+      main.content { padding: 18px 16px 28px; }
+      table { min-width: 760px; }
+      .leaderboard { min-width: 0; }
+      .leaderboard th:nth-child(1), .leaderboard td:nth-child(1) { width: 48px; }
+      .leaderboard th:nth-child(2), .leaderboard td:nth-child(2) { width: 84px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>${escapeHtml(data.title || "FIFA Predictions, MaletasUnited Rankings,")}</h1>
-    <p>Polymarket moneyline picks, ESPN final scores.</p>
-  </header>
-  <main>
+  <div class="page-shell">
+  ${knockoutVisual}
+  <main class="content">
     ${smsRows ? `<h2 class="section-title">${escapeHtml(data.manualLeaderboard?.title || "SMS Leaderboard")}</h2>
     <p class="section-note">As of ${escapeHtml(data.manualLeaderboard?.asOfLabel || data.manualLeaderboard?.asOf || "")}. Source: ${escapeHtml(data.manualLeaderboard?.source || "SMS thread")}.</p>
     <div class="table-wrap">
@@ -670,6 +1184,7 @@ function makeHtml(data) {
     </div>
     <footer>Sources: Polymarket FIFA World Cup moneyline markets for picks; ESPN FIFA World Cup scoreboard for final scores. Prices can move before kickoff.</footer>
   </main>
+  </div>
 </body>
 </html>
 `;
