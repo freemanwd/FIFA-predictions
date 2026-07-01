@@ -1,10 +1,12 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-07-01T17:08:21.391Z
+Last updated: 2026-07-01T17:28:28.645Z
 
 ## SMS Leaderboard
 
 As of: July 1, 2026, 9:57 AM ET
+
+Prediction KING Round of 32: Carlito - Round of 32 crown holder. Carlito is retired from new picks, but his Round of 32 run stays recognized as the live leaderboard keeps moving.
 
 #1 10 pts - Enver
 #2 9 pts - CARLITO.
@@ -115,7 +117,7 @@ Kwame: Colombia vs. Ghana - Colombia 1-1 Ghana (pending)
 
 ## Upcoming Matches
 
-England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Halftime)
+England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Second Half)
 Belgium vs. Senegal - Jul 1, 2026, 4:00 PM ET (Scheduled)
 United States vs. Bosnia-Herzegovina - Jul 1, 2026, 8:00 PM ET (Scheduled)
 Spain vs. Austria - Jul 2, 2026, 3:00 PM ET (Scheduled)

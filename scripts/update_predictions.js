@@ -205,6 +205,10 @@ function rankedEntries(entries) {
   });
 }
 
+function manualAwards(data) {
+  return data.manualLeaderboard?.awards || [];
+}
+
 function scoreTextForMatch(match, score) {
   if (!score) return "";
   const teams = matchTeams(match.match);
@@ -811,6 +815,10 @@ function makeMarkdown(data) {
     lines.push(`## ${data.manualLeaderboard.title || "SMS Leaderboard"}`, "");
     lines.push(`As of: ${data.manualLeaderboard.asOfLabel || data.manualLeaderboard.asOf}`);
     lines.push("");
+    for (const award of manualAwards(data)) {
+      lines.push(`${award.title}: ${award.winner} - ${award.detail || ""}`);
+    }
+    if (manualAwards(data).length) lines.push("");
     for (const entry of smsStandings) {
       lines.push(`#${entry.rank} ${entry.points} pts - ${entry.name}`);
     }
@@ -856,9 +864,21 @@ function makeMarkdown(data) {
 
 function makeHtml(data) {
   const smsStandings = rankedEntries(manualLeaderboardEntries(data));
+  const awards = manualAwards(data);
   const smsScorePicks = scorePickRows(data);
   const upcomingRows = upcomingScheduleRows(data);
   const knockoutVisual = knockoutVisualHtml(data, smsStandings, upcomingRows);
+  const awardRows = awards
+    .map(
+      (award) => `<div class="king-award">
+        <div>
+          <span>${escapeHtml(award.title || "Prediction KING")}</span>
+          <strong>${escapeHtml(award.winner || "")}</strong>
+        </div>
+        <p>${escapeHtml(award.detail || "")}</p>
+      </div>`
+    )
+    .join("\n");
   const smsRows = smsStandings
     .map(
       (entry) => `<tr>
@@ -1224,6 +1244,39 @@ function makeHtml(data) {
       margin: 0 auto;
       padding: 22px 28px 34px;
     }
+    .king-award {
+      display: grid;
+      grid-template-columns: minmax(190px, .45fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      margin: 0 0 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(177,132,36,.34);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255,243,205,.92), rgba(255,255,255,.78));
+      box-shadow: 0 10px 28px rgba(129,91,18,.08);
+    }
+    .king-award span {
+      display: block;
+      color: #8a620f;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .king-award strong {
+      display: block;
+      margin-top: 3px;
+      color: #14171a;
+      font-size: 24px;
+      line-height: 1;
+    }
+    .king-award p {
+      margin: 0;
+      color: #5e4a20;
+      font-size: 13px;
+      line-height: 1.35;
+    }
     .section-title { margin: 0 0 10px; font-size: 18px; }
     .section-title + .section-note { margin-top: -4px; }
     .table-wrap + .section-title { margin-top: 26px; }
@@ -1274,6 +1327,14 @@ function makeHtml(data) {
       th { background: #211e1c; }
       .team-node { border-color: #121316; }
       .trophy-mark { background: rgba(31,28,26,.9); }
+      .king-award {
+        border-color: rgba(255,209,102,.28);
+        background: linear-gradient(135deg, rgba(78,56,18,.68), rgba(42,38,35,.9));
+        box-shadow: 0 12px 32px rgba(0,0,0,.18);
+      }
+      .king-award span { color: #ffd166; }
+      .king-award strong { color: #fff5d9; }
+      .king-award p { color: #decf9d; }
     }
     @media (max-width: 1180px) {
       .knockout-hero { grid-template-columns: 1fr; min-height: 0; }
@@ -1294,6 +1355,8 @@ function makeHtml(data) {
       .trophy-mark { width: 94px; }
       .knockout-card-grid { grid-template-columns: 1fr; max-height: 360px; overflow: auto; padding-right: 2px; }
       main.content { padding: 18px 16px 28px; }
+      .king-award { grid-template-columns: 1fr; gap: 8px; padding: 12px; }
+      .king-award strong { font-size: 22px; }
       table { min-width: 760px; }
       .leaderboard { min-width: 0; }
       .leaderboard th:nth-child(1), .leaderboard td:nth-child(1) { width: 48px; }
@@ -1307,6 +1370,7 @@ function makeHtml(data) {
   <main class="content">
     ${smsRows ? `<h2 class="section-title">${escapeHtml(data.manualLeaderboard?.title || "SMS Leaderboard")}</h2>
     <p class="section-note">As of ${escapeHtml(data.manualLeaderboard?.asOfLabel || data.manualLeaderboard?.asOf || "")}. Source: ${escapeHtml(data.manualLeaderboard?.source || "SMS thread")}.</p>
+    ${awardRows}
     <div class="table-wrap">
       <table class="leaderboard">
         <thead>

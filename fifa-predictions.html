@@ -311,6 +311,39 @@
       margin: 0 auto;
       padding: 22px 28px 34px;
     }
+    .king-award {
+      display: grid;
+      grid-template-columns: minmax(190px, .45fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      margin: 0 0 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(177,132,36,.34);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(255,243,205,.92), rgba(255,255,255,.78));
+      box-shadow: 0 10px 28px rgba(129,91,18,.08);
+    }
+    .king-award span {
+      display: block;
+      color: #8a620f;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .king-award strong {
+      display: block;
+      margin-top: 3px;
+      color: #14171a;
+      font-size: 24px;
+      line-height: 1;
+    }
+    .king-award p {
+      margin: 0;
+      color: #5e4a20;
+      font-size: 13px;
+      line-height: 1.35;
+    }
     .section-title { margin: 0 0 10px; font-size: 18px; }
     .section-title + .section-note { margin-top: -4px; }
     .table-wrap + .section-title { margin-top: 26px; }
@@ -361,6 +394,14 @@
       th { background: #211e1c; }
       .team-node { border-color: #121316; }
       .trophy-mark { background: rgba(31,28,26,.9); }
+      .king-award {
+        border-color: rgba(255,209,102,.28);
+        background: linear-gradient(135deg, rgba(78,56,18,.68), rgba(42,38,35,.9));
+        box-shadow: 0 12px 32px rgba(0,0,0,.18);
+      }
+      .king-award span { color: #ffd166; }
+      .king-award strong { color: #fff5d9; }
+      .king-award p { color: #decf9d; }
     }
     @media (max-width: 1180px) {
       .knockout-hero { grid-template-columns: 1fr; min-height: 0; }
@@ -381,6 +422,8 @@
       .trophy-mark { width: 94px; }
       .knockout-card-grid { grid-template-columns: 1fr; max-height: 360px; overflow: auto; padding-right: 2px; }
       main.content { padding: 18px 16px 28px; }
+      .king-award { grid-template-columns: 1fr; gap: 8px; padding: 12px; }
+      .king-award strong { font-size: 22px; }
       table { min-width: 760px; }
       .leaderboard { min-width: 0; }
       .leaderboard th:nth-child(1), .leaderboard td:nth-child(1) { width: 48px; }
@@ -791,7 +834,7 @@
                   <span>Congo DR</span>
                 </div>
           </div>
-          <div class="knockout-card__meta">Halftime</div>
+          <div class="knockout-card__meta">Second Half</div>
         </article>
 <article class="knockout-card ">
           <div class="knockout-card__round">R32 5</div>
@@ -954,6 +997,13 @@
   <main class="content">
     <h2 class="section-title">SMS Leaderboard</h2>
     <p class="section-note">As of July 1, 2026, 9:57 AM ET. Source: SMS thread.</p>
+    <div class="king-award">
+        <div>
+          <span>Prediction KING Round of 32</span>
+          <strong>Carlito</strong>
+        </div>
+        <p>Round of 32 crown holder. Carlito is retired from new picks, but his Round of 32 run stays recognized as the live leaderboard keeps moving.</p>
+      </div>
     <div class="table-wrap">
       <table class="leaderboard">
         <thead>
@@ -1605,7 +1655,7 @@
         <td>England 3-0 Congo DR<span>England</span></td>
         <td>90 min</td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>Connor<span>SMS text from Conor Keeley</span></td>
@@ -1613,7 +1663,7 @@
         <td>England 3-0 Congo DR<span>England</span></td>
         <td></td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>Diana<span>SMS text from Diana</span></td>
@@ -1621,7 +1671,7 @@
         <td>England 1-1 Congo DR<span>England</span></td>
         <td>ET</td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>Enver<span>SMS text from Enver</span></td>
@@ -1629,7 +1679,7 @@
         <td>England 3-0 Congo DR<span>England</span></td>
         <td></td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>Huy<span>SMS text from Huy</span></td>
@@ -1637,7 +1687,7 @@
         <td>England 2-0 Congo DR<span>England</span></td>
         <td></td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>KGB.<span>SMS text from Dave G</span></td>
@@ -1645,7 +1695,7 @@
         <td>England 3-1 Congo DR<span>England</span></td>
         <td></td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>Kwame<span>SMS screenshot from Kwame</span></td>
@@ -1653,7 +1703,7 @@
         <td>Congo DR by 1 or PK<span>Congo DR</span></td>
         <td>Reg/PK</td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>Youssef<span>SMS screenshot from Youssef Khachanet</span></td>
@@ -1661,7 +1711,7 @@
         <td>England 3-0 Congo DR<span>England</span></td>
         <td></td>
         <td class="status pending">pending</td>
-        <td>TBD<span>Halftime</span></td>
+        <td>TBD<span>Second Half</span></td>
       </tr>
 <tr>
         <td>Billy E (BE)<span>SMS text from Billy Edwards</span></td>
@@ -1783,7 +1833,7 @@
         <tbody><tr>
         <td><a href="https://www.espn.com/soccer/match/_/gameId/760495">England vs. Congo DR</a></td>
         <td>Jul 1, 2026, 12:00 PM ET</td>
-        <td>Halftime</td>
+        <td>Second Half</td>
       </tr>
 <tr>
         <td><a href="https://www.espn.com/soccer/match/_/gameId/760493">Belgium vs. Senegal</a></td>
