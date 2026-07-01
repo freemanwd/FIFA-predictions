@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-07-01T17:28:28.645Z
+Last updated: 2026-07-01T19:49:46.768Z
 
 ## SMS Leaderboard
 
@@ -93,22 +93,24 @@ Enver: Mexico vs. Ecuador - Mexico 2-1 Ecuador (correct, final: Mexico 2-0 Ecuad
 Huy: Mexico vs. Ecuador - Mexico 1-1 Ecuador (missed, final: Mexico 2-0 Ecuador)
 KGB.: Mexico vs. Ecuador - Mexico 1-1 Ecuador (correct, decision: PK, final: Mexico 2-0 Ecuador)
 Youssef: Mexico vs. Ecuador - Mexico 2-0 Ecuador (exact, final: Mexico 2-0 Ecuador)
-Billy E (BE): England vs. Congo DR - England 3-0 Congo DR (pending, decision: 90 min)
-Connor: England vs. Congo DR - England 3-0 Congo DR (pending)
-Diana: England vs. Congo DR - England 1-1 Congo DR (pending, decision: ET)
-Enver: England vs. Congo DR - England 3-0 Congo DR (pending)
-Huy: England vs. Congo DR - England 2-0 Congo DR (pending)
-KGB.: England vs. Congo DR - England 3-1 Congo DR (pending)
-Kwame: England vs. Congo DR - Congo DR by 1 or PK (pending, decision: Reg/PK)
-Youssef: England vs. Congo DR - England 3-0 Congo DR (pending)
+Billy E (BE): England vs. Congo DR - England 3-0 Congo DR (correct, decision: 90 min, final: England 2-1 Congo DR)
+Connor: England vs. Congo DR - England 3-0 Congo DR (correct, final: England 2-1 Congo DR)
+Diana: England vs. Congo DR - England 1-1 Congo DR (correct, decision: ET, final: England 2-1 Congo DR)
+Enver: England vs. Congo DR - England 3-0 Congo DR (correct, final: England 2-1 Congo DR)
+Huy: England vs. Congo DR - England 2-0 Congo DR (correct, final: England 2-1 Congo DR)
+KGB.: England vs. Congo DR - England 3-1 Congo DR (correct, final: England 2-1 Congo DR)
+Kwame: England vs. Congo DR - Congo DR by 1 or PK (missed, decision: Reg/PK, final: England 2-1 Congo DR)
+Youssef: England vs. Congo DR - England 3-0 Congo DR (correct, final: England 2-1 Congo DR)
 Billy E (BE): Belgium vs. Senegal - Belgium 2-1 Senegal (pending, decision: 90 min)
 Connor: Belgium vs. Senegal - Belgium 0-1 Senegal (pending)
+Diana: Belgium vs. Senegal - Belgium 2-1 Senegal (pending)
 Enver: Belgium vs. Senegal - Belgium 1-1 Senegal (pending, decision: PK)
 Huy: Belgium vs. Senegal - Belgium 1-0 Senegal (pending)
 KGB.: Belgium vs. Senegal - Belgium 1-2 Senegal (pending)
 Youssef: Belgium vs. Senegal - Belgium 1-2 Senegal (pending)
 Billy E (BE): United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending, decision: 90 min)
 Connor: United States vs. Bosnia-Herzegovina - United States 3-0 Bosnia-Herzegovina (pending)
+Diana: United States vs. Bosnia-Herzegovina - United States 3-1 Bosnia-Herzegovina (pending)
 Enver: United States vs. Bosnia-Herzegovina - United States 3-1 Bosnia-Herzegovina (pending)
 Huy: United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending)
 KGB.: United States vs. Bosnia-Herzegovina - United States 1-1 Bosnia-Herzegovina (pending, decision: PK)
@@ -117,7 +119,6 @@ Kwame: Colombia vs. Ghana - Colombia 1-1 Ghana (pending)
 
 ## Upcoming Matches
 
-England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Second Half)
 Belgium vs. Senegal - Jul 1, 2026, 4:00 PM ET (Scheduled)
 United States vs. Bosnia-Herzegovina - Jul 1, 2026, 8:00 PM ET (Scheduled)
 Spain vs. Austria - Jul 2, 2026, 3:00 PM ET (Scheduled)
