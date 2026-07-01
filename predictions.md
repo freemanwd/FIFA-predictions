@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-07-01T13:59:45.042Z
+Last updated: 2026-07-01T15:43:42.025Z
 
 ## SMS Leaderboard
 
@@ -91,16 +91,19 @@ Enver: Mexico vs. Ecuador - Mexico 2-1 Ecuador (correct, final: Mexico 2-0 Ecuad
 Huy: Mexico vs. Ecuador - Mexico 1-1 Ecuador (missed, final: Mexico 2-0 Ecuador)
 KGB.: Mexico vs. Ecuador - Mexico 1-1 Ecuador (correct, decision: PK, final: Mexico 2-0 Ecuador)
 Youssef: Mexico vs. Ecuador - Mexico 2-0 Ecuador (exact, final: Mexico 2-0 Ecuador)
+Billy E (BE): England vs. Congo DR - England 3-0 Congo DR (pending, decision: 90 min)
 Connor: England vs. Congo DR - England 3-0 Congo DR (pending)
 Enver: England vs. Congo DR - England 3-0 Congo DR (pending)
 Huy: England vs. Congo DR - England 2-0 Congo DR (pending)
 KGB.: England vs. Congo DR - England 3-1 Congo DR (pending)
 Youssef: England vs. Congo DR - England 3-0 Congo DR (pending)
+Billy E (BE): Belgium vs. Senegal - Belgium 2-1 Senegal (pending, decision: 90 min)
 Connor: Belgium vs. Senegal - Belgium 0-1 Senegal (pending)
 Enver: Belgium vs. Senegal - Belgium 1-1 Senegal (pending, decision: PK)
 Huy: Belgium vs. Senegal - Belgium 1-0 Senegal (pending)
 KGB.: Belgium vs. Senegal - Belgium 1-2 Senegal (pending)
 Youssef: Belgium vs. Senegal - Belgium 1-2 Senegal (pending)
+Billy E (BE): United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending, decision: 90 min)
 Connor: United States vs. Bosnia-Herzegovina - United States 3-0 Bosnia-Herzegovina (pending)
 Enver: United States vs. Bosnia-Herzegovina - United States 3-1 Bosnia-Herzegovina (pending)
 Huy: United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending)
