@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-07-01T16:09:28.265Z
+Last updated: 2026-07-01T17:08:21.391Z
 
 ## SMS Leaderboard
 
@@ -97,6 +97,7 @@ Diana: England vs. Congo DR - England 1-1 Congo DR (pending, decision: ET)
 Enver: England vs. Congo DR - England 3-0 Congo DR (pending)
 Huy: England vs. Congo DR - England 2-0 Congo DR (pending)
 KGB.: England vs. Congo DR - England 3-1 Congo DR (pending)
+Kwame: England vs. Congo DR - Congo DR by 1 or PK (pending, decision: Reg/PK)
 Youssef: England vs. Congo DR - England 3-0 Congo DR (pending)
 Billy E (BE): Belgium vs. Senegal - Belgium 2-1 Senegal (pending, decision: 90 min)
 Connor: Belgium vs. Senegal - Belgium 0-1 Senegal (pending)
@@ -110,10 +111,11 @@ Enver: United States vs. Bosnia-Herzegovina - United States 3-1 Bosnia-Herzegovi
 Huy: United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending)
 KGB.: United States vs. Bosnia-Herzegovina - United States 1-1 Bosnia-Herzegovina (pending, decision: PK)
 Youssef: United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending)
+Kwame: Colombia vs. Ghana - Colombia 1-1 Ghana (pending)
 
 ## Upcoming Matches
 
-England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (First Half)
+England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Halftime)
 Belgium vs. Senegal - Jul 1, 2026, 4:00 PM ET (Scheduled)
 United States vs. Bosnia-Herzegovina - Jul 1, 2026, 8:00 PM ET (Scheduled)
 Spain vs. Austria - Jul 2, 2026, 3:00 PM ET (Scheduled)
