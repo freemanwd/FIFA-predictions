@@ -1,20 +1,20 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-06-30T20:27:05.492Z
+Last updated: 2026-07-01T13:59:45.042Z
 
 ## SMS Leaderboard
 
-As of: June 30, 2026, 4:25 PM ET
+As of: July 1, 2026, 9:57 AM ET
 
-#1 9 pts - CARLITO.
-#2 8 pts - Enver
-#3 7 pts - KGB.
-#3 7 pts - Huy
-#5 6 pts - Yous.
-#6 5 pts - Diana
-#7 4 pts - Connor
-#8 3 pts - BE.
-#8 3 pts - Eric
+#1 10 pts - Enver
+#2 9 pts - CARLITO.
+#2 9 pts - KGB.
+#4 8 pts - Huy
+#4 8 pts - Yous.
+#6 7 pts - Diana
+#7 5 pts - Connor
+#7 5 pts - BE.
+#9 3 pts - Eric
 #10 2 pts - Cole
 #11 1 pts - Diego
 #12 0 pts - Kwame
@@ -77,25 +77,38 @@ Enver: Ivory Coast vs. Norway - Ivory Coast 1-0 Norway (missed, final: Ivory Coa
 Huy: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
 KGB.: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
 Youssef: Ivory Coast vs. Norway - Ivory Coast 1-2 Norway (exact, final: Ivory Coast 1-2 Norway)
-Billy E (BE): France vs. Sweden - France 3-1 Sweden (pending)
-Connor: France vs. Sweden - France 2-1 Sweden (pending)
-Diana: France vs. Sweden - France 3-1 Sweden (pending)
-Enver: France vs. Sweden - France 3-0 Sweden (pending)
-Huy: France vs. Sweden - France 2-1 Sweden (pending)
-KGB.: France vs. Sweden - France 3-1 Sweden (pending)
-Youssef: France vs. Sweden - France 3-1 Sweden (pending)
-Billy E (BE): Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
-Connor: Mexico vs. Ecuador - Mexico 0-1 Ecuador (pending)
-Diana: Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
-Enver: Mexico vs. Ecuador - Mexico 2-1 Ecuador (pending)
-Huy: Mexico vs. Ecuador - Mexico 1-1 Ecuador (pending)
-KGB.: Mexico vs. Ecuador - Mexico 1-1 Ecuador (pending, decision: PK)
-Youssef: Mexico vs. Ecuador - Mexico 2-0 Ecuador (pending)
+Billy E (BE): France vs. Sweden - France 3-1 Sweden (correct, final: France 3-0 Sweden)
+Connor: France vs. Sweden - France 2-1 Sweden (correct, final: France 3-0 Sweden)
+Diana: France vs. Sweden - France 3-1 Sweden (correct, final: France 3-0 Sweden)
+Enver: France vs. Sweden - France 3-0 Sweden (exact, final: France 3-0 Sweden)
+Huy: France vs. Sweden - France 2-1 Sweden (correct, final: France 3-0 Sweden)
+KGB.: France vs. Sweden - France 3-1 Sweden (correct, final: France 3-0 Sweden)
+Youssef: France vs. Sweden - France 3-1 Sweden (correct, final: France 3-0 Sweden)
+Billy E (BE): Mexico vs. Ecuador - Mexico 2-1 Ecuador (correct, final: Mexico 2-0 Ecuador)
+Connor: Mexico vs. Ecuador - Mexico 0-1 Ecuador (missed, final: Mexico 2-0 Ecuador)
+Diana: Mexico vs. Ecuador - Mexico 2-1 Ecuador (correct, final: Mexico 2-0 Ecuador)
+Enver: Mexico vs. Ecuador - Mexico 2-1 Ecuador (correct, final: Mexico 2-0 Ecuador)
+Huy: Mexico vs. Ecuador - Mexico 1-1 Ecuador (missed, final: Mexico 2-0 Ecuador)
+KGB.: Mexico vs. Ecuador - Mexico 1-1 Ecuador (correct, decision: PK, final: Mexico 2-0 Ecuador)
+Youssef: Mexico vs. Ecuador - Mexico 2-0 Ecuador (exact, final: Mexico 2-0 Ecuador)
+Connor: England vs. Congo DR - England 3-0 Congo DR (pending)
+Enver: England vs. Congo DR - England 3-0 Congo DR (pending)
+Huy: England vs. Congo DR - England 2-0 Congo DR (pending)
+KGB.: England vs. Congo DR - England 3-1 Congo DR (pending)
+Youssef: England vs. Congo DR - England 3-0 Congo DR (pending)
+Connor: Belgium vs. Senegal - Belgium 0-1 Senegal (pending)
+Enver: Belgium vs. Senegal - Belgium 1-1 Senegal (pending, decision: PK)
+Huy: Belgium vs. Senegal - Belgium 1-0 Senegal (pending)
+KGB.: Belgium vs. Senegal - Belgium 1-2 Senegal (pending)
+Youssef: Belgium vs. Senegal - Belgium 1-2 Senegal (pending)
+Connor: United States vs. Bosnia-Herzegovina - United States 3-0 Bosnia-Herzegovina (pending)
+Enver: United States vs. Bosnia-Herzegovina - United States 3-1 Bosnia-Herzegovina (pending)
+Huy: United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending)
+KGB.: United States vs. Bosnia-Herzegovina - United States 1-1 Bosnia-Herzegovina (pending, decision: PK)
+Youssef: United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzegovina (pending)
 
 ## Upcoming Matches
 
-France vs. Sweden - Jun 30, 2026, 5:00 PM ET (Scheduled)
-Mexico vs. Ecuador - Jun 30, 2026, 9:00 PM ET (Scheduled)
 England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Scheduled)
 Belgium vs. Senegal - Jul 1, 2026, 4:00 PM ET (Scheduled)
 United States vs. Bosnia-Herzegovina - Jul 1, 2026, 8:00 PM ET (Scheduled)
