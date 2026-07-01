@@ -1,6 +1,6 @@
 # FIFA Predictions, MaletasUnited Rankings,
 
-Last updated: 2026-07-01T15:43:42.025Z
+Last updated: 2026-07-01T16:09:28.265Z
 
 ## SMS Leaderboard
 
@@ -93,6 +93,7 @@ KGB.: Mexico vs. Ecuador - Mexico 1-1 Ecuador (correct, decision: PK, final: Mex
 Youssef: Mexico vs. Ecuador - Mexico 2-0 Ecuador (exact, final: Mexico 2-0 Ecuador)
 Billy E (BE): England vs. Congo DR - England 3-0 Congo DR (pending, decision: 90 min)
 Connor: England vs. Congo DR - England 3-0 Congo DR (pending)
+Diana: England vs. Congo DR - England 1-1 Congo DR (pending, decision: ET)
 Enver: England vs. Congo DR - England 3-0 Congo DR (pending)
 Huy: England vs. Congo DR - England 2-0 Congo DR (pending)
 KGB.: England vs. Congo DR - England 3-1 Congo DR (pending)
@@ -112,7 +113,7 @@ Youssef: United States vs. Bosnia-Herzegovina - United States 2-1 Bosnia-Herzego
 
 ## Upcoming Matches
 
-England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (Scheduled)
+England vs. Congo DR - Jul 1, 2026, 12:00 PM ET (First Half)
 Belgium vs. Senegal - Jul 1, 2026, 4:00 PM ET (Scheduled)
 United States vs. Bosnia-Herzegovina - Jul 1, 2026, 8:00 PM ET (Scheduled)
 Spain vs. Austria - Jul 2, 2026, 3:00 PM ET (Scheduled)
